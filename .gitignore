@@ -1,15 +1,213 @@
-# python
-.venv/
+# Prelaunch Options Signals - Git Ignore Rules
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# notebooks
-.ipynb_checkpoints/
+# PyInstaller
+*.manifest
+*.spec
 
-# data & results
-data/
-results/
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 
-# OS/editor
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environment variables and secrets
+.env
+.env.local
+.env.dev
+.env.prod
+.env.test
+*.env
+
+# Virtual environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
-*.code-workspace
+Thumbs.db
+
+# Data files (protect sensitive financial data)
+data/raw/*.csv
+data/processed/*.csv
+data/options/*.parquet
+data/cache/
+*.h5
+*.hdf5
+
+# Results and outputs (except examples)
+results/*.csv
+results/*.json
+results/*.png
+results/*.pdf
+results/phase1_*
+results/phase2_*
+!results/README.md
+!results/.gitkeep
+
+# Logs
+logs/
+*.log
+*.out
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+*.tmp
+*.bak
+*.backup
+
+# API keys and credentials
+**/api_keys.*
+**/credentials.*
+**/*_key.txt
+**/*_secret.txt
+polygon_key*
+alpha_vantage_key*
+
+# Model files and trained models (can be large)
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pb
+*.model
+*.weights
+
+# Documentation builds
+docs/_build/
+docs/build/
+site/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Project-specific
+# Keep example data but ignore real market data
+!data/examples/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Analysis cache files
+.analysis_cache/
+*.cache
+
+# Backup files from editors
+*~
+.#*
+\#*#
+
+# Pytest
+.pytest_cache/
+test_reports/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Profiling
+*.prof
+
+# Coverage
+.coverage*
+htmlcov/
+
+# Local configuration overrides
+config.local.py
+settings.local.json
+
+# Notebook outputs (keep notebooks but clear outputs)
+*.ipynb
+!notebooks/examples/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
