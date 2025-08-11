@@ -1,0 +1,15 @@
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# notebooks
+.ipynb_checkpoints/
+
+# data & results
+data/
+results/
+
+# OS/editor
+.DS_Store
+*.code-workspace
