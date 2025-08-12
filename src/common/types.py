@@ -51,12 +51,14 @@ class SignalMetrics:
     # Price metrics
     price_5day_return: float
     price_1day_return: float
-    abnormal_return: Optional[float] = None
     
     # Volume metrics
     volume_spike_pct: float
     volume_z_score: float
     volume_anomaly_detected: bool
+    
+    # Optional price metrics
+    abnormal_return: Optional[float] = None
     
     # Statistical significance
     t_statistic: Optional[float] = None

@@ -9,40 +9,68 @@ from typing import Dict, Tuple, Optional
 import os
 from dotenv import load_dotenv
 
+# Import new modules
+from .config import get_config
+from .logging_setup import setup_logging, set_seeds
+from .schemas import validate_events_df
+
 # Load environment variables
 load_dotenv()
 
-# Configure logging
-logging.basicConfig(
-    level=getattr(logging, os.getenv('LOG_LEVEL', 'INFO')),
-    format=os.getenv('LOG_FORMAT', '%(asctime)s %(levelname)s %(message)s')
-)
-
 class PrelaunchAnalyzer:
-    def __init__(self, data_dir=None, results_dir=None):
-        self.data_dir = Path(data_dir or os.getenv('DATA_RAW_DIR', 'data/raw'))
-        self.results_dir = Path(results_dir or os.getenv('RESULTS_DIR', 'results'))
-        self.results_dir.mkdir(exist_ok=True)
+    def __init__(self, data_dir=None, results_dir=None, config=None):
+        # Load config
+        self.config = config or get_config()
         
-        # Analysis parameters from environment or defaults
+        # Set up directories
+        self.data_dir = Path(data_dir or self.config.raw_data_dir)
+        
+        # Create timestamped results directory
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        self.run_dir = Path(results_dir or self.config.results_dir) / f"run_{timestamp}"
+        self.run_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Set up logging to file in results directory
+        self.logger = setup_logging(self.config.log_level)
+        log_handler = logging.FileHandler(self.run_dir / 'run.log')
+        log_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+        self.logger.addHandler(log_handler)
+        
+        # Set seeds for reproducibility
+        set_seeds(self.config.seed)
+        
+        # Load and validate events data
+        self.events_df = self._load_and_validate_events()
+        
+        # Initialize results storage
+        self.results = {}
+        
+        # Analysis parameters from config
         self.params = {
-            'baseline_days': int(os.getenv('BASELINE_DAYS', 60)),
-            'signal_window_announce_before': int(os.getenv('SIGNAL_WINDOW_ANNOUNCE_BEFORE', 5)),
-            'signal_window_announce_after': int(os.getenv('SIGNAL_WINDOW_ANNOUNCE_AFTER', 20)),
-            'signal_window_release_before': int(os.getenv('SIGNAL_WINDOW_RELEASE_BEFORE', 5)),
-            'signal_window_release_after': int(os.getenv('SIGNAL_WINDOW_RELEASE_AFTER', 10)),
+            'baseline_days': self.config.baseline_days,
+            'signal_window_announce_before': 5,  # TODO: make configurable
+            'signal_window_announce_after': 20,   # TODO: make configurable  
+            'signal_window_release_before': 5,    # TODO: make configurable
+            'signal_window_release_after': 10,    # TODO: make configurable
             'z_thresholds': {
-                'low': float(os.getenv('Z_THRESHOLD_LOW', 1.645)),
-                'med': float(os.getenv('Z_THRESHOLD_MED', 2.326)),
-                'high': float(os.getenv('Z_THRESHOLD_HIGH', 2.576)),
-                'extreme': float(os.getenv('Z_THRESHOLD_EXTREME', 5.0))
+                'low': self.config.z_thresholds[0],
+                'med': self.config.z_thresholds[1], 
+                'high': self.config.z_thresholds[2],
+                'extreme': self.config.z_thresholds[3] if len(self.config.z_thresholds) > 3 else 5.0
             }
         }
         
-        self.results = {}
+        # Initialize metadata
         self.metadata = {
             'analysis_timestamp': datetime.now().isoformat(),
             'parameters': self.params,
+            'config': {
+                'events_csv': self.config.events_csv,
+                'baseline_days': self.config.baseline_days,
+                'z_thresholds': self.config.z_thresholds,
+                'event_windows': self.config.event_windows,
+                'seed': self.config.seed
+            },
             'data_sources': [],
             'calculation_definitions': {
                 'announcement_5day_return': 'Cumulative return from close[t-5] to close[t+0] on announcement day',
@@ -51,11 +79,28 @@ class PrelaunchAnalyzer:
                 'pre_announce_return': 'Average daily return 60 trading days before announcement',
                 'announce_to_release_return': 'Average daily return from announcement to release day',
                 'post_release_return': 'Average daily return 30 trading days after release',
-                'data_source': 'yfinance adjusted close prices (split/dividend adjusted), raw volumes'
             }
         }
         
-        logging.info(f"PrelaunchAnalyzer initialized with parameters: {self.params}")
+    def _load_and_validate_events(self) -> pd.DataFrame:
+        """Load and validate events_master.csv."""
+        events_path = Path(self.config.events_csv)
+        if not events_path.exists():
+            self.logger.warning(f"Events file not found: {events_path}. Using empty DataFrame.")
+            return pd.DataFrame()
+            
+        try:
+            df = pd.read_csv(events_path)
+            self.logger.info(f"Loaded {len(df)} events from {events_path}")
+            
+            # Validate schema
+            validated_df = validate_events_df(df)
+            self.logger.info("Events data validation passed")
+            return validated_df
+            
+        except Exception as e:
+            self.logger.error(f"Events data validation failed: {e}")
+            raise
     
     def load_stock_data(self, filename):
         """Load and clean stock data from CSV file"""
@@ -359,9 +404,8 @@ class PrelaunchAnalyzer:
         Returns:
             Tuple of (csv_filename, json_filename)
         """
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        csv_filename = f"{filename_prefix}_{timestamp}.csv"
-        json_filename = f"{filename_prefix}_{timestamp}_metadata.json"
+        csv_filename = f"{filename_prefix}.csv"
+        json_filename = f"{filename_prefix}_metadata.json"
         
         # Prepare results DataFrame
         results_data = []
@@ -377,23 +421,57 @@ class PrelaunchAnalyzer:
         
         # Add calculation clarity columns
         results_df['calculation_note'] = (
-            f"announcement_return: {self.metadata['calculation_definitions']['announcement_return']}; "
+            f"announcement_return: {self.metadata['calculation_definitions']['announcement_5day_return']}; "
             f"volume_spike_pct: {self.metadata['calculation_definitions']['volume_spike_pct']}"
         )
         
-        # Save CSV
-        csv_path = self.results_dir / csv_filename
+        # Save CSV to timestamped results directory
+        csv_path = self.run_dir / csv_filename
         results_df.to_csv(csv_path, index=False)
         
         # Save metadata JSON
-        json_path = self.results_dir / json_filename
+        json_path = self.run_dir / json_filename
         with open(json_path, 'w') as f:
             json.dump(self.metadata, f, indent=2)
         
-        logging.info(f"Results saved to {csv_path}")
-        logging.info(f"Metadata saved to {json_path}")
+        # Generate visualization artifacts
+        self._create_visualizations(results_df)
+        
+        self.logger.info(f"Results saved to {csv_path}")
+        self.logger.info(f"Metadata saved to {json_path}")
+        self.logger.info(f"All artifacts saved to {self.run_dir}")
         
         return str(csv_filename), str(json_filename)
+        
+    def _create_visualizations(self, results_df: pd.DataFrame):
+        """Create required visualization artifacts using pure functions."""
+        if len(results_df) == 0:
+            self.logger.warning("No results data to visualize")
+            return
+            
+        from .visualizations import (
+            create_volume_summary_plot,
+            create_volume_analysis_plot, 
+            create_returns_summary_plot
+        )
+        
+        try:
+            # Generate all required plots
+            volume_summary_path = create_volume_summary_plot(
+                results_df, self.run_dir / 'volume_summary.png'
+            )
+            volume_analysis_path = create_volume_analysis_plot(
+                results_df, self.run_dir / 'volume_analysis.png'
+            )
+            returns_summary_path = create_returns_summary_plot(
+                results_df, self.run_dir / 'returns_summary.png'
+            )
+            
+            self.logger.info(f"Visualization artifacts created: {volume_summary_path}, {volume_analysis_path}, {returns_summary_path}")
+            
+        except Exception as e:
+            self.logger.error(f"Failed to create visualizations: {e}")
+            raise
     
     def calculate_baseline_volume(self, df: pd.DataFrame, window: int = 20) -> pd.Series:
         """Calculate baseline volume using rolling mean for anomaly detection"""
@@ -446,24 +524,79 @@ class PrelaunchAnalyzer:
         df = pd.DataFrame(table_data)
         return df.to_markdown(index=False)
 
-if __name__ == "__main__":
-    # Run the analysis
+def main():
+    import argparse
+    import sys
+    
+    parser = argparse.ArgumentParser(description="Prelaunch Options Signals Analysis")
+    subparsers = parser.add_subparsers(dest='command', help='Available commands')
+    
+    # Single event command
+    run_parser = subparsers.add_parser('run', help='Run analysis for a single event')
+    run_parser.add_argument('--event-id', required=True, 
+                           choices=['msft_xbox_series', 'nvda_rtx30', 'nvda_rtx40', 'nvda_rtx40_super',
+                                   'aapl_iphone_12', 'aapl_iphone_13', 'aapl_iphone_14', 'aapl_iphone_15'],
+                           help='Event ID to analyze')
+    
+    # Run all events command  
+    run_all_parser = subparsers.add_parser('run-all', help='Run analysis for all events')
+    
+    # Common options for both commands
+    for p in [run_parser, run_all_parser]:
+        p.add_argument('--baseline-days', type=int, default=60,
+                      help='Number of baseline days (default: 60)')
+        p.add_argument('--z-thresholds', nargs='+', type=float, 
+                      default=[1.645, 2.326, 2.576],
+                      help='Z-score thresholds (default: 1.645 2.326 2.576)')
+        p.add_argument('--windows', nargs='+', 
+                      default=['-1:+1', '-2:+2', '-5:+5'],
+                      help='Event windows (default: -1:+1 -2:+2 -5:+5)')
+    
+    args = parser.parse_args()
+    
+    if not args.command:
+        parser.print_help()
+        sys.exit(1)
+    
+    # Create analyzer with custom parameters
     analyzer = PrelaunchAnalyzer()
+    analyzer.params['baseline_days'] = args.baseline_days
+    analyzer.params['z_thresholds'] = {
+        'low': args.z_thresholds[0] if len(args.z_thresholds) > 0 else 1.645,
+        'med': args.z_thresholds[1] if len(args.z_thresholds) > 1 else 2.326,  
+        'high': args.z_thresholds[2] if len(args.z_thresholds) > 2 else 2.576,
+        'extreme': args.z_thresholds[3] if len(args.z_thresholds) > 3 else 5.0
+    }
     
-    # Analyze each product launch
-    logging.info("Starting Phase 1 analysis...")
-    analyzer.analyze_xbox_data()
-    analyzer.analyze_nvidia_rtx30_data()
-    analyzer.analyze_nvidia_rtx40_data()
-    analyzer.analyze_nvidia_rtx40_super_data()
-    analyzer.analyze_iphone_12_data()
-    analyzer.analyze_iphone_13_data()
-    analyzer.analyze_iphone_14_data()
-    analyzer.analyze_iphone_15_data()
+    # Event ID to method mapping
+    event_methods = {
+        'msft_xbox_series': analyzer.analyze_xbox_data,
+        'nvda_rtx30': analyzer.analyze_nvidia_rtx30_data,
+        'nvda_rtx40': analyzer.analyze_nvidia_rtx40_data,
+        'nvda_rtx40_super': analyzer.analyze_nvidia_rtx40_super_data,
+        'aapl_iphone_12': analyzer.analyze_iphone_12_data,
+        'aapl_iphone_13': analyzer.analyze_iphone_13_data,
+        'aapl_iphone_14': analyzer.analyze_iphone_14_data,
+        'aapl_iphone_15': analyzer.analyze_iphone_15_data,
+    }
     
-    # Create summary report
-    analyzer.create_summary_report()
-    
-    # Save reproducible results
-    csv_file, json_file = analyzer.save_results()
-    logging.info(f"Phase 1 analysis completed. Results: {csv_file}, {json_file}")
+    if args.command == 'run':
+        logging.info(f"Starting analysis for {args.event_id}...")
+        event_methods[args.event_id]()
+        analyzer.create_summary_report()
+        csv_file, json_file = analyzer.save_results()
+        logging.info(f"Analysis completed. Results: {csv_file}, {json_file}")
+        
+    elif args.command == 'run-all':
+        logging.info("Starting Phase 1 analysis for all events...")
+        for event_id, method in event_methods.items():
+            logging.info(f"Analyzing {event_id}...")
+            method()
+        
+        analyzer.create_summary_report()
+        csv_file, json_file = analyzer.save_results()
+        logging.info(f"Phase 1 analysis completed. Results: {csv_file}, {json_file}")
+
+
+if __name__ == "__main__":
+    main()

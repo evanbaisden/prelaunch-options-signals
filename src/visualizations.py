@@ -1,252 +1,225 @@
+"""
+Pure visualization functions for prelaunch options signals analysis.
+All functions take DataFrames/Series and return saved plot paths.
+Uses matplotlib only (no seaborn).
+"""
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
-from datetime import datetime, timedelta
 from pathlib import Path
-from analysis import PrelaunchAnalyzer
+from typing import Union
 
-class PrelaunchVisualizer(PrelaunchAnalyzer):
-    def __init__(self, data_dir="data/raw", output_dir="results"):
-        super().__init__(data_dir)
-        self.output_dir = Path(output_dir)
-        self.output_dir.mkdir(exist_ok=True)
-        
-        # Set style for better plots
-        plt.style.use('seaborn-v0_8')
-        sns.set_palette("husl")
-    
-    def create_price_movement_comparison(self):
-        """Create a comparison chart of price movements around announcements"""
-        fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-        fig.suptitle('Stock Price Movements Around Product Launch Announcements', fontsize=16, fontweight='bold')
-        
-        products = [
-            ('microsoft_xbox_series_x-s_raw.csv', datetime(2020, 9, 9), 'Microsoft Xbox Series X/S'),
-            ('nvidia_rtx_30_series_raw.csv', datetime(2020, 9, 1), 'NVIDIA RTX 30 Series'),
-            ('nvidia_rtx_40_series_raw.csv', datetime(2022, 9, 20), 'NVIDIA RTX 40 Series'),
-            ('nvidia_rtx_40_super_raw.csv', datetime(2024, 1, 8), 'NVIDIA RTX 40 SUPER'),
-            ('apple_iphone_12_raw.csv', datetime(2020, 10, 13), 'Apple iPhone 12'),
-            ('apple_iphone_13_raw.csv', datetime(2021, 9, 14), 'Apple iPhone 13'),
-            ('apple_iphone_14_raw.csv', datetime(2022, 9, 7), 'Apple iPhone 14'),
-            ('apple_iphone_15_raw.csv', datetime(2023, 9, 12), 'Apple iPhone 15')
-        ]
-        
-        for i, (filename, announce_date, title) in enumerate(products):
-            ax = axes[i // 4, i % 4]
-            
-            # Load data
-            df = self.load_stock_data(filename)
-            announce_idx = self.find_nearest_date_index(df, announce_date)
-            
-            # Get data window around announcement (-30 to +30 days)
-            start_idx = max(0, announce_idx - 30)
-            end_idx = min(len(df), announce_idx + 30)
-            
-            window_df = df.iloc[start_idx:end_idx].copy()
-            window_df['Days_From_Announcement'] = range(-len(window_df[:announce_idx-start_idx]), 
-                                                      len(window_df[announce_idx-start_idx:]))
-            
-            # Normalize price to announcement day = 100
-            announce_price = df.iloc[announce_idx]['Adj Close']
-            window_df['Normalized_Price'] = (window_df['Adj Close'] / announce_price) * 100
-            
-            # Plot
-            ax.plot(window_df['Days_From_Announcement'], window_df['Normalized_Price'], 
-                   linewidth=2, alpha=0.8)
-            ax.axvline(x=0, color='red', linestyle='--', alpha=0.7, label='Announcement')
-            ax.set_title(title, fontweight='bold')
-            ax.set_xlabel('Days from Announcement')
-            ax.set_ylabel('Normalized Price (Announcement = 100)')
-            ax.grid(True, alpha=0.3)
-            ax.legend()
-            
-        plt.tight_layout()
-        plt.savefig(self.output_dir / 'price_movements_comparison.png', dpi=300, bbox_inches='tight')
-        plt.show()
-    
-    def create_volume_analysis_chart(self):
-        """Create volume analysis charts"""
-        fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-        fig.suptitle('Trading Volume Analysis Around Product Announcements', fontsize=16, fontweight='bold')
-        
-        products = [
-            ('microsoft_xbox_series_x-s_raw.csv', datetime(2020, 9, 9), 'Microsoft Xbox Series X/S'),
-            ('nvidia_rtx_30_series_raw.csv', datetime(2020, 9, 1), 'NVIDIA RTX 30 Series'),
-            ('nvidia_rtx_40_series_raw.csv', datetime(2022, 9, 20), 'NVIDIA RTX 40 Series'),
-            ('nvidia_rtx_40_super_raw.csv', datetime(2024, 1, 8), 'NVIDIA RTX 40 SUPER'),
-            ('apple_iphone_12_raw.csv', datetime(2020, 10, 13), 'Apple iPhone 12'),
-            ('apple_iphone_13_raw.csv', datetime(2021, 9, 14), 'Apple iPhone 13'),
-            ('apple_iphone_14_raw.csv', datetime(2022, 9, 7), 'Apple iPhone 14'),
-            ('apple_iphone_15_raw.csv', datetime(2023, 9, 12), 'Apple iPhone 15')
-        ]
-        
-        for i, (filename, announce_date, title) in enumerate(products):
-            ax = axes[i // 4, i % 4]
-            
-            # Load data
-            df = self.load_stock_data(filename)
-            announce_idx = self.find_nearest_date_index(df, announce_date)
-            
-            # Calculate rolling volume average
-            df['Volume_MA20'] = df['Volume'].rolling(window=20).mean()
-            df['Volume_Ratio'] = df['Volume'] / df['Volume_MA20']
-            
-            # Get data window around announcement (-30 to +30 days)
-            start_idx = max(0, announce_idx - 30)
-            end_idx = min(len(df), announce_idx + 30)
-            
-            window_df = df.iloc[start_idx:end_idx].copy()
-            window_df['Days_From_Announcement'] = range(-len(window_df[:announce_idx-start_idx]), 
-                                                      len(window_df[announce_idx-start_idx:]))
-            
-            # Plot volume ratio
-            ax.bar(window_df['Days_From_Announcement'], window_df['Volume_Ratio'], 
-                  alpha=0.7, width=0.8)
-            ax.axvline(x=0, color='red', linestyle='--', alpha=0.7, label='Announcement')
-            ax.axhline(y=1, color='black', linestyle='-', alpha=0.5, label='20-day Average')
-            ax.set_title(title, fontweight='bold')
-            ax.set_xlabel('Days from Announcement')
-            ax.set_ylabel('Volume Ratio (vs 20-day MA)')
-            ax.legend()
-            ax.grid(True, alpha=0.3)
-            
-        plt.tight_layout()
-        plt.savefig(self.output_dir / 'volume_analysis.png', dpi=300, bbox_inches='tight')
-        plt.show()
-    
-    def create_returns_summary_chart(self):
-        """Create a summary chart of returns across different periods"""
-        # Get all results
-        if not self.results:
-            self.analyze_xbox_data()
-            self.analyze_nvidia_rtx30_data()
-            self.analyze_nvidia_rtx40_data()
-            self.analyze_nvidia_rtx40_super_data()
-            self.analyze_iphone_12_data()
-            self.analyze_iphone_13_data()
-            self.analyze_iphone_14_data()
-            self.analyze_iphone_15_data()
-        
-        # Prepare data for visualization
-        products = ['Xbox Series X/S', 'RTX 30 Series', 'RTX 40 Series', 'RTX 40 SUPER', 
-                   'iPhone 12', 'iPhone 13', 'iPhone 14', 'iPhone 15']
-        keys = ['xbox', 'rtx30', 'rtx40', 'rtx40_super', 'iphone12', 'iphone13', 'iphone14', 'iphone15']
-        
-        pre_announce_returns = []
-        announce_to_release_returns = []
-        post_release_returns = []
-        announce_5day_returns = []
-        release_5day_returns = []
-        
-        for key in keys:
-            pre_announce_returns.append(self.results[key]['pre_announce_avg_return'] * 100)
-            announce_to_release_returns.append(self.results[key]['announce_to_release_avg_return'] * 100)
-            post_release_returns.append(self.results[key]['post_release_avg_return'] * 100)
-            announce_5day_returns.append(self.results[key].get('announcement_5day_return', 0) * 100)
-            release_5day_returns.append(self.results[key].get('release_5day_return', 0) * 100)
-        
-        # Create subplots
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
-        
-        # Average daily returns chart
-        x = np.arange(len(products))
-        width = 0.25
-        
-        ax1.bar(x - width, pre_announce_returns, width, label='Pre-Announcement', alpha=0.8)
-        ax1.bar(x, announce_to_release_returns, width, label='Announcement to Release', alpha=0.8)
-        ax1.bar(x + width, post_release_returns, width, label='Post-Release', alpha=0.8)
-        
-        ax1.set_xlabel('Product')
-        ax1.set_ylabel('Average Daily Return (%)')
-        ax1.set_title('Average Daily Returns by Period', fontweight='bold')
-        ax1.set_xticks(x)
-        ax1.set_xticklabels(products, rotation=45, ha='right')
-        ax1.legend()
-        ax1.grid(True, alpha=0.3)
-        ax1.axhline(y=0, color='black', linestyle='-', alpha=0.5)
-        
-        # 5-day event returns
-        x = np.arange(len(products))
-        width = 0.35
-        
-        ax2.bar(x - width/2, announce_5day_returns, width, label='5-day Announcement Return', alpha=0.8)
-        ax2.bar(x + width/2, release_5day_returns, width, label='5-day Release Return', alpha=0.8)
-        
-        ax2.set_xlabel('Product')
-        ax2.set_ylabel('5-Day Return (%)')
-        ax2.set_title('5-Day Returns Around Key Events', fontweight='bold')
-        ax2.set_xticks(x)
-        ax2.set_xticklabels(products, rotation=45, ha='right')
-        ax2.legend()
-        ax2.grid(True, alpha=0.3)
-        ax2.axhline(y=0, color='black', linestyle='-', alpha=0.5)
-        
-        plt.tight_layout()
-        plt.savefig(self.output_dir / 'returns_summary.png', dpi=300, bbox_inches='tight')
-        plt.show()
-    
-    def create_volume_summary_chart(self):
-        """Create a summary chart of volume patterns"""
-        if not self.results:
-            self.analyze_xbox_data()
-            self.analyze_nvidia_rtx30_data()
-            self.analyze_nvidia_rtx40_data()
-            self.analyze_nvidia_rtx40_super_data()
-            self.analyze_iphone_12_data()
-            self.analyze_iphone_13_data()
-            self.analyze_iphone_14_data()
-            self.analyze_iphone_15_data()
-        
-        products = ['Xbox Series X/S', 'RTX 30 Series', 'RTX 40 Series', 'RTX 40 SUPER',
-                   'iPhone 12', 'iPhone 13', 'iPhone 14', 'iPhone 15']
-        keys = ['xbox', 'rtx30', 'rtx40', 'rtx40_super', 'iphone12', 'iphone13', 'iphone14', 'iphone15']
-        
-        pre_announce_volume = []
-        announce_to_release_volume = []
-        post_release_volume = []
-        
-        for key in keys:
-            pre_announce_volume.append(self.results[key]['pre_announce_avg_volume'] / 1e6)  # Convert to millions
-            announce_to_release_volume.append(self.results[key]['announce_to_release_avg_volume'] / 1e6)
-            post_release_volume.append(self.results[key]['post_release_avg_volume'] / 1e6)
-        
-        # Create chart
-        fig, ax = plt.subplots(1, 1, figsize=(16, 8))
-        
-        x = np.arange(len(products))
-        width = 0.25
-        
-        ax.bar(x - width, pre_announce_volume, width, label='Pre-Announcement', alpha=0.8)
-        ax.bar(x, announce_to_release_volume, width, label='Announcement to Release', alpha=0.8)
-        ax.bar(x + width, post_release_volume, width, label='Post-Release', alpha=0.8)
-        
-        ax.set_xlabel('Product')
-        ax.set_ylabel('Average Daily Volume (Millions)')
-        ax.set_title('Average Trading Volume by Period', fontweight='bold')
-        ax.set_xticks(x)
-        ax.set_xticklabels(products, rotation=45, ha='right')
-        ax.legend()
-        ax.grid(True, alpha=0.3)
-        
-        plt.tight_layout()
-        plt.savefig(self.output_dir / 'volume_summary.png', dpi=300, bbox_inches='tight')
-        plt.show()
 
-if __name__ == "__main__":
-    # Create visualizer and generate all charts
-    visualizer = PrelaunchVisualizer()
+def create_volume_summary_plot(results_df: pd.DataFrame, output_path: Union[str, Path]) -> str:
+    """
+    Create volume spike summary plot from results DataFrame.
     
-    print("Creating price movement comparison chart...")
-    visualizer.create_price_movement_comparison()
+    Args:
+        results_df: DataFrame with analysis results containing volume data
+        output_path: Path to save the plot
+        
+    Returns:
+        str: Path to saved plot file
+    """
+    if len(results_df) == 0:
+        return ""
+        
+    plt.style.use('default')
+    fig, ax = plt.subplots(figsize=(12, 6))
     
-    print("Creating volume analysis chart...")  
-    visualizer.create_volume_analysis_chart()
+    products = results_df['product']
+    volume_spikes = results_df.get('volume_spike_pct', [0] * len(products))
     
-    print("Creating returns summary chart...")
-    visualizer.create_returns_summary_chart()
+    bars = ax.bar(products, volume_spikes, alpha=0.7)
+    ax.set_title('Volume Spike Analysis by Product Launch')
+    ax.set_ylabel('Volume Spike (%)')
+    ax.set_xlabel('Product')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
     
-    print("Creating volume summary chart...")
-    visualizer.create_volume_summary_chart()
+    output_path = Path(output_path)
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close()
     
-    print("All visualizations completed and saved to results/")
+    return str(output_path)
+
+
+def create_volume_analysis_plot(results_df: pd.DataFrame, output_path: Union[str, Path]) -> str:
+    """
+    Create detailed volume analysis plot comparing announcement vs release spikes.
+    
+    Args:
+        results_df: DataFrame with analysis results containing volume data
+        output_path: Path to save the plot
+        
+    Returns:
+        str: Path to saved plot file
+    """
+    if len(results_df) == 0:
+        return ""
+        
+    plt.style.use('default')
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
+    
+    products = results_df['product']
+    
+    # Announcement volume spikes
+    ann_spikes = results_df.get('announcement_volume_spike', [0] * len(products))
+    ax1.bar(products, ann_spikes, alpha=0.7, color='blue')
+    ax1.set_title('Volume Spikes at Announcement')
+    ax1.set_ylabel('Volume Spike (%)')
+    plt.setp(ax1.get_xticklabels(), rotation=45, ha='right')
+    
+    # Release volume spikes  
+    rel_spikes = results_df.get('release_volume_spike', [0] * len(products))
+    ax2.bar(products, rel_spikes, alpha=0.7, color='green')
+    ax2.set_title('Volume Spikes at Release')
+    ax2.set_ylabel('Volume Spike (%)')
+    ax2.set_xlabel('Product')
+    plt.setp(ax2.get_xticklabels(), rotation=45, ha='right')
+    
+    plt.tight_layout()
+    
+    output_path = Path(output_path)
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    return str(output_path)
+
+
+def create_returns_summary_plot(results_df: pd.DataFrame, output_path: Union[str, Path]) -> str:
+    """
+    Create returns summary plot comparing announcement vs release returns.
+    
+    Args:
+        results_df: DataFrame with analysis results containing returns data
+        output_path: Path to save the plot
+        
+    Returns:
+        str: Path to saved plot file
+    """
+    if len(results_df) == 0:
+        return ""
+        
+    plt.style.use('default')
+    fig, ax = plt.subplots(figsize=(12, 6))
+    
+    products = results_df['product']
+    
+    # Plot announcement and release returns
+    ann_returns = results_df.get('announcement_5day_return', [0] * len(products))
+    rel_returns = results_df.get('release_5day_return', [0] * len(products))
+    
+    x = np.arange(len(products))
+    width = 0.35
+    
+    ax.bar(x - width/2, ann_returns, width, label='Announcement Return', alpha=0.7)
+    ax.bar(x + width/2, rel_returns, width, label='Release Return', alpha=0.7)
+    
+    ax.set_title('5-Day Returns Around Launch Events')
+    ax.set_ylabel('Return (%)')
+    ax.set_xlabel('Product')
+    ax.set_xticks(x)
+    ax.set_xticklabels(products, rotation=45, ha='right')
+    ax.legend()
+    ax.axhline(y=0, color='black', linestyle='-', alpha=0.3)
+    
+    plt.tight_layout()
+    
+    output_path = Path(output_path)
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    return str(output_path)
+
+
+def create_price_movement_plot(price_data: pd.DataFrame, event_date: pd.Timestamp, 
+                              output_path: Union[str, Path], title: str = "Price Movement") -> str:
+    """
+    Create price movement plot around an event date.
+    
+    Args:
+        price_data: DataFrame with Date and Adj Close columns
+        event_date: Event date to center the plot around
+        output_path: Path to save the plot
+        title: Plot title
+        
+    Returns:
+        str: Path to saved plot file
+    """
+    if len(price_data) == 0:
+        return ""
+        
+    plt.style.use('default')
+    fig, ax = plt.subplots(figsize=(12, 6))
+    
+    # Normalize prices to event date = 100
+    event_price = price_data.loc[price_data['Date'] == event_date, 'Adj Close']
+    if len(event_price) == 0:
+        # Find nearest date
+        event_price = price_data.iloc[(price_data['Date'] - event_date).abs().argsort()[:1]]['Adj Close']
+    
+    normalized_prices = (price_data['Adj Close'] / event_price.iloc[0]) * 100
+    
+    ax.plot(price_data['Date'], normalized_prices, linewidth=2, alpha=0.8)
+    ax.axvline(x=event_date, color='red', linestyle='--', alpha=0.7, label='Event Date')
+    ax.set_title(title)
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Normalized Price (Event Date = 100)')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    
+    output_path = Path(output_path)
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    return str(output_path)
+
+
+def create_volume_timeseries_plot(volume_data: pd.DataFrame, event_date: pd.Timestamp,
+                                 output_path: Union[str, Path], title: str = "Volume Analysis") -> str:
+    """
+    Create volume timeseries plot with baseline and event highlighting.
+    
+    Args:
+        volume_data: DataFrame with Date, Volume, and optional Volume_MA20 columns
+        event_date: Event date to highlight
+        output_path: Path to save the plot
+        title: Plot title
+        
+    Returns:
+        str: Path to saved plot file
+    """
+    if len(volume_data) == 0:
+        return ""
+        
+    plt.style.use('default')
+    fig, ax = plt.subplots(figsize=(12, 6))
+    
+    # Calculate baseline if not provided
+    if 'Volume_MA20' not in volume_data.columns:
+        volume_data = volume_data.copy()
+        volume_data['Volume_MA20'] = volume_data['Volume'].rolling(window=20).mean()
+    
+    ax.bar(volume_data['Date'], volume_data['Volume'], alpha=0.6, width=0.8)
+    ax.plot(volume_data['Date'], volume_data['Volume_MA20'], 
+           color='red', linewidth=2, label='20-day Moving Average')
+    ax.axvline(x=event_date, color='green', linestyle='--', alpha=0.7, label='Event Date')
+    
+    ax.set_title(title)
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Trading Volume')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    
+    output_path = Path(output_path)
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    return str(output_path)
