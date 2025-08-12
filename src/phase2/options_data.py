@@ -623,15 +623,8 @@ class OptionsDataManager:
         except Exception as e:
             self.logger.warning(f"Yahoo Finance options provider not available: {e}")
         
-        # Try to initialize QuantConnect (premium)
-        try:
-            self.providers['quantconnect'] = QuantConnectOptionsProvider(config)
-            self.logger.info("QuantConnect options provider initialized")
-        except Exception as e:
-            self.logger.warning(f"QuantConnect options provider not available: {e}")
-        
-        # Provider priority: Alpha Vantage (historical), Polygon (recent), Yahoo (backup), QuantConnect (premium)
-        self.provider_order = [name for name in ['alpha_vantage', 'polygon', 'yahoo', 'quantconnect'] 
+        # Provider priority: Alpha Vantage (historical), Polygon (recent), Yahoo (backup)
+        self.provider_order = [name for name in ['alpha_vantage', 'polygon', 'yahoo'] 
                                if name in self.providers]
         
         self.logger.info(f"Initialized options providers: {list(self.providers.keys())}")
