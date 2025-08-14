@@ -191,6 +191,10 @@ settings.local.json
 *.ipynb
 !notebooks/examples/
 
+# Infrastructure (MCP servers)
+.infrastructure/node_modules/
+.infrastructure/**/node_modules/
+
 # Distribution / packaging
 .Python
 build/

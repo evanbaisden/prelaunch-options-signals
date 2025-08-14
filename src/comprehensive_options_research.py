@@ -525,8 +525,7 @@ class ComprehensiveOptionsResearch:
         """
         Generate comprehensive research report integrating all analyses.
         """
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        report_file = self.results_dir / f"comprehensive_options_research_{timestamp}.md"
+        report_file = self.results_dir / "options_analysis_report.md"
         
         report = f"""# Comprehensive Options Research Analysis
 ## Pre-Launch Options Signals: Exploitable Information Study
@@ -704,8 +703,7 @@ The analysis provides evidence for/against market efficiency in options markets 
         )
         
         # Save detailed results
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        results_file = self.results_dir / f"complete_options_analysis_{timestamp}.json"
+        results_file = self.results_dir / "options_analysis_data.json"
         
         complete_results = {
             'anomaly_analysis': anomaly_df.to_dict('records'),

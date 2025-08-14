@@ -428,15 +428,23 @@ class ComprehensiveAnalyzer:
             results_df = pd.DataFrame(results)
             
             # Save results
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            # Save to clean filenames (no timestamps)
             
             # Save CSV
-            csv_file = self.results_dir / f"comprehensive_analysis_{timestamp}.csv"
+            csv_file = self.results_dir / "equity_analysis_results.csv"
             results_df.to_csv(csv_file, index=False)
             
             # Save JSON for detailed analysis
-            json_file = self.results_dir / f"comprehensive_analysis_{timestamp}.json"
+            json_file = self.results_dir / "equity_analysis_results.json"
             with open(json_file, 'w') as f:
+                json.dump(results, f, indent=2, default=str)
+            
+            # Also save as final_analysis_results for backward compatibility
+            final_csv = self.results_dir / "final_analysis_results.csv"
+            results_df.to_csv(final_csv, index=False)
+            
+            final_json = self.results_dir / "final_analysis_results.json"
+            with open(final_json, 'w') as f:
                 json.dump(results, f, indent=2, default=str)
             
             logger.info(f"Analysis complete!")
