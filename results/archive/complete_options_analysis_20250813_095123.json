@@ -1,0 +1,1828 @@
+{
+  "anomaly_analysis": [
+    {
+      "event_id": "NVDA_2024-01-08_RTX_40_SUPER",
+      "event_name": "RTX 40 SUPER",
+      "ticker": "NVDA",
+      "event_date": "2024-01-08 00:00:00",
+      "total_volume": 1754737,
+      "call_volume": 1035942,
+      "put_volume": 718795,
+      "pcr_volume": 0.6938564128107558,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.17238171152388174,
+      "avg_gamma": 0.0014986884003032601,
+      "avg_theta": -0.09984520280515541,
+      "avg_vega": 0.823266679302502,
+      "vw_strike": 511.19520760091115,
+      "strike_std": 61.77584794676656,
+      "otm_volume_ratio": 0.6145758595162694,
+      "short_term_ratio": 0.8371317183144824,
+      "avg_bid_ask_spread": 0.12560778773060682,
+      "num_contracts": 5276,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "AAPL_2024-01-08_Vision_Pro_US_Launch",
+      "event_name": "Vision Pro US Launch",
+      "ticker": "AAPL",
+      "event_date": "2024-01-08 00:00:00",
+      "total_volume": 941673,
+      "call_volume": 629311,
+      "put_volume": 312362,
+      "pcr_volume": 0.49635553804080973,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.11358833020637898,
+      "avg_gamma": 0.005075684803001876,
+      "avg_theta": -0.019873757035647283,
+      "avg_vega": 0.24798926360225143,
+      "vw_strike": 187.6776545573676,
+      "strike_std": 14.400888524685337,
+      "otm_volume_ratio": 0.6139955164903316,
+      "short_term_ratio": 0.7383008751445566,
+      "avg_bid_ask_spread": 0.19959498804313677,
+      "num_contracts": 2132,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "AMD_2023-12-06_Instinct_MI300X",
+      "event_name": "Instinct MI300X",
+      "ticker": "AMD",
+      "event_date": "2023-12-06 00:00:00",
+      "total_volume": 687193,
+      "call_volume": 458166,
+      "put_volume": 229027,
+      "pcr_volume": 0.4998777735580554,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.042279655568312285,
+      "avg_gamma": 0.009731969001148106,
+      "avg_theta": -0.039043197474167624,
+      "avg_vega": 0.1358382721010333,
+      "vw_strike": 120.93964577636851,
+      "strike_std": 11.414845804616565,
+      "otm_volume_ratio": 0.39194083758129084,
+      "short_term_ratio": 0.873048765048538,
+      "avg_bid_ask_spread": 0.19718816487992943,
+      "num_contracts": 1742,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "TSLA_2023-11-28_Cybertruck_Delivery_Event",
+      "event_name": "Cybertruck Delivery Event",
+      "ticker": "TSLA",
+      "event_date": "2023-11-28 00:00:00",
+      "total_volume": 2243720,
+      "call_volume": 1336036,
+      "put_volume": 907684,
+      "pcr_volume": 0.6793858848114871,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.06661039900935609,
+      "avg_gamma": 0.002587614199229499,
+      "avg_theta": -0.0678764584479912,
+      "avg_vega": 0.3391926031920749,
+      "vw_strike": 246.62826918688606,
+      "strike_std": 47.2915371322441,
+      "otm_volume_ratio": 0.3729342342181734,
+      "short_term_ratio": 0.8418608382507621,
+      "avg_bid_ask_spread": 0.10993408311478203,
+      "num_contracts": 3634,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "SONY_2023-10-10_PS5_Slim_Refresh",
+      "event_name": "PS5 Slim Refresh",
+      "ticker": "SONY",
+      "event_date": "2023-10-10 00:00:00",
+      "total_volume": 1213,
+      "call_volume": 244,
+      "put_volume": 969,
+      "pcr_volume": 3.971311475409836,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.01995234722222222,
+      "avg_gamma": 0.021143611111111113,
+      "avg_theta": -0.02188193055555556,
+      "avg_vega": 0.07929956944444444,
+      "vw_strike": 74.45507007419621,
+      "strike_std": 10.789173580259332,
+      "otm_volume_ratio": 0.6933223413025557,
+      "short_term_ratio": 0.14591920857378401,
+      "avg_bid_ask_spread": 0.34027861071154764,
+      "num_contracts": 720,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": true,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": false,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "MSFT_2023-09-21_Copilot_for_Windows",
+      "event_name": "Copilot for Windows",
+      "ticker": "MSFT",
+      "event_date": "2023-09-21 00:00:00",
+      "total_volume": 527805,
+      "call_volume": 324536,
+      "put_volume": 203269,
+      "pcr_volume": 0.626337293859541,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.025523696930111042,
+      "avg_gamma": 0.003384686479425212,
+      "avg_theta": -0.05568272044415414,
+      "avg_vega": 0.5044826714565644,
+      "vw_strike": 324.0701348035733,
+      "strike_std": 24.833631976949803,
+      "otm_volume_ratio": 0.27794924261801235,
+      "short_term_ratio": 0.8667272951184624,
+      "avg_bid_ask_spread": 0.16987431659970187,
+      "num_contracts": 3062,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": false,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 1,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "AAPL_2023-09-12_iPhone_15",
+      "event_name": "iPhone 15",
+      "ticker": "AAPL",
+      "event_date": "2023-09-12 00:00:00",
+      "total_volume": 2027209,
+      "call_volume": 1171890,
+      "put_volume": 855319,
+      "pcr_volume": 0.7298628710885834,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.07798771457085828,
+      "avg_gamma": 0.005377649700598802,
+      "avg_theta": -0.025936941117764473,
+      "avg_vega": 0.24137205089820363,
+      "vw_strike": 179.28327567606496,
+      "strike_std": 15.42267092449971,
+      "otm_volume_ratio": 0.4081439062277249,
+      "short_term_ratio": 0.7212551838512951,
+      "avg_bid_ask_spread": 0.1670612781756148,
+      "num_contracts": 2004,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "TSLA_2023-09-01_Model_3_Highland_Refresh",
+      "event_name": "Model 3 Highland Refresh",
+      "ticker": "TSLA",
+      "event_date": "2023-09-01 00:00:00",
+      "total_volume": 3444929,
+      "call_volume": 2036197,
+      "put_volume": 1408732,
+      "pcr_volume": 0.6918446496090506,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.0388901948051948,
+      "avg_gamma": 0.0029722906403940887,
+      "avg_theta": -0.06087760188087774,
+      "avg_vega": 0.321188197492163,
+      "vw_strike": 252.74113086800918,
+      "strike_std": 36.84536110032619,
+      "otm_volume_ratio": 0.3407466452864486,
+      "short_term_ratio": 0.921193441142038,
+      "avg_bid_ask_spread": 0.14467113841899787,
+      "num_contracts": 4466,
+      "high_volume_anomaly": true,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 3,
+      "high_anomaly_event": true
+    },
+    {
+      "event_id": "AAPL_2023-06-05_Vision_Pro_Announcement",
+      "event_name": "Vision Pro Announcement",
+      "ticker": "AAPL",
+      "event_date": "2023-06-05 00:00:00",
+      "total_volume": 2754441,
+      "call_volume": 1884042,
+      "put_volume": 870399,
+      "pcr_volume": 0.4619849239029703,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.11802002606882168,
+      "avg_gamma": 0.005435026068821689,
+      "avg_theta": -0.02337055787278415,
+      "avg_vega": 0.252260401459854,
+      "vw_strike": 185.77251282565138,
+      "strike_std": 17.97780026035623,
+      "otm_volume_ratio": 0.6935367285049853,
+      "short_term_ratio": 0.7691738541504428,
+      "avg_bid_ask_spread": 0.1741144403825282,
+      "num_contracts": 1918,
+      "high_volume_anomaly": true,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 3,
+      "high_anomaly_event": true
+    },
+    {
+      "event_id": "NVDA_2023-01-03_RTX_4070_Ti",
+      "event_name": "RTX 4070 Ti",
+      "ticker": "NVDA",
+      "event_date": "2023-01-03 00:00:00",
+      "total_volume": 326907,
+      "call_volume": 142636,
+      "put_volume": 184271,
+      "pcr_volume": 1.2918968563336044,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": -0.043598002633889375,
+      "avg_gamma": 0.00557702370500439,
+      "avg_theta": -0.06530471027216857,
+      "avg_vega": 0.17784259877085162,
+      "vw_strike": 149.62781004995304,
+      "strike_std": 34.93781063430647,
+      "otm_volume_ratio": 0.5730222968611868,
+      "short_term_ratio": 0.7873951919047313,
+      "avg_bid_ask_spread": 0.15540166257400947,
+      "num_contracts": 2278,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "SONY_2022-11-02_PSVR2",
+      "event_name": "PSVR2",
+      "ticker": "SONY",
+      "event_date": "2022-11-02 00:00:00",
+      "total_volume": 2956,
+      "call_volume": 1597,
+      "put_volume": 1359,
+      "pcr_volume": 0.8509705698184096,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.03293395953757225,
+      "avg_gamma": 0.021111156069364163,
+      "avg_theta": -0.027304132947976876,
+      "avg_vega": 0.06130416184971097,
+      "vw_strike": 75.13582543978349,
+      "strike_std": 10.27026061371977,
+      "otm_volume_ratio": 0.5287550744248986,
+      "short_term_ratio": 0.5862652232746955,
+      "avg_bid_ask_spread": 0.36118667934480875,
+      "num_contracts": 692,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": false,
+      "anomaly_score": 1,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "MSFT_2022-10-12_Surface_Pro_9",
+      "event_name": "Surface Pro 9",
+      "ticker": "MSFT",
+      "event_date": "2022-10-12 00:00:00",
+      "total_volume": 323133,
+      "call_volume": 134688,
+      "put_volume": 188445,
+      "pcr_volume": 1.3991224162508908,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": -0.10575713654223969,
+      "avg_gamma": 0.004092833988212181,
+      "avg_theta": -0.05345614440078586,
+      "avg_vega": 0.34091490176817285,
+      "vw_strike": 247.94939699752115,
+      "strike_std": 40.18590201176285,
+      "otm_volume_ratio": 0.3713703026308053,
+      "short_term_ratio": 0.7060653043793113,
+      "avg_bid_ask_spread": 0.16390328045823094,
+      "num_contracts": 2036,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "NVDA_2022-09-20_RTX_40_Series",
+      "event_name": "RTX 40 Series",
+      "ticker": "NVDA",
+      "event_date": "2022-09-20 00:00:00",
+      "total_volume": 356678,
+      "call_volume": 203496,
+      "put_volume": 153182,
+      "pcr_volume": 0.7527518968431812,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": -0.11428038694992414,
+      "avg_gamma": 0.005091832321699545,
+      "avg_theta": -0.04833347496206374,
+      "avg_vega": 0.18030534142640361,
+      "vw_strike": 141.3203898193889,
+      "strike_std": 37.513667332327216,
+      "otm_volume_ratio": 0.46656087563572746,
+      "short_term_ratio": 0.7149698046977947,
+      "avg_bid_ask_spread": 0.17952020675357916,
+      "num_contracts": 2636,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "AAPL_2022-09-07_Apple_Watch_Series_8",
+      "event_name": "Apple Watch Series 8",
+      "ticker": "AAPL",
+      "event_date": "2022-09-07 00:00:00",
+      "total_volume": 1467734,
+      "call_volume": 813951,
+      "put_volume": 653783,
+      "pcr_volume": 0.8032215698487992,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.026010947136563874,
+      "avg_gamma": 0.00642307268722467,
+      "avg_theta": -0.02800149779735683,
+      "avg_vega": 0.16977299559471365,
+      "vw_strike": 157.7077460902316,
+      "strike_std": 18.16383744127559,
+      "otm_volume_ratio": 0.2721426361997474,
+      "short_term_ratio": 0.8171685060099446,
+      "avg_bid_ask_spread": 0.15371033672441647,
+      "num_contracts": 1816,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": false,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 1,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "AAPL_2022-09-07_iPhone_14",
+      "event_name": "iPhone 14",
+      "ticker": "AAPL",
+      "event_date": "2022-09-07 00:00:00",
+      "total_volume": 1467734,
+      "call_volume": 813951,
+      "put_volume": 653783,
+      "pcr_volume": 0.8032215698487992,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.026010947136563874,
+      "avg_gamma": 0.00642307268722467,
+      "avg_theta": -0.02800149779735683,
+      "avg_vega": 0.16977299559471365,
+      "vw_strike": 157.7077460902316,
+      "strike_std": 18.16383744127559,
+      "otm_volume_ratio": 0.2721426361997474,
+      "short_term_ratio": 0.8171685060099446,
+      "avg_bid_ask_spread": 0.15371033672441647,
+      "num_contracts": 1816,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": false,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 1,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "AMD_2022-08-29_Ryzen_7000_(Zen_4)",
+      "event_name": "Ryzen 7000 (Zen 4)",
+      "ticker": "AMD",
+      "event_date": "2022-08-29 00:00:00",
+      "total_volume": 380087,
+      "call_volume": 201759,
+      "put_volume": 178328,
+      "pcr_volume": 0.883866395055487,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": -0.07077285185185185,
+      "avg_gamma": 0.01096837037037037,
+      "avg_theta": -0.03515511851851852,
+      "avg_vega": 0.09777025185185184,
+      "vw_strike": 93.11134029840537,
+      "strike_std": 16.178772943642535,
+      "otm_volume_ratio": 0.5519920439267851,
+      "short_term_ratio": 0.7968123087608889,
+      "avg_bid_ask_spread": 0.15253313858155654,
+      "num_contracts": 1350,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "NVDA_2022-03-22_H100_Hopper_GPU",
+      "event_name": "H100 Hopper GPU",
+      "ticker": "NVDA",
+      "event_date": "2022-03-22 00:00:00",
+      "total_volume": 690982,
+      "call_volume": 427271,
+      "put_volume": 263711,
+      "pcr_volume": 0.6171984525043824,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.08097186289120716,
+      "avg_gamma": 0.0028819560357675107,
+      "avg_theta": -0.08008401266766021,
+      "avg_vega": 0.3412345789865872,
+      "vw_strike": 269.77960134996283,
+      "strike_std": 30.71551220386201,
+      "otm_volume_ratio": 0.6784619570408491,
+      "short_term_ratio": 0.862171518216104,
+      "avg_bid_ask_spread": 0.1637141660704695,
+      "num_contracts": 2684,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "MSFT_2021-09-22_Surface_Pro_8_&_Laptop_Studio",
+      "event_name": "Surface Pro 8 & Laptop Studio",
+      "ticker": "MSFT",
+      "event_date": "2021-09-22 00:00:00",
+      "total_volume": 247772,
+      "call_volume": 160073,
+      "put_volume": 87699,
+      "pcr_volume": 0.5478687848669045,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.08888097408400357,
+      "avg_gamma": 0.004097596067917784,
+      "avg_theta": -0.04245798033958892,
+      "avg_vega": 0.45022832886505804,
+      "vw_strike": 295.1264166249617,
+      "strike_std": 25.870883462523313,
+      "otm_volume_ratio": 0.6584763411523498,
+      "short_term_ratio": 0.7886968664740165,
+      "avg_bid_ask_spread": 0.16356984696310933,
+      "num_contracts": 2238,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    },
+    {
+      "event_id": "AAPL_2021-09-14_iPhone_13",
+      "event_name": "iPhone 13",
+      "ticker": "AAPL",
+      "event_date": "2021-09-14 00:00:00",
+      "total_volume": 1852639,
+      "call_volume": 1243355,
+      "put_volume": 609284,
+      "pcr_volume": 0.49003221123492485,
+      "total_oi": 0,
+      "call_oi": 0,
+      "put_oi": 0,
+      "pcr_oi": 0.0,
+      "avg_iv": 0.0,
+      "call_iv": 0.0,
+      "put_iv": 0.0,
+      "iv_skew": 0.0,
+      "avg_delta": 0.13064827080890973,
+      "avg_gamma": 0.008072866354044549,
+      "avg_theta": -0.026806881594372802,
+      "avg_vega": 0.19440961313012892,
+      "vw_strike": 150.40589289116767,
+      "strike_std": 11.385844619741697,
+      "otm_volume_ratio": 0.6561720874924905,
+      "short_term_ratio": 0.8075361686761425,
+      "avg_bid_ask_spread": 0.16827214476968635,
+      "num_contracts": 1706,
+      "high_volume_anomaly": false,
+      "high_pcr_anomaly": false,
+      "high_iv_anomaly": false,
+      "unusual_skew_anomaly": false,
+      "otm_concentration_anomaly": true,
+      "short_term_concentration_anomaly": true,
+      "anomaly_score": 2,
+      "high_anomaly_event": false
+    }
+  ],
+  "correlation_analysis": {
+    "correlation_matrix": {
+      "abnormal_return_minus5_plus0": {
+        "total_volume": {
+          "correlation": -0.24766743617262799,
+          "p_value": 0.005746867888169616,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "pcr_volume": {
+          "correlation": 0.2781374434025913,
+          "p_value": 0.0018400676246230815,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "avg_iv": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "iv_skew": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "otm_volume_ratio": {
+          "correlation": 0.15332233198352863,
+          "p_value": 0.09043816780565672,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "short_term_ratio": {
+          "correlation": -0.2294477586611009,
+          "p_value": 0.010683924308969809,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "avg_bid_ask_spread": {
+          "correlation": 0.27244972029994236,
+          "p_value": 0.0022987077831448373,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "anomaly_score": {
+          "correlation": 0.01845389172405897,
+          "p_value": 0.8394546456613816,
+          "significant": "False",
+          "sample_size": 123
+        }
+      },
+      "abnormal_return_minus3_plus0": {
+        "total_volume": {
+          "correlation": -0.2459902552648932,
+          "p_value": 0.006095798285413893,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "pcr_volume": {
+          "correlation": 0.29374094650320315,
+          "p_value": 0.0009753556761291843,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "avg_iv": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "iv_skew": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "otm_volume_ratio": {
+          "correlation": 0.15553787687412574,
+          "p_value": 0.08582279361956341,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "short_term_ratio": {
+          "correlation": -0.2965663006061968,
+          "p_value": 0.0008661017065822259,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "avg_bid_ask_spread": {
+          "correlation": 0.33915861400616576,
+          "p_value": 0.00012433068971146548,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "anomaly_score": {
+          "correlation": -0.034172494762430554,
+          "p_value": 0.7074884811380885,
+          "significant": "False",
+          "sample_size": 123
+        }
+      },
+      "abnormal_return_minus1_plus0": {
+        "total_volume": {
+          "correlation": -0.2261123857372617,
+          "p_value": 0.011911308833400244,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "pcr_volume": {
+          "correlation": 0.2732645280962889,
+          "p_value": 0.0022272139496563098,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "avg_iv": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "iv_skew": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "otm_volume_ratio": {
+          "correlation": 0.1268365049854328,
+          "p_value": 0.16212060138867018,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "short_term_ratio": {
+          "correlation": -0.3327793326356111,
+          "p_value": 0.0001693781102999887,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "avg_bid_ask_spread": {
+          "correlation": 0.37791872574314955,
+          "p_value": 1.6365370943949358e-05,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "anomaly_score": {
+          "correlation": -0.09389812892951789,
+          "p_value": 0.3015888847437019,
+          "significant": "False",
+          "sample_size": 123
+        }
+      },
+      "abnormal_return_plus0_plus1": {
+        "total_volume": {
+          "correlation": -0.2816988234282606,
+          "p_value": 0.001596913969249885,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "pcr_volume": {
+          "correlation": 0.09418110845816136,
+          "p_value": 0.30012786974123173,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "avg_iv": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "iv_skew": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "otm_volume_ratio": {
+          "correlation": 0.12430442275357244,
+          "p_value": 0.17073504401074802,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "short_term_ratio": {
+          "correlation": -0.07968741553976068,
+          "p_value": 0.38095021532327084,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "avg_bid_ask_spread": {
+          "correlation": 0.10134394750288682,
+          "p_value": 0.2646974631863075,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "anomaly_score": {
+          "correlation": -0.05154084722715587,
+          "p_value": 0.5712879393216624,
+          "significant": "False",
+          "sample_size": 123
+        }
+      },
+      "abnormal_return_plus0_plus3": {
+        "total_volume": {
+          "correlation": -0.3683242754337024,
+          "p_value": 2.7706757172441755e-05,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "pcr_volume": {
+          "correlation": 0.15732186999053055,
+          "p_value": 0.08224470086866234,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "avg_iv": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "iv_skew": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "otm_volume_ratio": {
+          "correlation": 0.1850277120313851,
+          "p_value": 0.04047871997058,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "short_term_ratio": {
+          "correlation": -0.2017037519361673,
+          "p_value": 0.025272701924118755,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "avg_bid_ask_spread": {
+          "correlation": 0.2219628226557549,
+          "p_value": 0.01360935119355701,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "anomaly_score": {
+          "correlation": -0.1295993402368162,
+          "p_value": 0.15309529827395585,
+          "significant": "False",
+          "sample_size": 123
+        }
+      },
+      "abnormal_return_plus0_plus5": {
+        "total_volume": {
+          "correlation": -0.32701167863838276,
+          "p_value": 0.00022272693893483732,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "pcr_volume": {
+          "correlation": 0.13031360325103797,
+          "p_value": 0.15082462271707586,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "avg_iv": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "iv_skew": {
+          "correlation": NaN,
+          "p_value": NaN,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "otm_volume_ratio": {
+          "correlation": 0.17539285973412896,
+          "p_value": 0.052330003957358984,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "short_term_ratio": {
+          "correlation": -0.16770244803440862,
+          "p_value": 0.06372869107007377,
+          "significant": "False",
+          "sample_size": 123
+        },
+        "avg_bid_ask_spread": {
+          "correlation": 0.1819251808761428,
+          "p_value": 0.04402157651049596,
+          "significant": "True",
+          "sample_size": 123
+        },
+        "anomaly_score": {
+          "correlation": -0.11055064799038897,
+          "p_value": 0.22349678900830006,
+          "significant": "False",
+          "sample_size": 123
+        }
+      }
+    },
+    "significant_relationships": [
+      {
+        "outcome_measure": "abnormal_return_minus3_plus0",
+        "options_metric": "avg_bid_ask_spread",
+        "correlation": 0.33915861400616576,
+        "p_value": 0.00012433068971146548,
+        "sample_size": 123
+      },
+      {
+        "outcome_measure": "abnormal_return_minus1_plus0",
+        "options_metric": "short_term_ratio",
+        "correlation": -0.3327793326356111,
+        "p_value": 0.0001693781102999887,
+        "sample_size": 123
+      },
+      {
+        "outcome_measure": "abnormal_return_minus1_plus0",
+        "options_metric": "avg_bid_ask_spread",
+        "correlation": 0.37791872574314955,
+        "p_value": 1.6365370943949358e-05,
+        "sample_size": 123
+      },
+      {
+        "outcome_measure": "abnormal_return_plus0_plus3",
+        "options_metric": "total_volume",
+        "correlation": -0.3683242754337024,
+        "p_value": 2.7706757172441755e-05,
+        "sample_size": 123
+      },
+      {
+        "outcome_measure": "abnormal_return_plus0_plus5",
+        "options_metric": "total_volume",
+        "correlation": -0.32701167863838276,
+        "p_value": 0.00022272693893483732,
+        "sample_size": 123
+      }
+    ],
+    "total_events_matched": 123,
+    "analysis_summary": {
+      "strongest_predictor": "avg_bid_ask_spread (r=0.378)",
+      "significant_count": 5
+    }
+  },
+  "prediction_models": {
+    "prediction_models": {
+      "abnormal_return_minus5_plus0": {
+        "models": {
+          "Random Forest": {
+            "cv_r2_mean": -0.05208785450833223,
+            "cv_r2_std": 0.07867354918542178,
+            "train_r2": 0.2999425149545316,
+            "train_mse": 0.0007347949785385118,
+            "train_mae": 0.021025663935005316,
+            "feature_importance": {
+              "total_volume": 0.31391415498444813,
+              "pcr_volume": 0.13369139523940737,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.14050300161518003,
+              "short_term_ratio": 0.17945084014943774,
+              "avg_bid_ask_spread": 0.21713455896933812,
+              "anomaly_score": 0.015306049042188609
+            }
+          },
+          "Gradient Boosting": {
+            "cv_r2_mean": -0.16403266833575747,
+            "cv_r2_std": 0.154178983061073,
+            "train_r2": 0.301725711078481,
+            "train_mse": 0.0007329232985899112,
+            "train_mae": 0.021096004500101313,
+            "feature_importance": {
+              "total_volume": 0.32545069708530777,
+              "pcr_volume": 0.1184455180428342,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.09891967314215926,
+              "short_term_ratio": 0.25958565630811253,
+              "avg_bid_ask_spread": 0.19206727219933561,
+              "anomaly_score": 0.0055311832222505524
+            }
+          },
+          "Ridge Regression": {
+            "cv_r2_mean": -0.22793388717580917,
+            "cv_r2_std": 0.33378809800526105,
+            "train_r2": 0.16118314036971715,
+            "train_mse": 0.0008804397203605978,
+            "train_mae": 0.023536621000793626,
+            "feature_importance": {
+              "total_volume": 0.004669737953330366,
+              "pcr_volume": 0.013465876868518212,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0036237597052851773,
+              "short_term_ratio": 0.013768244769789576,
+              "avg_bid_ask_spread": 0.010077438585633614,
+              "anomaly_score": 0.0026491951458534994
+            }
+          },
+          "Lasso Regression": {
+            "cv_r2_mean": -0.023898123808747156,
+            "cv_r2_std": 0.02498089714812889,
+            "train_r2": 0.0,
+            "train_mse": 0.0010496209157606353,
+            "train_mae": 0.025992561890860216,
+            "feature_importance": {
+              "total_volume": 0.0,
+              "pcr_volume": 0.0,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0,
+              "short_term_ratio": 0.0,
+              "avg_bid_ask_spread": 0.0,
+              "anomaly_score": 0.0
+            }
+          }
+        },
+        "sample_size": 123,
+        "feature_columns": [
+          "total_volume",
+          "pcr_volume",
+          "avg_iv",
+          "iv_skew",
+          "otm_volume_ratio",
+          "short_term_ratio",
+          "avg_bid_ask_spread",
+          "anomaly_score"
+        ],
+        "best_model": "Lasso Regression"
+      },
+      "abnormal_return_minus3_plus0": {
+        "models": {
+          "Random Forest": {
+            "cv_r2_mean": -0.006819602991704328,
+            "cv_r2_std": 0.1360780161437942,
+            "train_r2": 0.241088935571109,
+            "train_mse": 0.0005591228317827963,
+            "train_mae": 0.018488887793957926,
+            "feature_importance": {
+              "total_volume": 0.2827684385540564,
+              "pcr_volume": 0.1180759708081319,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.13896721508688575,
+              "short_term_ratio": 0.20495546475559182,
+              "avg_bid_ask_spread": 0.24597856077881725,
+              "anomaly_score": 0.009254350016516866
+            }
+          },
+          "Gradient Boosting": {
+            "cv_r2_mean": -0.04974043330335213,
+            "cv_r2_std": 0.2575425739904413,
+            "train_r2": 0.24329839724404012,
+            "train_mse": 0.0005574950251461722,
+            "train_mae": 0.018467599629415337,
+            "feature_importance": {
+              "total_volume": 0.5422228798196518,
+              "pcr_volume": 0.13826171893169095,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.07635330003356416,
+              "short_term_ratio": 0.15027018284502638,
+              "avg_bid_ask_spread": 0.0928797273345267,
+              "anomaly_score": 1.219103554002174e-05
+            }
+          },
+          "Ridge Regression": {
+            "cv_r2_mean": -0.0631345645430725,
+            "cv_r2_std": 0.08797546312431517,
+            "train_r2": 0.163969858256504,
+            "train_mse": 0.0006159398145804671,
+            "train_mae": 0.019169187170235767,
+            "feature_importance": {
+              "total_volume": 0.0018766836736311395,
+              "pcr_volume": 0.008527656544287948,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0038897299113299483,
+              "short_term_ratio": 0.007071211717120477,
+              "avg_bid_ask_spread": 0.008510029648762237,
+              "anomaly_score": 0.0007519294884081785
+            }
+          },
+          "Lasso Regression": {
+            "cv_r2_mean": -0.030762598113102262,
+            "cv_r2_std": 0.02157388004856869,
+            "train_r2": 0.0,
+            "train_mse": 0.0007367435500542572,
+            "train_mae": 0.02012089043737953,
+            "feature_importance": {
+              "total_volume": 0.0,
+              "pcr_volume": 0.0,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0,
+              "short_term_ratio": 0.0,
+              "avg_bid_ask_spread": 0.0,
+              "anomaly_score": 0.0
+            }
+          }
+        },
+        "sample_size": 123,
+        "feature_columns": [
+          "total_volume",
+          "pcr_volume",
+          "avg_iv",
+          "iv_skew",
+          "otm_volume_ratio",
+          "short_term_ratio",
+          "avg_bid_ask_spread",
+          "anomaly_score"
+        ],
+        "best_model": "Random Forest"
+      },
+      "abnormal_return_minus1_plus0": {
+        "models": {
+          "Random Forest": {
+            "cv_r2_mean": 0.07411067110644065,
+            "cv_r2_std": 0.11362049526558057,
+            "train_r2": 0.18163194077693412,
+            "train_mse": 0.0005223296422847153,
+            "train_mae": 0.017069582150047304,
+            "feature_importance": {
+              "total_volume": 0.27436888344268573,
+              "pcr_volume": 0.09630582341346926,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.06376945119688687,
+              "short_term_ratio": 0.2190593973777947,
+              "avg_bid_ask_spread": 0.3323495707683204,
+              "anomaly_score": 0.014146873800843054
+            }
+          },
+          "Gradient Boosting": {
+            "cv_r2_mean": 0.04081869255697764,
+            "cv_r2_std": 0.16006022484100405,
+            "train_r2": 0.18444387783104665,
+            "train_mse": 0.0005205349020586657,
+            "train_mae": 0.017075231391764735,
+            "feature_importance": {
+              "total_volume": 0.4594532070340052,
+              "pcr_volume": 0.020359939970441467,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.03345947179871466,
+              "short_term_ratio": 0.22198345939195796,
+              "avg_bid_ask_spread": 0.2647397252657871,
+              "anomaly_score": 4.196539093640173e-06
+            }
+          },
+          "Ridge Regression": {
+            "cv_r2_mean": 0.03712923115883878,
+            "cv_r2_std": 0.11994776453533955,
+            "train_r2": 0.16513881595505175,
+            "train_mse": 0.000532856504729163,
+            "train_mae": 0.017059125400103514,
+            "feature_importance": {
+              "total_volume": 2.1037246011020822e-05,
+              "pcr_volume": 0.0038805886609498074,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.003361951812966883,
+              "short_term_ratio": 0.0013433731450502911,
+              "avg_bid_ask_spread": 0.007415762458554884,
+              "anomaly_score": 0.0031414799740172405
+            }
+          },
+          "Lasso Regression": {
+            "cv_r2_mean": -0.023909053914912343,
+            "cv_r2_std": 0.01190796266498291,
+            "train_r2": 0.0,
+            "train_mse": 0.0006382576108610585,
+            "train_mae": 0.017889047446355926,
+            "feature_importance": {
+              "total_volume": 0.0,
+              "pcr_volume": 0.0,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0,
+              "short_term_ratio": 0.0,
+              "avg_bid_ask_spread": 0.0,
+              "anomaly_score": 0.0
+            }
+          }
+        },
+        "sample_size": 123,
+        "feature_columns": [
+          "total_volume",
+          "pcr_volume",
+          "avg_iv",
+          "iv_skew",
+          "otm_volume_ratio",
+          "short_term_ratio",
+          "avg_bid_ask_spread",
+          "anomaly_score"
+        ],
+        "best_model": "Random Forest"
+      },
+      "abnormal_return_plus0_plus1": {
+        "models": {
+          "Random Forest": {
+            "cv_r2_mean": 0.019305635062696187,
+            "cv_r2_std": 0.04461846866725302,
+            "train_r2": 0.13524516257663588,
+            "train_mse": 0.001103869525879141,
+            "train_mae": 0.0245434846006747,
+            "feature_importance": {
+              "total_volume": 0.43769508176237526,
+              "pcr_volume": 0.07838379377951014,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.08801345811349079,
+              "short_term_ratio": 0.1425698730288658,
+              "avg_bid_ask_spread": 0.24139187897748704,
+              "anomaly_score": 0.011945914338270965
+            }
+          },
+          "Gradient Boosting": {
+            "cv_r2_mean": 0.026235672458556143,
+            "cv_r2_std": 0.06283507363934798,
+            "train_r2": 0.13880471921347481,
+            "train_mse": 0.0010993257107687737,
+            "train_mae": 0.02464324133405131,
+            "feature_importance": {
+              "total_volume": 0.5839358467200655,
+              "pcr_volume": 0.005028559284070425,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.032558030110999975,
+              "short_term_ratio": 0.3144757075331121,
+              "avg_bid_ask_spread": 0.06284457215199697,
+              "anomaly_score": 0.0011572841997551425
+            }
+          },
+          "Ridge Regression": {
+            "cv_r2_mean": -0.021569051128903765,
+            "cv_r2_std": 0.08616319384636043,
+            "train_r2": 0.09443172195780769,
+            "train_mse": 0.0011559683536574764,
+            "train_mae": 0.024720061777965163,
+            "feature_importance": {
+              "total_volume": 0.010236411367401345,
+              "pcr_volume": 0.003136636714268811,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0041529890227222435,
+              "short_term_ratio": 0.004888211268764336,
+              "avg_bid_ask_spread": 0.0006499214243446743,
+              "anomaly_score": 0.0006464658938393206
+            }
+          },
+          "Lasso Regression": {
+            "cv_r2_mean": -0.020238953414183507,
+            "cv_r2_std": 0.0011392952049604835,
+            "train_r2": 0.0,
+            "train_mse": 0.0012765115361114906,
+            "train_mae": 0.02588772360970263,
+            "feature_importance": {
+              "total_volume": 0.0,
+              "pcr_volume": 0.0,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0,
+              "short_term_ratio": 0.0,
+              "avg_bid_ask_spread": 0.0,
+              "anomaly_score": 0.0
+            }
+          }
+        },
+        "sample_size": 123,
+        "feature_columns": [
+          "total_volume",
+          "pcr_volume",
+          "avg_iv",
+          "iv_skew",
+          "otm_volume_ratio",
+          "short_term_ratio",
+          "avg_bid_ask_spread",
+          "anomaly_score"
+        ],
+        "best_model": "Gradient Boosting"
+      },
+      "abnormal_return_plus0_plus3": {
+        "models": {
+          "Random Forest": {
+            "cv_r2_mean": 0.0869718396497386,
+            "cv_r2_std": 0.051019063560331215,
+            "train_r2": 0.2494301939942516,
+            "train_mse": 0.0012475161407146948,
+            "train_mae": 0.027974248863166486,
+            "feature_importance": {
+              "total_volume": 0.39139050576216156,
+              "pcr_volume": 0.05854866066556722,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.09865959062497735,
+              "short_term_ratio": 0.18428423835554458,
+              "avg_bid_ask_spread": 0.25749395516475626,
+              "anomaly_score": 0.009623049426993168
+            }
+          },
+          "Gradient Boosting": {
+            "cv_r2_mean": -0.028932126300545535,
+            "cv_r2_std": 0.1489246007967698,
+            "train_r2": 0.2512265322002111,
+            "train_mse": 0.0012445304611840428,
+            "train_mae": 0.02802502043646457,
+            "feature_importance": {
+              "total_volume": 0.6098508464584907,
+              "pcr_volume": 0.1335306251190023,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.05468034877441911,
+              "short_term_ratio": 0.0834890358520329,
+              "avg_bid_ask_spread": 0.1183498502066344,
+              "anomaly_score": 9.929358942052594e-05
+            }
+          },
+          "Ridge Regression": {
+            "cv_r2_mean": -0.23607276180539016,
+            "cv_r2_std": 0.29704767438825513,
+            "train_r2": 0.1692478954466945,
+            "train_mse": 0.001380786505226155,
+            "train_mae": 0.028681253358713497,
+            "feature_importance": {
+              "total_volume": 0.010852975813334949,
+              "pcr_volume": 0.0004848385685266513,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.00921993750502129,
+              "short_term_ratio": 0.0009007088474006676,
+              "avg_bid_ask_spread": 0.0008089516674848281,
+              "anomaly_score": 0.0054965909648195315
+            }
+          },
+          "Lasso Regression": {
+            "cv_r2_mean": -0.051291833620532655,
+            "cv_r2_std": 0.045601539099604786,
+            "train_r2": 0.0,
+            "train_mse": 0.001662092094209743,
+            "train_mae": 0.030078974743826606,
+            "feature_importance": {
+              "total_volume": 0.0,
+              "pcr_volume": 0.0,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0,
+              "short_term_ratio": 0.0,
+              "avg_bid_ask_spread": 0.0,
+              "anomaly_score": 0.0
+            }
+          }
+        },
+        "sample_size": 123,
+        "feature_columns": [
+          "total_volume",
+          "pcr_volume",
+          "avg_iv",
+          "iv_skew",
+          "otm_volume_ratio",
+          "short_term_ratio",
+          "avg_bid_ask_spread",
+          "anomaly_score"
+        ],
+        "best_model": "Random Forest"
+      },
+      "abnormal_return_plus0_plus5": {
+        "models": {
+          "Random Forest": {
+            "cv_r2_mean": 0.055593018880998435,
+            "cv_r2_std": 0.046883070511700264,
+            "train_r2": 0.20958528893122175,
+            "train_mse": 0.0016306832028805522,
+            "train_mae": 0.02955447337980023,
+            "feature_importance": {
+              "total_volume": 0.35337223562583475,
+              "pcr_volume": 0.07998525332207744,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0920536091499668,
+              "short_term_ratio": 0.19085756801167172,
+              "avg_bid_ask_spread": 0.27876985703057516,
+              "anomaly_score": 0.00496147685987407
+            }
+          },
+          "Gradient Boosting": {
+            "cv_r2_mean": -0.053039645004347324,
+            "cv_r2_std": 0.1490794351946641,
+            "train_r2": 0.2117432670217536,
+            "train_mse": 0.001626231136673869,
+            "train_mae": 0.029599030468667818,
+            "feature_importance": {
+              "total_volume": 0.5701311162666208,
+              "pcr_volume": 0.07235088434295184,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.12236028640347912,
+              "short_term_ratio": 0.09585832970646105,
+              "avg_bid_ask_spread": 0.13923982898994186,
+              "anomaly_score": 5.955429054537933e-05
+            }
+          },
+          "Ridge Regression": {
+            "cv_r2_mean": -0.2182015705239928,
+            "cv_r2_std": 0.23655879482416617,
+            "train_r2": 0.13624860709963926,
+            "train_mse": 0.0017819821267784286,
+            "train_mae": 0.030278058781334057,
+            "feature_importance": {
+              "total_volume": 0.010931019782520156,
+              "pcr_volume": 0.00046770740613474745,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.01004449919793363,
+              "short_term_ratio": 0.000788011181591368,
+              "avg_bid_ask_spread": 0.00013554951123800261,
+              "anomaly_score": 0.00577333234252328
+            }
+          },
+          "Lasso Regression": {
+            "cv_r2_mean": -0.061811086323536234,
+            "cv_r2_std": 0.06281230296992746,
+            "train_r2": 0.0,
+            "train_mse": 0.0020630729413874203,
+            "train_mae": 0.030748985967918047,
+            "feature_importance": {
+              "total_volume": 0.0,
+              "pcr_volume": 0.0,
+              "avg_iv": 0.0,
+              "iv_skew": 0.0,
+              "otm_volume_ratio": 0.0,
+              "short_term_ratio": 0.0,
+              "avg_bid_ask_spread": 0.0,
+              "anomaly_score": 0.0
+            }
+          }
+        },
+        "sample_size": 123,
+        "feature_columns": [
+          "total_volume",
+          "pcr_volume",
+          "avg_iv",
+          "iv_skew",
+          "otm_volume_ratio",
+          "short_term_ratio",
+          "avg_bid_ask_spread",
+          "anomaly_score"
+        ],
+        "best_model": "Random Forest"
+      }
+    },
+    "total_events": 123,
+    "summary": {
+      "total_targets": 6,
+      "best_overall": {
+        "target": "abnormal_return_plus0_plus3",
+        "model": "Random Forest",
+        "r2": 0.0869718396497386
+      },
+      "average_r2": 0.03536557921588039
+    }
+  },
+  "backtesting_results": {
+    "strategy_performance": {
+      "abnormal_return_minus5_plus0": {
+        "high_volume_strategy": {
+          "avg_return": -0.006929667233126158,
+          "volatility": 0.025753033059358985,
+          "sharpe_ratio": -0.26908159583198404,
+          "hit_rate": 0.35714285714285715,
+          "max_drawdown": -0.1376239149464965,
+          "excess_return": -0.00857218857752247,
+          "information_ratio": -0.3328613199759485,
+          "num_trades": 14,
+          "total_signals": "14"
+        },
+        "high_pcr_strategy": {
+          "avg_return": 0.05241933560300127,
+          "volatility": 0.03082333316871345,
+          "sharpe_ratio": 1.700638127488703,
+          "hit_rate": 1.0,
+          "max_drawdown": 0.0,
+          "excess_return": 0.05077681425860496,
+          "information_ratio": 1.6473498820090247,
+          "num_trades": 3,
+          "total_signals": "3"
+        },
+        "composite_anomaly_strategy": {
+          "avg_return": -0.006929667233126158,
+          "volatility": 0.025753033059358985,
+          "sharpe_ratio": -0.26908159583198404,
+          "hit_rate": 0.35714285714285715,
+          "max_drawdown": -0.1376239149464965,
+          "excess_return": -0.00857218857752247,
+          "information_ratio": -0.3328613199759485,
+          "num_trades": 14,
+          "total_signals": "14"
+        }
+      },
+      "abnormal_return_minus3_plus0": {
+        "high_volume_strategy": {
+          "avg_return": -0.0035144429235193573,
+          "volatility": 0.02437029980057891,
+          "sharpe_ratio": -0.14421008162713997,
+          "hit_rate": 0.42857142857142855,
+          "max_drawdown": -0.055667061730547696,
+          "excess_return": -0.007647907440003808,
+          "information_ratio": -0.3138208188896443,
+          "num_trades": 14,
+          "total_signals": "14"
+        },
+        "high_pcr_strategy": {
+          "avg_return": 0.051802469958910365,
+          "volatility": 0.03519433602374417,
+          "sharpe_ratio": 1.4718979191413462,
+          "hit_rate": 1.0,
+          "max_drawdown": 0.0,
+          "excess_return": 0.047669005442425916,
+          "information_ratio": 1.3544510517335973,
+          "num_trades": 3,
+          "total_signals": "3"
+        },
+        "composite_anomaly_strategy": {
+          "avg_return": -0.0035144429235193573,
+          "volatility": 0.02437029980057891,
+          "sharpe_ratio": -0.14421008162713997,
+          "hit_rate": 0.42857142857142855,
+          "max_drawdown": -0.055667061730547696,
+          "excess_return": -0.007647907440003808,
+          "information_ratio": -0.3138208188896443,
+          "num_trades": 14,
+          "total_signals": "14"
+        }
+      },
+      "abnormal_return_minus1_plus0": {
+        "high_volume_strategy": {
+          "avg_return": -0.004991999303351786,
+          "volatility": 0.026209537601342224,
+          "sharpe_ratio": -0.19046498947376087,
+          "hit_rate": 0.42857142857142855,
+          "max_drawdown": -0.0651047948129716,
+          "excess_return": -0.006972875272868464,
+          "information_ratio": -0.2660434296449158,
+          "num_trades": 14,
+          "total_signals": "14"
+        },
+        "high_pcr_strategy": {
+          "avg_return": 0.0461558286359387,
+          "volatility": 0.0344626577366268,
+          "sharpe_ratio": 1.3392997425989126,
+          "hit_rate": 1.0,
+          "max_drawdown": 0.0,
+          "excess_return": 0.044174952666422025,
+          "information_ratio": 1.2818208335532122,
+          "num_trades": 3,
+          "total_signals": "3"
+        },
+        "composite_anomaly_strategy": {
+          "avg_return": -0.004991999303351786,
+          "volatility": 0.026209537601342224,
+          "sharpe_ratio": -0.19046498947376087,
+          "hit_rate": 0.42857142857142855,
+          "max_drawdown": -0.0651047948129716,
+          "excess_return": -0.006972875272868464,
+          "information_ratio": -0.2660434296449158,
+          "num_trades": 14,
+          "total_signals": "14"
+        }
+      },
+      "abnormal_return_plus0_plus1": {
+        "high_volume_strategy": {
+          "avg_return": -0.016541062000752307,
+          "volatility": 0.04649481946042113,
+          "sharpe_ratio": -0.35576139863996975,
+          "hit_rate": 0.42857142857142855,
+          "max_drawdown": -0.13848453222399645,
+          "excess_return": -0.015350373263179347,
+          "information_ratio": -0.33015233613814554,
+          "num_trades": 14,
+          "total_signals": "14"
+        },
+        "high_pcr_strategy": {
+          "avg_return": 0.0111341172840365,
+          "volatility": 0.005282605531973918,
+          "sharpe_ratio": 2.1076942460771027,
+          "hit_rate": 1.0,
+          "max_drawdown": 0.0,
+          "excess_return": 0.01232480602160946,
+          "information_ratio": 2.3330922490826467,
+          "num_trades": 3,
+          "total_signals": "3"
+        },
+        "composite_anomaly_strategy": {
+          "avg_return": -0.016541062000752307,
+          "volatility": 0.04649481946042113,
+          "sharpe_ratio": -0.35576139863996975,
+          "hit_rate": 0.42857142857142855,
+          "max_drawdown": -0.13848453222399645,
+          "excess_return": -0.015350373263179347,
+          "information_ratio": -0.33015233613814554,
+          "num_trades": 14,
+          "total_signals": "14"
+        }
+      },
+      "abnormal_return_plus0_plus3": {
+        "high_volume_strategy": {
+          "avg_return": -0.030485132175520492,
+          "volatility": 0.046787889182837425,
+          "sharpe_ratio": -0.6515603227234912,
+          "hit_rate": 0.2857142857142857,
+          "max_drawdown": -0.26885975956358266,
+          "excess_return": -0.024086140750985228,
+          "information_ratio": -0.51479434468312,
+          "num_trades": 14,
+          "total_signals": "14"
+        },
+        "high_pcr_strategy": {
+          "avg_return": 0.024449583034600736,
+          "volatility": 0.014512514944153395,
+          "sharpe_ratio": 1.684724055664153,
+          "hit_rate": 1.0,
+          "max_drawdown": 0.0,
+          "excess_return": 0.030848574459136,
+          "information_ratio": 2.1256532432763384,
+          "num_trades": 3,
+          "total_signals": "3"
+        },
+        "composite_anomaly_strategy": {
+          "avg_return": -0.030485132175520492,
+          "volatility": 0.046787889182837425,
+          "sharpe_ratio": -0.6515603227234912,
+          "hit_rate": 0.2857142857142857,
+          "max_drawdown": -0.26885975956358266,
+          "excess_return": -0.024086140750985228,
+          "information_ratio": -0.51479434468312,
+          "num_trades": 14,
+          "total_signals": "14"
+        }
+      },
+      "abnormal_return_plus0_plus5": {
+        "high_volume_strategy": {
+          "avg_return": -0.027080355180726774,
+          "volatility": 0.05911278773667509,
+          "sharpe_ratio": -0.45811331553773815,
+          "hit_rate": 0.2857142857142857,
+          "max_drawdown": -0.26061434602328426,
+          "excess_return": -0.024411432317570075,
+          "information_ratio": -0.4129636454689583,
+          "num_trades": 14,
+          "total_signals": "14"
+        },
+        "high_pcr_strategy": {
+          "avg_return": 0.024533502088218067,
+          "volatility": 0.01929997203730943,
+          "sharpe_ratio": 1.271167753030498,
+          "hit_rate": 0.6666666666666666,
+          "max_drawdown": 0.0,
+          "excess_return": 0.027202424951374767,
+          "information_ratio": 1.409454112098652,
+          "num_trades": 3,
+          "total_signals": "3"
+        },
+        "composite_anomaly_strategy": {
+          "avg_return": -0.027080355180726774,
+          "volatility": 0.05911278773667509,
+          "sharpe_ratio": -0.45811331553773815,
+          "hit_rate": 0.2857142857142857,
+          "max_drawdown": -0.26061434602328426,
+          "excess_return": -0.024411432317570075,
+          "information_ratio": -0.4129636454689583,
+          "num_trades": 14,
+          "total_signals": "14"
+        }
+      }
+    },
+    "benchmark_stats": {
+      "abnormal_return_minus5_plus0": {
+        "mean_return": 0.0016425213443963126,
+        "volatility": 0.03253036067875394,
+        "sharpe_ratio": 0.050491949985327626
+      },
+      "abnormal_return_minus3_plus0": {
+        "mean_return": 0.004133464516484451,
+        "volatility": 0.02725403514366412,
+        "sharpe_ratio": 0.1516643129979003
+      },
+      "abnormal_return_minus1_plus0": {
+        "mean_return": 0.0019808759695166774,
+        "volatility": 0.02536708951815747,
+        "sharpe_ratio": 0.07808842114499534
+      },
+      "abnormal_return_plus0_plus1": {
+        "mean_return": -0.0011906887375729596,
+        "volatility": 0.035874430245285846,
+        "sharpe_ratio": -0.03319045708689477
+      },
+      "abnormal_return_plus0_plus3": {
+        "mean_return": -0.006398991424535265,
+        "volatility": 0.040935507812899875,
+        "sharpe_ratio": -0.15631884802266388
+      },
+      "abnormal_return_plus0_plus5": {
+        "mean_return": -0.0026689228631566995,
+        "volatility": 0.04560683474363485,
+        "sharpe_ratio": -0.05852023886681129
+      }
+    },
+    "summary": {
+      "total_strategies": 18,
+      "best_strategy": {
+        "target": "abnormal_return_plus0_plus1",
+        "strategy": "high_pcr_strategy",
+        "sharpe_ratio": 2.1076942460771027,
+        "excess_return": 0.01232480602160946
+      },
+      "positive_excess_returns": 6
+    }
+  },
+  "summary_statistics": {
+    "total_events": 19,
+    "date_range": [
+      "2021-09-14 00:00:00",
+      "2024-01-08 00:00:00"
+    ],
+    "companies": 6,
+    "total_volume": 21499542,
+    "avg_anomaly_score": 1.894736842105263,
+    "high_anomaly_rate": 0.10526315789473684
+  },
+  "research_metadata": {
+    "analysis_date": "2025-08-13T09:51:23.689557",
+    "total_events": 19,
+    "total_contracts": "44206",
+    "date_range": [
+      "2021-09-14 00:00:00",
+      "2024-01-08 00:00:00"
+    ]
+  }
+}

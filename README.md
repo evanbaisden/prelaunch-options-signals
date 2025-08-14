@@ -19,7 +19,9 @@ This study investigates whether major technology product launches create systema
 
 ## Key Findings
 
-**Primary Result**: No statistically significant abnormal returns detected in the 5-day pre-announcement window (p=0.3121, N=34 events). Mean abnormal return of 0.62% with 95% confidence interval [-0.61%, 1.85%].
+**Equity Results**: No statistically significant abnormal returns detected in the 5-day pre-announcement window (p=0.3121, N=34 events). Mean abnormal return of 0.62% with 95% confidence interval [-0.61%, 1.85%].
+
+**Options Results**: Pilot analysis of 3 recent events shows call-dominated flow (P/C ratio 0.55) with high volume activity across all analyzed product launches (1.29M avg contracts/event).
 
 **Market Efficiency**: Results support the semi-strong form of market efficiency for anticipated technology product launches, consistent with efficient information incorporation in modern markets.
 
@@ -30,22 +32,22 @@ This study investigates whether major technology product launches create systema
 ```
 prelaunch-options-signals/
 ├── data/
-│   ├── raw/                    # Raw stock data files
-│   └── processed/              # Event dataset
-│       └── events_master.csv   # 34 events with dates and metadata
+│   ├── raw/                      # Raw stock data files  
+│   └── processed/                # Event dataset
+│       └── events_master.csv     # 34 events with dates and metadata
 ├── src/
-│   ├── comprehensive_analysis.py  # Main analysis framework
-│   ├── analysis.py               # Legacy stock analysis
+│   ├── comprehensive_analysis.py # Main analysis framework (CORE)
+│   ├── config.py                 # Configuration management
 │   ├── phase1/                   # Stock analysis components
 │   ├── phase2/                   # Options analysis components
-│   └── common/                   # Shared utilities
+│   └── common/                   # Shared utilities and types
 ├── results/
 │   ├── final_research_report.md  # Complete academic report
 │   ├── final_analysis_results.csv # Statistical results (N=34)
 │   └── final_analysis_results.json # Detailed analysis data
-├── docs/                       # Methodology documentation
-├── tests/                      # Test suite
-└── requirements.txt           # Dependencies
+├── docs/                         # Methodology documentation
+├── tests/                        # Test suite
+└── requirements.txt             # Dependencies
 ```
 
 ## Execution Instructions
@@ -83,8 +85,6 @@ python -c "import pandas as pd; df = pd.read_csv('results/final_analysis_results
 pip install -r requirements.txt
 ```
 
-**API Access**: Alpha Vantage API key required for options analysis (stored in environment variable)
-
 ## Data Coverage
 
 **Time Period**: 2020-2024 (post-COVID technology market conditions)
@@ -92,19 +92,12 @@ pip install -r requirements.txt
 **Market Conditions**: Bull and bear market periods, varying volatility regimes
 **Quality Controls**: Minimum estimation data requirements, outlier detection, missing data handling
 
-## Limitations
-
-- Focus on major product launches may not capture smaller systematic effects
-- Timing precision limited to daily frequency data
-- Potential confounding with earnings announcements and other corporate events
-- Sample concentrated in technology sector during specific time period
-
 ## Academic Contribution
 
-This study contributes to the event study literature by providing a well-powered analysis of technology product launch effects using modern data and methodology. The null findings support market efficiency theory while establishing a robust framework for future research in this domain.
+This study contributes to the event study literature by providing a well-powered analysis of technology product launch effects using modern data and methodology. The null findings support market efficiency theory while establishing a robust framework for future research.
+
+**Limitations**: Focus on major product launches, daily frequency data, potential confounding events, technology sector concentration.
 
 ---
 
-**Research Ethics**: This analysis uses publicly available historical market data for academic research purposes. No proprietary information or forward-looking investment advice is provided.
-
-**Data Disclaimer**: All analysis based on historical market data. Past performance does not predict future results.
+**Research Ethics**: Uses publicly available historical market data for academic research. No proprietary information or investment advice provided.

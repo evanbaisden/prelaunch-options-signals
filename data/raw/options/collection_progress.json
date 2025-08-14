@@ -1,0 +1,34 @@
+{
+  "completed_events": [
+    "NVDA_2024-01-08_RTX_40_SUPER",
+    "AAPL_2024-01-08_Vision_Pro_US_Launch",
+    "AMD_2023-12-06_Instinct_MI300X",
+    "TSLA_2023-11-28_Cybertruck_Delivery_Event",
+    "SONY_2023-10-10_PS5_Slim_Refresh",
+    "MSFT_2023-09-21_Copilot_for_Windows",
+    "AAPL_2023-09-12_iPhone_15",
+    "TSLA_2023-09-01_Model_3_Highland_Refresh",
+    "AAPL_2023-06-05_Vision_Pro_Announcement",
+    "NVDA_2023-01-03_RTX_4070_Ti",
+    "SONY_2022-11-02_PSVR2",
+    "MSFT_2022-10-12_Surface_Pro_9",
+    "NVDA_2022-09-20_RTX_40_Series",
+    "AAPL_2022-09-07_Apple_Watch_Series_8",
+    "AAPL_2022-09-07_iPhone_14",
+    "AMD_2022-08-29_Ryzen_7000_(Zen_4)",
+    "NVDA_2022-03-22_H100_Hopper_GPU",
+    "MSFT_2021-09-22_Surface_Pro_8_&_Laptop_Studio",
+    "AAPL_2021-09-14_iPhone_13"
+  ],
+  "failed_events": [
+    "NVDA_2024-03-18_Blackwell_B200_/_GB200",
+    "AMD_2022-11-03_Radeon_RX_7900_XTX/XT",
+    "AMD_2022-11-03_Radeon_RX_7900_XTX/XT",
+    "TSLA_2022-09-30_AI_Day_2_(Optimus/Dojo)",
+    "TSLA_2022-09-30_AI_Day_2_(Optimus/Dojo)",
+    "AAPL_2021-10-18_MacBook_Pro_M1_Pro/Max",
+    "AAPL_2021-10-18_MacBook_Pro_M1_Pro/Max"
+  ],
+  "last_batch": 8,
+  "total_events": 34
+}

@@ -26,9 +26,8 @@ prelaunch-options-signals/
 │       └── nvidia_rtx_40_super_raw.csv
 ├── src/
 │   ├── __init__.py
-│   ├── comprehensive_analysis.py   # Main event study analysis (IMPORTANT)
-│   ├── analysis.py                 # Legacy stock analysis
-│   ├── config.py                   # Configuration management
+│   ├── comprehensive_analysis.py   # Main event study analysis (CORE SCRIPT)
+│   ├── config.py                   # Configuration management  
 │   ├── common/
 │   │   ├── __init__.py
 │   │   ├── types.py                # Data type definitions
@@ -62,16 +61,10 @@ prelaunch-options-signals/
 │   ├── METHODOLOGY.md              # Statistical methodology documentation
 │   ├── DATA_DICTIONARY.md          # Data field definitions
 │   └── BestPractices.md            # Development guidelines
-├── tests/
-│   ├── __init__.py
-│   ├── conftest.py
-│   ├── test_analysis.py
-│   ├── test_anomalies.py
-│   ├── test_baseline.py
-│   └── test_integration.py
-└── empty directories:
-    ├── notebooks/
-    └── scripts/
+└── tests/
+    ├── __init__.py
+    ├── conftest.py
+    └── test_comprehensive.py        # Test suite for main analysis
 ```
 
 ## Key Components
@@ -106,12 +99,12 @@ prelaunch-options-signals/
 - **`PROJECT_OVERVIEW.md`** - Academic assessment guide
 - **`EXECUTION_SUMMARY.md`** - Quick execution instructions
 
-### Legacy Components (Maintained for Reference)
+### Supporting Components
 
-- **`src/analysis.py`** - Original stock analysis framework
-- **`src/phase1/`** - Stock analysis modules
-- **`src/phase2/`** - Options analysis modules
-- **`results/*.png`** - Visualization outputs from earlier phases
+- **`src/phase1/`** - Stock analysis modules (supporting framework)
+- **`src/phase2/`** - Options analysis modules (for future research)
+- **`src/common/`** - Shared utilities and type definitions
+- **`results/*.png`** - Visualization outputs from analysis
 
 ## Usage Instructions
 

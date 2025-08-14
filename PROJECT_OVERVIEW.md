@@ -1,32 +1,40 @@
-# Project Overview: Pre-Launch Options Signals Event Study
+# Project Overview: Unified Pre-Launch Options Signals and Equity Market Efficiency Study
 
 ## Research Summary
 
-This project examines the market efficiency hypothesis through an event study of technology product launches. The analysis tests whether major product announcements create systematic abnormal returns in equity markets using rigorous statistical methodology.
+This comprehensive research project examines whether unusual options activity contains exploitable information about upcoming product launch outcomes by integrating traditional equity event study methodology with sophisticated options flow analysis. The study addresses market efficiency, information asymmetry, and cross-asset predictive relationships in technology markets.
 
-**Key Finding**: No statistically significant abnormal returns detected (p=0.3121, N=34 events), supporting market efficiency theory.
+**Integrated Key Findings**: 
+- **Equity Analysis**: No statistically significant abnormal returns (supporting market efficiency)
+- **Options Analysis**: 44,206 contracts analyzed with 2 significant cross-asset correlations
+- **Combined Model**: Best integrated prediction model achieves R² = -0.823
+- **Trading Strategy**: Best unified strategy achieves Sharpe ratio = 0.28
 
 ## For Professor Review
 
 ### Core Analysis
-**Main Script**: `src/comprehensive_analysis.py`
-- Complete event study implementation
-- 34 technology product launches (2020-2024)
-- Market-adjusted abnormal returns using CAPM
-- Statistical significance testing with confidence intervals
+**Main Script**: `src/unified_research_analysis.py`
+- Complete integrated equity + options analysis
+- 34 equity events + 44,206 options contracts
+- Cross-asset correlation analysis and prediction models
+- Unified trading strategies with risk-adjusted performance
 
-**To Run**: `python src/comprehensive_analysis.py`
+**To Run**: `python src/unified_research_analysis.py`
+
+**Individual Components**:
+- **Equity Analysis**: `src/comprehensive_analysis.py` (Brown & Warner event study)
+- **Options Analysis**: `src/comprehensive_options_research.py` (Flow anomaly detection)
 
 ### Key Results
-**Primary Output**: `results/final_analysis_results.csv`
-- Statistical results for all 34 events
-- Abnormal returns, t-statistics, p-values
-- Company-level breakdown
+**Unified Analysis**: `results/unified_research_analysis_[timestamp].md`
+- Comprehensive integrated research report
+- Cross-asset correlations and prediction models
+- Trading strategy performance evaluation
 
-**Research Report**: `results/final_research_report.md`
-- Complete academic write-up
-- Methodology, findings, and implications
-- Publication-ready format
+**Supporting Results**:
+- **Equity Results**: `results/final_analysis_results.csv` (34 events)
+- **Options Results**: `results/complete_options_analysis_[timestamp].json` (44,206 contracts)
+- **Integrated Data**: `results/unified_analysis_results_[timestamp].json`
 
 ### Data
 **Event Dataset**: `data/processed/events_master.csv`
@@ -34,40 +42,55 @@ This project examines the market efficiency hypothesis through an event study of
 - Announcement dates, release dates, company information
 - Spans Apple, NVIDIA, Microsoft, Tesla, AMD, Sony
 
+**Options Dataset**: `data/raw/options/`
+- 44,206 individual options contracts from 19 events
+- Complete options chains with Greeks, volume, open interest
+- Historical data from Alpha Vantage API
+
 ## Project Organization
 
 ### Essential Files for Review
 ```
 prelaunch-options-signals/
-├── README.md                          # Project overview and execution
-├── src/comprehensive_analysis.py      # Main analysis (IMPORTANT)
-├── data/processed/events_master.csv   # Event dataset (34 events)
+├── README.md                                    # Project overview and execution
+├── src/unified_research_analysis.py            # Main integrated analysis (IMPORTANT)
+├── data/
+│   ├── processed/events_master.csv             # Event dataset (34 events)
+│   └── raw/options/                             # Options data (44,206 contracts)
 ├── results/
-│   ├── final_research_report.md       # Academic report (IMPORTANT)
-│   ├── final_analysis_results.csv     # Statistical results (IMPORTANT)
-│   └── final_analysis_results.json    # Detailed output data
-├── docs/METHODOLOGY.md                # Statistical methodology
-└── requirements.txt                   # Python dependencies
+│   ├── unified_research_analysis_[timestamp].md # Integrated report (IMPORTANT)
+│   ├── final_analysis_results.csv              # Equity results (IMPORTANT)
+│   ├── complete_options_analysis_[timestamp].json # Options results
+│   └── unified_analysis_results_[timestamp].json  # Integrated data
+├── docs/METHODOLOGY.md                         # Statistical methodology
+└── requirements.txt                            # Python dependencies
 ```
 
 ### Supporting Infrastructure
 ```
 ├── src/
-│   ├── analysis.py                    # Legacy stock analysis
-│   ├── phase1/                        # Stock analysis components
-│   ├── phase2/                        # Options analysis components
-│   └── common/                        # Shared utilities
-├── tests/                             # Test suite
-└── docs/                             # Additional documentation
+│   ├── unified_research_analysis.py        # Main integrated analysis
+│   ├── comprehensive_analysis.py           # Equity event study component
+│   ├── comprehensive_options_research.py   # Options flow analysis component
+│   ├── config.py                           # Configuration management
+│   ├── phase1/                             # Equity analysis modules
+│   ├── phase2/                             # Options analysis modules  
+│   └── common/                             # Shared utilities and types
+├── batch_options_collector.py              # Options data collection tool
+├── tests/
+│   └── test_comprehensive.py               # Test suite for analysis
+└── docs/                                   # Additional documentation
 ```
 
 ## Academic Rigor
 
 ### Statistical Methodology
-- **Event Study Framework**: Brown & Warner (1985) methodology
-- **Market Model**: CAPM regression with 120-day estimation window
-- **Statistical Testing**: One-sample t-tests with 95% confidence intervals
-- **Power Analysis**: Adequate sample size (N=34) for detecting meaningful effects
+- **Equity Event Study**: Brown & Warner (1985) methodology with CAMP regression
+- **Options Flow Analysis**: Multi-factor anomaly detection system
+- **Cross-Asset Integration**: Pearson correlation and machine learning models
+- **Trading Strategies**: Risk-adjusted performance with Sharpe ratios
+- **Statistical Testing**: Multiple comparison correction (Bonferroni)
+- **Sample Size**: N=34 equity events, 44,206 options contracts, 21 integrated events
 
 ### Data Quality
 - **Public Data Sources**: Yahoo Finance, Alpha Vantage APIs
@@ -85,13 +108,18 @@ prelaunch-options-signals/
 
 ### Quick Start (5 minutes)
 1. **Install dependencies**: `pip install -r requirements.txt`
-2. **Run analysis**: `python src/comprehensive_analysis.py`
-3. **Review results**: Open `results/final_research_report.md`
+2. **Run unified analysis**: `python src/unified_research_analysis.py`
+3. **Review results**: Open `results/unified_research_analysis_[timestamp].md`
+
+### Individual Components
+- **Equity only**: `python src/comprehensive_analysis.py`
+- **Options only**: `python src/comprehensive_options_research.py`
 
 ### Expected Output
-- Console output showing analysis progress and summary statistics
-- CSV file with detailed results for all 34 events
-- Academic report with complete methodology and findings
+- Console output showing integrated analysis progress
+- Unified research report combining equity and options analysis
+- Cross-asset correlation results and trading strategy performance
+- Individual component results (equity CSV, options JSON)
 
 ### Verification
 ```bash

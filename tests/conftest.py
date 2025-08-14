@@ -9,7 +9,7 @@ from pathlib import Path
 import tempfile
 import os
 
-from src.common.types import LaunchEvent, BaselineMetrics, SignalMetrics, StockData
+# Removed imports for types that are no longer used
 
 
 @pytest.fixture
@@ -48,47 +48,7 @@ def sample_stock_data():
     return df
 
 
-@pytest.fixture
-def sample_launch_event():
-    """Generate sample launch event for testing."""
-    return LaunchEvent(
-        name="Test Product",
-        company="Test Company",
-        ticker="TEST",
-        announcement=date(2020, 6, 1),
-        release=date(2020, 7, 15),
-        category="Technology"
-    )
-
-
-@pytest.fixture
-def sample_baseline_metrics():
-    """Generate sample baseline metrics for testing."""
-    return BaselineMetrics(
-        avg_daily_return=0.0015,
-        avg_volume=1200000,
-        volume_std=400000,
-        price_volatility=0.025,
-        trading_days=60,
-        start_date=date(2020, 4, 1),
-        end_date=date(2020, 5, 29)
-    )
-
-
-@pytest.fixture
-def sample_signal_metrics():
-    """Generate sample signal metrics for testing."""
-    return SignalMetrics(
-        event_date=date(2020, 6, 1),
-        event_type='announcement',
-        price_5day_return=0.025,
-        price_1day_return=0.008,
-        abnormal_return=0.015,
-        volume_spike_pct=1.5,
-        volume_z_score=2.3,
-        volume_anomaly_detected=True,
-        significance_level='med'
-    )
+# Removed fixtures for legacy types that are no longer used
 
 
 @pytest.fixture

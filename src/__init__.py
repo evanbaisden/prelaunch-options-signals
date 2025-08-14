@@ -21,6 +21,5 @@ __description__ = "Options signals analysis around product launch events"
 
 # Core exports
 from .config import get_config
-from .analysis import PrelaunchAnalyzer
 
-__all__ = ["get_config", "PrelaunchAnalyzer"]
+__all__ = ["get_config"]

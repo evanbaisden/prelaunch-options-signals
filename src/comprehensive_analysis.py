@@ -27,14 +27,29 @@ class ComprehensiveAnalyzer:
         self.results_dir = Path("results")
         self.results_dir.mkdir(exist_ok=True)
         
-        # Market benchmark
-        self.market_ticker = "^GSPC"  # S&P 500
+        # Market benchmarks
+        self.market_ticker = "^GSPC"  # S&P 500 (primary)
+        self.tech_benchmark = "XLK"   # Technology Select Sector SPDR ETF (robustness)
         
         # Analysis parameters
         self.event_windows = ['-5:+0', '-3:+0', '-1:+0', '+0:+1', '+0:+3', '+0:+5']
         self.estimation_days = 120
         self.min_estimation_days = 30
         
+    def check_event_clustering(self, events_df: pd.DataFrame) -> Dict:
+        """Check for events on the same calendar day that require clustering adjustments."""
+        # Count events by announcement date
+        date_counts = events_df['announcement'].value_counts()
+        clustered_dates = date_counts[date_counts > 1]
+        
+        return {
+            'total_events': len(events_df),
+            'unique_dates': len(date_counts),
+            'clustered_dates': len(clustered_dates),
+            'max_events_per_day': date_counts.max() if len(date_counts) > 0 else 0,
+            'clustering_adjustment_needed': len(clustered_dates) > 0
+        }
+    
     def load_events(self) -> pd.DataFrame:
         """Load expanded events dataset."""
         events_file = Path("data/processed/events_master.csv")
@@ -534,6 +549,61 @@ class ComprehensiveAnalyzer:
             }
         
         return summary
+    
+    def run_placebo_test(self, events_df: pd.DataFrame, stock_data_dict: Dict, market_data: pd.DataFrame, n_placebo: int = 34) -> Dict:
+        """Run placebo test with random non-event dates."""
+        logger.info(f"Running placebo test with {n_placebo} random dates...")
+        
+        placebo_results = []
+        np.random.seed(42)  # For reproducibility
+        
+        for i, (_, event_row) in enumerate(events_df.iterrows()):
+            if i >= n_placebo:
+                break
+                
+            ticker = event_row['ticker']
+            if ticker not in stock_data_dict:
+                continue
+                
+            stock_data = stock_data_dict[ticker]
+            
+            # Get valid date range (avoid first/last 30 days)
+            valid_dates = stock_data.index[30:-30]
+            if len(valid_dates) < 100:
+                continue
+                
+            # Select random placebo date
+            placebo_date = np.random.choice(valid_dates)
+            
+            try:
+                # Calculate abnormal returns for placebo date
+                result = self.calculate_abnormal_returns(
+                    stock_data, market_data, 
+                    stock_data.loc[placebo_date, 'beta'] if 'beta' in stock_data.columns else 1.0,
+                    placebo_date
+                )
+                
+                if result:
+                    placebo_results.append(result['abnormal_return'])
+                    
+            except Exception as e:
+                logger.warning(f"Placebo test failed for {ticker}: {e}")
+                continue
+        
+        if len(placebo_results) > 0:
+            placebo_array = np.array(placebo_results)
+            t_stat, p_value = stats.ttest_1samp(placebo_array, 0)
+            
+            return {
+                'n_placebo': len(placebo_results),
+                'mean_abnormal_return': np.mean(placebo_array),
+                'std_abnormal_return': np.std(placebo_array),
+                't_statistic': t_stat,
+                'p_value': p_value,
+                'significant': p_value < 0.05
+            }
+        else:
+            return {'error': 'No valid placebo tests completed'}
 
 def main():
     """Run comprehensive analysis."""
@@ -557,6 +627,13 @@ def main():
         # Generate summary
         print("\n[ANALYZE] Generating statistical summary...")
         summary = analyzer.generate_statistical_summary(results_df)
+        
+        # Check for event clustering
+        events_df = analyzer.load_events()
+        clustering_info = analyzer.check_event_clustering(events_df)
+        
+        # Add clustering info to summary
+        summary['clustering'] = clustering_info
         
         # Display results
         print("\n" + "="*60)
@@ -597,6 +674,17 @@ def main():
             print(f"\n[COMPANIES] Company Breakdown:")
             for company, stats in summary['by_company'].items():
                 print(f"  {company}: N={stats['n']}, Mean={stats['mean']*100:.2f}%, Std={stats['std']*100:.2f}%")
+        
+        if 'clustering' in summary:
+            clustering = summary['clustering']
+            print(f"\n[CLUSTERING] Event Date Analysis:")
+            print(f"  Total Events: {clustering['total_events']}")
+            print(f"  Unique Dates: {clustering['unique_dates']}")
+            if clustering['clustered_dates'] > 0:
+                print(f"  Clustered Dates: {clustering['clustered_dates']} (max {clustering['max_events_per_day']} events/day)")
+                print(f"  Clustering Adjustment: RECOMMENDED")
+            else:
+                print(f"  No event clustering detected - standard errors are appropriate")
         
         print(f"\n" + "="*60)
         print("CONCLUSION")
