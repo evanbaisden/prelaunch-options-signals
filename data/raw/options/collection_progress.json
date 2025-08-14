@@ -18,7 +18,14 @@
     "AMD_2022-08-29_Ryzen_7000_(Zen_4)",
     "NVDA_2022-03-22_H100_Hopper_GPU",
     "MSFT_2021-09-22_Surface_Pro_8_&_Laptop_Studio",
-    "AAPL_2021-09-14_iPhone_13"
+    "AAPL_2021-09-14_iPhone_13",
+    "TSLA_2021-05-20_Model_S_Plaid_Delivery",
+    "AMD_2020-10-28_Radeon_RX_6000_(RDNA_2)",
+    "AAPL_2020-10-13_iPhone_12",
+    "AMD_2020-10-08_Ryzen_5000_(Zen_3)",
+    "TSLA_2020-09-22_Battery_Day",
+    "NVDA_2020-09-01_RTX_30_Series",
+    "AAPL_2020-06-22_M1_Mac_Launch"
   ],
   "failed_events": [
     "NVDA_2024-03-18_Blackwell_B200_/_GB200",
@@ -27,8 +34,12 @@
     "TSLA_2022-09-30_AI_Day_2_(Optimus/Dojo)",
     "TSLA_2022-09-30_AI_Day_2_(Optimus/Dojo)",
     "AAPL_2021-10-18_MacBook_Pro_M1_Pro/Max",
-    "AAPL_2021-10-18_MacBook_Pro_M1_Pro/Max"
+    "AAPL_2021-10-18_MacBook_Pro_M1_Pro/Max",
+    "NVDA_2021-05-31_RTX_3080_Ti_/_3070_Ti",
+    "MSFT_2020-09-09_Xbox_Series_X/S",
+    "SONY_2020-06-11_PlayStation_5",
+    "SONY_2020-06-11_PlayStation_5"
   ],
-  "last_batch": 8,
+  "last_batch": 11,
   "total_events": 34
 }
