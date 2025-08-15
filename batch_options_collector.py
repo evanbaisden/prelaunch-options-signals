@@ -58,7 +58,7 @@ class BatchOptionsCollector:
         with open(self.progress_file, 'w') as f:
             json.dump(self.progress, f, indent=2, default=str)
     
-    def get_options_data(self, ticker: str, event_date: date, event_name: str) -> Optional[pd.DataFrame]:
+    def get_options_data(self, ticker: str, event_date: date, event_name: str, proxy_date: Optional[date] = None) -> Optional[pd.DataFrame]:
         """Get options data for a specific event."""
         # Check if already collected
         event_id = f"{ticker}_{event_date}_{event_name.replace(' ', '_')}"
@@ -66,10 +66,13 @@ class BatchOptionsCollector:
             logger.info(f"Event {event_name} already collected, skipping...")
             return self.load_cached_data(event_id)
         
-        logger.info(f"Fetching options data for {event_name} ({ticker}) on {event_date}")
+        # Use proxy date if provided, otherwise use event date
+        collection_date = proxy_date if proxy_date else event_date
+        date_info = f" (using proxy date {proxy_date})" if proxy_date else ""
+        logger.info(f"Fetching options data for {event_name} ({ticker}) on {event_date}{date_info}")
         
         try:
-            url = f"{self.base_url}?function=HISTORICAL_OPTIONS&symbol={ticker}&date={event_date}&apikey={self.api_key}"
+            url = f"{self.base_url}?function=HISTORICAL_OPTIONS&symbol={ticker}&date={collection_date}&apikey={self.api_key}"
             
             response = requests.get(url, timeout=30)
             response.raise_for_status()
@@ -335,6 +338,61 @@ class BatchOptionsCollector:
             return analysis_results
         else:
             return {'error': 'No events could be analyzed'}
+    
+    def retry_failed_events_with_proxy_dates(self) -> Dict:
+        """Retry specific failed events using proxy dates (previous trading days)."""
+        # Define proxy dates for problematic events
+        proxy_mappings = {
+            'NVDA_2021-05-31_RTX_3080_Ti_/_3070_Ti': {
+                'ticker': 'NVDA',
+                'original_date': '2021-05-31',  # Memorial Day Monday
+                'proxy_date': '2021-05-28',     # Previous Friday
+                'event_name': 'RTX_3080_Ti_/_3070_Ti'
+            },
+            'SONY_2020-06-11_PlayStation_5': {
+                'ticker': 'SONY',
+                'original_date': '2020-06-11',  # Thursday
+                'proxy_date': '2020-06-10',     # Previous Wednesday  
+                'event_name': 'PlayStation_5'
+            }
+        }
+        
+        results = {'retried': 0, 'successful': 0, 'still_failed': 0}
+        
+        for event_id, mapping in proxy_mappings.items():
+            if event_id in self.progress['failed_events']:
+                logger.info(f"Retrying failed event: {event_id}")
+                
+                # Convert dates
+                original_date = datetime.strptime(mapping['original_date'], '%Y-%m-%d').date()
+                proxy_date = datetime.strptime(mapping['proxy_date'], '%Y-%m-%d').date()
+                
+                # Remove from failed events before retry
+                while event_id in self.progress['failed_events']:
+                    self.progress['failed_events'].remove(event_id)
+                
+                # Try to collect with proxy date
+                result = self.get_options_data(
+                    ticker=mapping['ticker'],
+                    event_date=original_date,  # Keep original date for event_id
+                    event_name=mapping['event_name'],
+                    proxy_date=proxy_date  # Use proxy for API call
+                )
+                
+                results['retried'] += 1
+                
+                if result is not None and not result.empty:
+                    logger.info(f"Successfully collected {len(result)} contracts for {event_id} using proxy date")
+                    results['successful'] += 1
+                else:
+                    logger.warning(f"Still failed to collect {event_id} even with proxy date")
+                    results['still_failed'] += 1
+                
+                # Rate limiting
+                time.sleep(13)
+        
+        self.save_progress()
+        return results
 
 
 def main():
