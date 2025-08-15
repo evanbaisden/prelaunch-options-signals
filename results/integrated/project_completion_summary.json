@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "generated": "2025-08-15T09:49:13.036359",
+    "events_count": 33,
+    "companies": [
+      "AAPL",
+      "NVDA",
+      "MSFT",
+      "TSLA",
+      "AMD",
+      "SONY"
+    ],
+    "analysis_period": {
+      "start": "2020-06-22",
+      "end": "2024-03-18"
+    },
+    "data_sources": {
+      "options_files": 33,
+      "earnings_files": 6,
+      "equity_records": 34
+    }
+  },
+  "phase1_completion": {
+    "product_calendar": true,
+    "options_data": true,
+    "baseline_metrics": true,
+    "screening_criteria": true
+  },
+  "phase2_completion": {
+    "event_studies": true,
+    "statistical_testing": true,
+    "earnings_integration": true,
+    "regression_analysis": true,
+    "trading_strategies": true
+  }
+}

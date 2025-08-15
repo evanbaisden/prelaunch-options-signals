@@ -1,7 +1,7 @@
 # Comprehensive Options Research Analysis
 ## Pre-Launch Options Signals: Exploitable Information Study
 
-**Generated**: 2025-08-14 16:06:12
+**Generated**: 2025-08-15 09:26:50
 **Analysis Period**: 2020-06-22 00:00:00 to 2024-01-08 00:00:00
 **Sample Size**: 26 product launch events
 
@@ -63,50 +63,50 @@ Average Metrics:
 
 **Target**: abnormal_return_minus5_plus0 (N=168)
 
-- **Random Forest**: R² = -0.100 (±0.159)
-- **Gradient Boosting**: R² = -0.212 (±0.198)
-- **Ridge Regression**: R² = -0.181 (±0.314)
-- **Lasso Regression**: R² = -0.025 (±0.031)
-- **Best Model**: Lasso Regression
+- **Random Forest**: R² = -0.138 (±0.048)
+- **Gradient Boosting**: R² = -0.180 (±0.063)
+- **Ridge Regression**: R² = -0.283 (±0.211)
+- **Lasso Regression**: R² = -0.182 (±0.088)
+- **Best Model**: Random Forest
 
 **Target**: abnormal_return_minus3_plus0 (N=168)
 
-- **Random Forest**: R² = -0.083 (±0.046)
-- **Gradient Boosting**: R² = -0.075 (±0.059)
-- **Ridge Regression**: R² = -0.103 (±0.112)
-- **Lasso Regression**: R² = -0.031 (±0.038)
-- **Best Model**: Lasso Regression
+- **Random Forest**: R² = -0.031 (±0.039)
+- **Gradient Boosting**: R² = -0.055 (±0.056)
+- **Ridge Regression**: R² = -0.101 (±0.058)
+- **Lasso Regression**: R² = -0.078 (±0.069)
+- **Best Model**: Random Forest
 
 **Target**: abnormal_return_minus1_plus0 (N=168)
 
-- **Random Forest**: R² = 0.001 (±0.071)
-- **Gradient Boosting**: R² = -0.006 (±0.067)
-- **Ridge Regression**: R² = 0.021 (±0.063)
-- **Lasso Regression**: R² = -0.014 (±0.016)
-- **Best Model**: Ridge Regression
+- **Random Forest**: R² = -0.090 (±0.139)
+- **Gradient Boosting**: R² = -0.183 (±0.294)
+- **Ridge Regression**: R² = -0.093 (±0.119)
+- **Lasso Regression**: R² = -0.020 (±0.026)
+- **Best Model**: Lasso Regression
 
 **Target**: abnormal_return_plus0_plus1 (N=168)
 
-- **Random Forest**: R² = -0.002 (±0.028)
-- **Gradient Boosting**: R² = 0.003 (±0.078)
-- **Ridge Regression**: R² = -0.034 (±0.010)
-- **Lasso Regression**: R² = -0.002 (±0.001)
-- **Best Model**: Gradient Boosting
+- **Random Forest**: R² = -0.218 (±0.288)
+- **Gradient Boosting**: R² = -0.297 (±0.412)
+- **Ridge Regression**: R² = -0.273 (±0.288)
+- **Lasso Regression**: R² = -0.151 (±0.188)
+- **Best Model**: Lasso Regression
 
 **Target**: abnormal_return_plus0_plus3 (N=168)
 
-- **Random Forest**: R² = -0.011 (±0.169)
-- **Gradient Boosting**: R² = -0.087 (±0.170)
-- **Ridge Regression**: R² = -0.094 (±0.041)
-- **Lasso Regression**: R² = -0.007 (±0.002)
+- **Random Forest**: R² = -0.188 (±0.251)
+- **Gradient Boosting**: R² = -0.257 (±0.363)
+- **Ridge Regression**: R² = -0.177 (±0.219)
+- **Lasso Regression**: R² = -0.119 (±0.108)
 - **Best Model**: Lasso Regression
 
 **Target**: abnormal_return_plus0_plus5 (N=168)
 
-- **Random Forest**: R² = -0.096 (±0.191)
-- **Gradient Boosting**: R² = -0.133 (±0.163)
-- **Ridge Regression**: R² = -0.097 (±0.040)
-- **Lasso Regression**: R² = -0.005 (±0.002)
+- **Random Forest**: R² = -0.178 (±0.249)
+- **Gradient Boosting**: R² = -0.328 (±0.471)
+- **Ridge Regression**: R² = -0.177 (±0.239)
+- **Lasso Regression**: R² = -0.092 (±0.092)
 - **Best Model**: Lasso Regression
 
 
@@ -184,7 +184,7 @@ The analysis provides evidence for/against market efficiency in options markets 
 ### Trading Strategy Recommendations
 1. **Signal Generation**: Use composite anomaly score > 3 for trade selection
 2. **Position Sizing**: Risk-adjusted based on historical volatility
-3. **Risk Management**: Maximum drawdown controls at 34.6%
+3. **Risk Management**: Maximum drawdown controls at 40.9%
 
 ### Implementation Constraints
 - **Data Requirements**: Real-time options flow data
@@ -224,6 +224,6 @@ The analysis provides evidence for/against market efficiency in options markets 
 
 ---
 
-**Report Generated**: 2025-08-14 16:06:12
+**Report Generated**: 2025-08-15 09:26:50
 **Analysis Framework**: Comprehensive Options Research v1.0
 **Contact**: Academic Research Project

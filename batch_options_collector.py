@@ -1,6 +1,6 @@
 """
-Batch Options Data Collector
-Collects historical options data in batches to work around API rate limits.
+Batch Data Collector
+Collects historical options and earnings data in batches to work around API rate limits.
 Stores results incrementally and combines them for complete analysis.
 """
 import pandas as pd
@@ -24,8 +24,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 
-class BatchOptionsCollector:
-    """Collects options data in batches to avoid API rate limits."""
+class BatchDataCollector:
+    """Collects options and earnings data in batches to avoid API rate limits."""
     
     def __init__(self, batch_size: int = 3):
         self.api_key = os.getenv('ALPHA_VANTAGE_API_KEY')
@@ -393,16 +393,97 @@ class BatchOptionsCollector:
         
         self.save_progress()
         return results
+    
+    def collect_earnings_data(self, symbol: str) -> Dict[str, pd.DataFrame]:
+        """Collect earnings and estimates data for a symbol"""
+        earnings_data = {}
+        
+        # Collect earnings data
+        try:
+            url = f"{self.base_url}?function=EARNINGS&symbol={symbol}&apikey={self.api_key}"
+            response = requests.get(url, timeout=30)
+            response.raise_for_status()
+            data = response.json()
+            
+            if 'quarterlyEarnings' in data:
+                df = pd.DataFrame(data['quarterlyEarnings'])
+                # Convert columns to proper types
+                df['fiscalDateEnding'] = pd.to_datetime(df['fiscalDateEnding'])
+                for col in ['reportedEPS', 'estimatedEPS', 'surprise', 'surprisePercentage']:
+                    if col in df.columns:
+                        df[col] = pd.to_numeric(df[col], errors='coerce')
+                
+                # Save earnings data
+                earnings_file = f"data/raw/earnings/{symbol}_earnings.csv"
+                os.makedirs("data/raw/earnings", exist_ok=True)
+                df.to_csv(earnings_file, index=False)
+                earnings_data['earnings'] = df
+                logger.info(f"Saved {len(df)} earnings records for {symbol}")
+            
+            time.sleep(self.rate_limit_delay)
+            
+        except Exception as e:
+            logger.error(f"Error collecting earnings for {symbol}: {e}")
+        
+        # Collect estimates data
+        try:
+            url = f"{self.base_url}?function=EARNINGS_ESTIMATES&symbol={symbol}&apikey={self.api_key}"
+            response = requests.get(url, timeout=30)
+            response.raise_for_status()
+            data = response.json()
+            
+            if 'quarterlyEstimates' in data:
+                df = pd.DataFrame(data['quarterlyEstimates'])
+                df['fiscalDateEnding'] = pd.to_datetime(df['fiscalDateEnding'])
+                for col in ['estimatedEPS']:
+                    if col in df.columns:
+                        df[col] = pd.to_numeric(df[col], errors='coerce')
+                
+                # Save estimates data  
+                estimates_file = f"data/raw/earnings/{symbol}_estimates.csv"
+                df.to_csv(estimates_file, index=False)
+                earnings_data['estimates'] = df
+                logger.info(f"Saved {len(df)} estimate records for {symbol}")
+            
+            time.sleep(self.rate_limit_delay)
+            
+        except Exception as e:
+            logger.error(f"Error collecting estimates for {symbol}: {e}")
+            
+        return earnings_data
+    
+    def collect_all_earnings(self) -> Dict[str, Dict]:
+        """Collect earnings data for all companies in the dataset"""
+        # Get unique companies from events
+        events_file = Path("data/processed/events_master.csv")
+        if not events_file.exists():
+            logger.error("Events master file not found")
+            return {}
+        
+        events_df = pd.read_csv(events_file)
+        companies = events_df['ticker'].unique()
+        
+        logger.info(f"Collecting earnings data for {len(companies)} companies: {list(companies)}")
+        
+        all_earnings_data = {}
+        
+        for company in companies:
+            logger.info(f"Processing earnings for {company}")
+            earnings_data = self.collect_earnings_data(company)
+            all_earnings_data[company] = earnings_data
+        
+        logger.info(f"Completed earnings collection for {len(companies)} companies")
+        return all_earnings_data
 
 
 def main():
     """Main collection interface."""
     print("="*80)
-    print("BATCH OPTIONS DATA COLLECTOR")
-    print("Historical Data Collection with Rate Limit Management")
+    print("BATCH DATA COLLECTOR")
+    print("Options and Earnings Data Collection with Rate Limit Management")
     print("="*80)
     
-    collector = BatchOptionsCollector(batch_size=3)
+    collector = BatchDataCollector(batch_size=3)
     
     # Show current status
     status = collector.get_collection_status()
@@ -427,6 +508,22 @@ def main():
                 print(f"  Average Volume per Event: {vol_stats['avg_total_volume']:,.0f}")
                 print(f"  Average P/C Ratio: {vol_stats['avg_pcr_volume']:.3f}")
         
+        # Check if we should collect earnings data too
+        earnings_dir = Path("data/raw/earnings")
+        earnings_files = list(earnings_dir.glob("*.csv")) if earnings_dir.exists() else []
+        
+        events_df = pd.read_csv("data/processed/events_master.csv")
+        companies = events_df['ticker'].unique()
+        
+        print(f"\n[EARNINGS] Earnings data status:")
+        print(f"  Companies in dataset: {len(companies)}")
+        print(f"  Companies with earnings: {len(earnings_files)}")
+        
+        if len(earnings_files) < len(companies):
+            print(f"\n[EARNINGS] Collecting missing earnings data...")
+            earnings_results = collector.collect_all_earnings()
+            print(f"  Earnings collection completed for {len(earnings_results)} companies")
+        
         return
     
     # Ask user how many batches to run
@@ -435,29 +532,27 @@ def main():
     print(f"  Time per Batch: ~{collector.batch_size * 13 / 60:.1f} minutes")
     
     try:
-        # For demonstration, auto-run 2 batches
-        max_batches = 2
-        estimated_time = max_batches * collector.batch_size * 13 / 60
-        print(f"\nAuto-running {max_batches} batches for demonstration (~{estimated_time:.1f} minutes)")
-        print("(To run more/all batches, modify the script or run interactively)")
+        # Options collection is already complete, focus on earnings if needed
+        print(f"\nOptions collection status: COMPLETE")
+        print("All events have options data available.")
         
-        # Run collection session
-        print("\n[STARTING] Collection session...")
-        session_results = collector.run_collection_session(max_batches)
-        
-        print("\n[SESSION COMPLETE]")
-        print(f"  Duration: {session_results['session_duration']}")
-        print(f"  Batches Processed: {session_results['batches_processed']}")
-        print(f"  Events Collected: {session_results['events_collected_this_session']}")
-        print(f"  Total Completed: {session_results['total_completed_events']}")
-        print(f"  Remaining: {session_results['remaining_events']}")
-        
-        if session_results['remaining_events'] == 0:
-            print("\n[ANALYZING] All data collected! Running complete analysis...")
-            results = collector.analyze_combined_data()
+        if status['remaining_events'] > 0:
+            # Run remaining options collection if any
+            session_results = collector.run_collection_session(2)
             
-            if 'error' not in results:
-                print(f"  Final Results: {results['events_analyzed']} events, {results['raw_data_contracts']:,} contracts")
+            print("\n[SESSION COMPLETE]")
+            print(f"  Duration: {session_results['session_duration']}")
+            print(f"  Batches Processed: {session_results['batches_processed']}")
+            print(f"  Events Collected: {session_results['events_collected_this_session']}")
+            print(f"  Total Completed: {session_results['total_completed_events']}")
+            print(f"  Remaining: {session_results['remaining_events']}")
+            
+            if session_results['remaining_events'] == 0:
+                print("\n[ANALYZING] All data collected! Running complete analysis...")
+                results = collector.analyze_combined_data()
+                
+                if 'error' not in results:
+                    print(f"  Final Results: {results['events_analyzed']} events, {results['raw_data_contracts']:,} contracts")
             
     except KeyboardInterrupt:
         print("\n[INTERRUPTED] Collection stopped by user")

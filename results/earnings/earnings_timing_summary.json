@@ -1,0 +1,9 @@
+{
+  "total_events_analyzed": 34,
+  "events_with_earnings_data": 34,
+  "average_days_to_earnings": 41.0,
+  "median_days_to_earnings": 32.5,
+  "min_days_to_earnings": "6",
+  "max_days_to_earnings": "92",
+  "earnings_coverage_percent": 100.0
+}
