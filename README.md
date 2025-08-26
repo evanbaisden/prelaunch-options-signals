@@ -50,7 +50,10 @@ prelaunch-options-signals/
 └── documentation/                      # Additional documentation
     ├── methodology_notes.md            # Detailed methodology
     ├── data_sources.md                 # Data collection details
-    └── code_documentation.md           # Code explanations
+    ├── code_documentation.md           # Code explanations
+    ├── best_practices.md               # Research methodology standards
+    ├── DATA_DICTIONARY.md              # Variable definitions
+    └── methodology_detailed.md         # Comprehensive methodology
 ```
 
 ## Data Summary

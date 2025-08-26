@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "generated": "2025-08-26T12:15:14.231372",
+    "analysis_type": "comprehensive_event_study",
+    "sample_period": "2020-06-22 to 2024-03-18",
+    "methodology": "Brown & Warner (1985) event study framework"
+  },
+  "dataset_summary": {
+    "total_events": 34,
+    "companies": 6,
+    "company_breakdown": {
+      "Apple": 9,
+      "NVIDIA": 7,
+      "Microsoft": 5,
+      "Tesla": 5,
+      "AMD": 5,
+      "Sony": 3
+    },
+    "product_categories": 14,
+    "options_observations": 92076,
+    "earnings_records": 610
+  },
+  "abnormal_returns_analysis": {
+    "pre_launch_windows": {
+      "minus5_to_0": {
+        "mean_car": 0.006213157322679996,
+        "median_car": 0.000614329151799265,
+        "std_dev": 0.035288034043015774,
+        "confidence_interval_95": [-0.00564846458256227, 0.018074779227922264],
+        "t_statistic": 1.026654571334026,
+        "p_value": 0.31205010464863947,
+        "significant": false
+      },
+      "minus3_to_0": {
+        "mean_car": 0.00677768510652422,
+        "median_car": 0.0002904512626857685,
+        "std_dev": 0.031215162406428482,
+        "confidence_interval_95": [-0.0037148930213601657, 0.017270263234408605],
+        "t_statistic": 1.2660627966623461,
+        "p_value": 0.21435559153161998,
+        "significant": false
+      },
+      "minus1_to_0": {
+        "mean_car": 0.0032027925950830352,
+        "median_car": -0.0015201633777017466,
+        "std_dev": 0.030794668616747404,
+        "confidence_interval_95": [-0.007148441916417979, 0.01355402710658405],
+        "t_statistic": 0.6064468425855867,
+        "p_value": 0.548367632805784,
+        "significant": false
+      }
+    },
+    "post_launch_windows": {
+      "0_to_plus1": {
+        "mean_car": -0.00046361235254880847,
+        "median_car": 0.005195231268945798,
+        "std_dev": 0.04233322171485642,
+        "confidence_interval_95": [-0.014693384104647943, 0.013766159399550327],
+        "t_statistic": -0.0638576799983892,
+        "p_value": 0.9494688034880827,
+        "significant": false
+      },
+      "0_to_plus3": {
+        "mean_car": -0.00784923888221369,
+        "median_car": -0.012038279216450228,
+        "std_dev": 0.04783050217644972,
+        "confidence_interval_95": [-0.023926851244050654, 0.00822837347962327],
+        "t_statistic": -0.956890106745991,
+        "p_value": 0.3455808478692717,
+        "significant": false
+      },
+      "0_to_plus5": {
+        "mean_car": -0.004517007166867108,
+        "median_car": -0.0026690491183277614,
+        "std_dev": 0.055890810442520006,
+        "confidence_interval_95": [-0.02330398919705337, 0.014269974863319157],
+        "t_statistic": -0.4712483374303709,
+        "p_value": 0.6405640362993572,
+        "significant": false
+      }
+    }
+  },
+  "options_anomaly_analysis": {
+    "high_volume_events": [
+      {
+        "event_name": "iPhone 12",
+        "ticker": "AAPL",
+        "date": "2020-10-13",
+        "contracts": 3720000,
+        "anomaly_score": 5.2
+      },
+      {
+        "event_name": "Model 3 Highland Refresh",
+        "ticker": "TSLA", 
+        "date": "2023-09-01",
+        "contracts": 3440000,
+        "anomaly_score": 5.8
+      },
+      {
+        "event_name": "Vision Pro Announcement",
+        "ticker": "AAPL",
+        "date": "2023-06-05", 
+        "contracts": 2750000,
+        "anomaly_score": 4.9
+      }
+    ],
+    "total_high_anomaly_events": 3,
+    "anomaly_detection_rate": 0.088
+  },
+  "earnings_integration": {
+    "positive_earnings_surprises": 28,
+    "total_earnings_events": 34,
+    "positive_rate": 0.824,
+    "binomial_test_p_value": 0.00019512558355927467,
+    "significant_above_50pct": true,
+    "significant_above_70pct": false
+  },
+  "cross_sectional_results": {
+    "company_effects": {
+      "Apple": {"events": 9, "mean_pre_launch_ar": -0.012394954951470466},
+      "NVIDIA": {"events": 7, "mean_pre_launch_ar": 0.019894977876295374},
+      "Microsoft": {"events": 5, "mean_pre_launch_ar": -0.010554273308822314},
+      "Tesla": {"events": 5, "mean_pre_launch_ar": 0.00290790194208627},
+      "AMD": {"events": 5, "mean_pre_launch_ar": 0.012902165555982678},
+      "Sony": {"events": 3, "mean_pre_launch_ar": 0.052419375818017734}
+    },
+    "regression_r_squared": {
+      "basic_model": 0.02,
+      "options_model": 0.05,
+      "company_fixed_effects": 0.34,
+      "full_model": 0.45
+    }
+  },
+  "statistical_tests": {
+    "parametric_tests": {
+      "all_windows_non_significant": true,
+      "max_t_statistic": 1.2660627966623461,
+      "min_p_value": 0.21435559153161998
+    },
+    "nonparametric_tests": {
+      "corrado_rank_test": "non-significant for all windows",
+      "sign_test": "non-significant for all windows"
+    },
+    "bootstrap_validation": {
+      "replications": 1000,
+      "confidence_intervals_consistent": true
+    }
+  },
+  "economic_significance": {
+    "trading_strategies": {
+      "long_all": {"sharpe_ratio": 0.2, "net_return_after_costs": "negative"},
+      "long_short_volume": {"sharpe_ratio": 0.19, "net_return_after_costs": "negative"},
+      "options_anomaly": {"sharpe_ratio": 2.11, "gross_return": "positive", "note": "limited to 3 events"}
+    },
+    "transaction_costs": {
+      "retail": 0.004,
+      "institutional": 0.0017,
+      "high_frequency": 0.0008
+    },
+    "deflated_sharpe_ratios": {
+      "range": [-12, -7],
+      "interpretation": "severe_selection_bias"
+    }
+  },
+  "key_findings": {
+    "market_efficiency": "Evidence supports semi-strong form efficiency",
+    "statistical_significance": "No significant abnormal returns detected",
+    "economic_significance": "Limited after transaction costs",
+    "selection_bias": "Severe overfitting concerns in strategy backtests",
+    "options_predictive_power": "Minimal predictive content for stock returns"
+  }
+}
