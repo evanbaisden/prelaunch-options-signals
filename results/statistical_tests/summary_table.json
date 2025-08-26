@@ -1,0 +1,50 @@
+[
+  {
+    "window": "(-5,0)",
+    "mean_car": "0.62%",
+    "median_car": "0.06%",
+    "std_dev": "3.48%",
+    "ci_95_approx": "[-0.55%, 1.79%]",
+    "sample_size": 34
+  },
+  {
+    "window": "(-3,0)",
+    "mean_car": "0.68%",
+    "median_car": "0.03%",
+    "std_dev": "3.08%",
+    "ci_95_approx": "[-0.36%, 1.71%]",
+    "sample_size": 34
+  },
+  {
+    "window": "(-1,0)",
+    "mean_car": "0.32%",
+    "median_car": "-0.15%",
+    "std_dev": "3.03%",
+    "ci_95_approx": "[-0.70%, 1.34%]",
+    "sample_size": 34
+  },
+  {
+    "window": "(0,+1)",
+    "mean_car": "-0.05%",
+    "median_car": "0.52%",
+    "std_dev": "4.17%",
+    "ci_95_approx": "[-1.45%, 1.36%]",
+    "sample_size": 34
+  },
+  {
+    "window": "(0,+3)",
+    "mean_car": "-0.78%",
+    "median_car": "-1.20%",
+    "std_dev": "4.71%",
+    "ci_95_approx": "[-2.37%, 0.80%]",
+    "sample_size": 34
+  },
+  {
+    "window": "(0,+5)",
+    "mean_car": "-0.45%",
+    "median_car": "-0.27%",
+    "std_dev": "5.51%",
+    "ci_95_approx": "[-2.30%, 1.40%]",
+    "sample_size": 34
+  }
+]

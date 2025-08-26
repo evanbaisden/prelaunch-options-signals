@@ -1,0 +1,1052 @@
+{
+  "metadata": {
+    "analysis_date": "2025-08-26T12:19:06.158880",
+    "robustness_tests": [
+      "alternative_estimation_windows",
+      "outlier_sensitivity",
+      "cross_sectional_stability",
+      "bootstrap_stability"
+    ]
+  },
+  "estimation_window_sensitivity": {
+    "metadata": {
+      "analysis_date": "2025-08-26T12:19:06.097566",
+      "original_window": "(-120, -6)",
+      "alternative_windows_simulated": true,
+      "note": "Simulation based on existing results - full implementation requires price data"
+    },
+    "results": [
+      {
+        "event_name": "iPhone 12",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": 0.010590415254324609,
+          "beta": 1.2161443624293213,
+          "r_squared": 0.4121826902076907
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.010388604968404552,
+            "beta_change": 0.04338128467016407,
+            "r_squared_change": 0.005601183132819036
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.010496137257029423,
+            "beta_change": 0.002617703102790064,
+            "r_squared_change": -0.0009280124334540756
+          }
+        }
+      },
+      {
+        "event_name": "iPhone 13",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": -0.025657401146477583,
+          "beta": 1.3325707689309216,
+          "r_squared": 0.5289281480395363
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.023640621457862207,
+            "beta_change": -0.022646506951082876,
+            "r_squared_change": 0.0024463478626244933
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.028677687698505844,
+            "beta_change": -0.05561494111260641,
+            "r_squared_change": -0.019637814482654083
+          }
+        }
+      },
+      {
+        "event_name": "iPhone 14",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": -0.02027456819960282,
+          "beta": 1.3031832768394527,
+          "r_squared": 0.8291469865185233
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.019680597894302092,
+            "beta_change": -0.028202212786579296,
+            "r_squared_change": 0.004474669246455473
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.023001569921813694,
+            "beta_change": -0.056819250413619175,
+            "r_squared_change": 0.01086193923359931
+          }
+        }
+      },
+      {
+        "event_name": "iPhone 15",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": -0.035183938320361235,
+          "beta": 1.094540687944432,
+          "r_squared": 0.44725267491795306
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.038910325648073375,
+            "beta_change": 0.02632665674553407,
+            "r_squared_change": 0.003298469801978539
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.0367932718107346,
+            "beta_change": -0.03629976438430255,
+            "r_squared_change": -0.007692182999959656
+          }
+        }
+      },
+      {
+        "event_name": "M1 Mac Launch",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": 0.015018998230588844,
+          "beta": 1.0709737033662547,
+          "r_squared": 0.8721051569647925
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.01596847818487196,
+            "beta_change": 0.005965443550352081,
+            "r_squared_change": -0.006013762120590811
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.014201159294098308,
+            "beta_change": -0.03907855928542966,
+            "r_squared_change": 0.011507374139572072
+          }
+        }
+      },
+      {
+        "event_name": "MacBook Pro M1 Pro/Max",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": -0.009801916192175587,
+          "beta": 1.372288541496931,
+          "r_squared": 0.4308661676803134
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.01051924364430324,
+            "beta_change": 0.00642839666576807,
+            "r_squared_change": -0.012695523954686512
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.009829337705213053,
+            "beta_change": 0.03291913086527945,
+            "r_squared_change": 0.01793421428434752
+          }
+        }
+      },
+      {
+        "event_name": "Apple Watch Series 8",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": -0.02027456819960282,
+          "beta": 1.3031832768394527,
+          "r_squared": 0.8291469865185233
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.016285986268005006,
+            "beta_change": 0.018583793495167294,
+            "r_squared_change": -0.010941638179198177
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.021826271624212232,
+            "beta_change": 0.009889080370496748,
+            "r_squared_change": 0.015904088674343297
+          }
+        }
+      },
+      {
+        "event_name": "Vision Pro Announcement",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": -0.01772001097464163,
+          "beta": 1.1847425878188322,
+          "r_squared": 0.6563914446867565
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.018120668827618838,
+            "beta_change": 0.14230476168199602,
+            "r_squared_change": 0.011990532611087169
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.016597613394758483,
+            "beta_change": 0.03268506370140736,
+            "r_squared_change": -0.007889879249929139
+          }
+        }
+      },
+      {
+        "event_name": "Vision Pro US Launch",
+        "ticker": "AAPL",
+        "original_results": {
+          "abnormal_return": -0.008251605015285976,
+          "beta": 1.1099064020991414,
+          "r_squared": 0.5099490301404845
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.0074833667566359015,
+            "beta_change": 0.02530005494701076,
+            "r_squared_change": 0.03840448984371449
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.008146837657146858,
+            "beta_change": 0.020214148749940045,
+            "r_squared_change": -0.0025981685429331504
+          }
+        }
+      },
+      {
+        "event_name": "RTX 30 Series",
+        "ticker": "NVDA",
+        "original_results": {
+          "abnormal_return": 0.05227888168976723,
+          "beta": 1.0659890778766687,
+          "r_squared": 0.42511541189431795
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.053550795654954374,
+            "beta_change": 0.02186686957439422,
+            "r_squared_change": 0.024834461922667264
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.05661179065120301,
+            "beta_change": 0.033084834547328926,
+            "r_squared_change": -0.008813731502658335
+          }
+        }
+      },
+      {
+        "event_name": "RTX 40 Series",
+        "ticker": "NVDA",
+        "original_results": {
+          "abnormal_return": 0.054067501686555795,
+          "beta": 2.128476184136944,
+          "r_squared": 0.7359307614580926
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.046100754971314925,
+            "beta_change": 0.014761826683083788,
+            "r_squared_change": -0.013423392618264265
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.0581976526427506,
+            "beta_change": 0.020791873461363106,
+            "r_squared_change": 0.003069629525448121
+          }
+        }
+      },
+      {
+        "event_name": "RTX 40 SUPER",
+        "ticker": "NVDA",
+        "original_results": {
+          "abnormal_return": 0.07184088793023115,
+          "beta": 1.8046821279270813,
+          "r_squared": 0.3424550024714282
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.0729634327502152,
+            "beta_change": -0.11594418369400644,
+            "r_squared_change": -0.0006498724878073782
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.06931073191906534,
+            "beta_change": 0.013829845197269462,
+            "r_squared_change": -0.017936869414574313
+          }
+        }
+      },
+      {
+        "event_name": "RTX 3080 Ti / 3070 Ti",
+        "ticker": "NVDA",
+        "original_results": {
+          "abnormal_return": 0.0327310823271294,
+          "beta": 1.982909924613972,
+          "r_squared": 0.3837340655567002
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.033231996305737345,
+            "beta_change": -0.05687606642398886,
+            "r_squared_change": -0.016348423155798056
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.03669619173216816,
+            "beta_change": -0.04837646217509956,
+            "r_squared_change": -0.011070501373435966
+          }
+        }
+      },
+      {
+        "event_name": "RTX 4070 Ti",
+        "ticker": "NVDA",
+        "original_results": {
+          "abnormal_return": -0.0005318640025561636,
+          "beta": 2.0731202658627645,
+          "r_squared": 0.7134978305298301
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.0005138681524002486,
+            "beta_change": 0.0028494765977381663,
+            "r_squared_change": 0.0452799737464776
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.0005614449826945748,
+            "beta_change": 0.01135697261235634,
+            "r_squared_change": -0.0009750753831624504
+          }
+        }
+      },
+      {
+        "event_name": "H100 Hopper GPU",
+        "ticker": "NVDA",
+        "original_results": {
+          "abnormal_return": -0.027689766147134497,
+          "beta": 2.8403434135148102,
+          "r_squared": 0.5756588322339052
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.027464140889621378,
+            "beta_change": -0.0835566344387839,
+            "r_squared_change": -0.0028446188837388483
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.024405779111221416,
+            "beta_change": 0.03454027867768182,
+            "r_squared_change": -0.00711927396014646
+          }
+        }
+      },
+      {
+        "event_name": "Blackwell B200 / GB200",
+        "ticker": "NVDA",
+        "original_results": {
+          "abnormal_return": -0.043431878349925256,
+          "beta": 1.7147775090473185,
+          "r_squared": 0.35521106324664886
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.04022450397569175,
+            "beta_change": -0.038841574548937004,
+            "r_squared_change": -0.029611105434039057
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.04744332745118616,
+            "beta_change": 0.010251272168358434,
+            "r_squared_change": -0.0013671290179407903
+          }
+        }
+      },
+      {
+        "event_name": "Xbox Series X/S",
+        "ticker": "MSFT",
+        "original_results": {
+          "abnormal_return": -0.01298582876706892,
+          "beta": 0.9481063419405392,
+          "r_squared": 0.49041016063757714
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.012931215539619925,
+            "beta_change": 0.04869782435151553,
+            "r_squared_change": -0.006106356914331075
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.01349710103267327,
+            "beta_change": 0.010012820845798317,
+            "r_squared_change": -0.004549857629050791
+          }
+        }
+      },
+      {
+        "event_name": "Windows 11",
+        "ticker": "MSFT",
+        "original_results": {
+          "abnormal_return": -0.0002706142413077526,
+          "beta": 1.1365529297619172,
+          "r_squared": 0.533210877355101
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.00032572574735909596,
+            "beta_change": 0.045607310053996736,
+            "r_squared_change": -0.013887883924767197
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.00027529842088270964,
+            "beta_change": -0.009207429362816402,
+            "r_squared_change": 0.00024392874397037044
+          }
+        }
+      },
+      {
+        "event_name": "Surface Pro 8 & Laptop Studio",
+        "ticker": "MSFT",
+        "original_results": {
+          "abnormal_return": -0.006527172115368865,
+          "beta": 1.0992797432160315,
+          "r_squared": 0.4733692092122457
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.007179104455699678,
+            "beta_change": 0.01592103096112895,
+            "r_squared_change": -0.0004544435124207271
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.007348496874306733,
+            "beta_change": 0.0006537346867771019,
+            "r_squared_change": -0.007058931325454923
+          }
+        }
+      },
+      {
+        "event_name": "Surface Pro 9",
+        "ticker": "MSFT",
+        "original_results": {
+          "abnormal_return": -0.03448702396527231,
+          "beta": 1.1735968600643831,
+          "r_squared": 0.8027194260387374
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.03563772993945025,
+            "beta_change": -0.062205099163143596,
+            "r_squared_change": -0.02011723195721184
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.03404868208866904,
+            "beta_change": -0.015362511458380797,
+            "r_squared_change": 0.004137289547580737
+          }
+        }
+      },
+      {
+        "event_name": "Copilot for Windows",
+        "ticker": "MSFT",
+        "original_results": {
+          "abnormal_return": 0.0014992725449062827,
+          "beta": 1.3458357943783115,
+          "r_squared": 0.3469266798253114
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.0017645970285188018,
+            "beta_change": -0.012742174315708066,
+            "r_squared_change": 0.0013268322394805684
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.0015922494660394544,
+            "beta_change": -0.01908222689776836,
+            "r_squared_change": 0.004765351449469612
+          }
+        }
+      },
+      {
+        "event_name": "Battery Day",
+        "ticker": "TSLA",
+        "original_results": {
+          "abnormal_return": -0.04111455812591265,
+          "beta": 1.6916780148772452,
+          "r_squared": 0.2316559187403749
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.03543631941844613,
+            "beta_change": 0.02756844426008211,
+            "r_squared_change": 0.014986651354771799
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.043604555357090825,
+            "beta_change": -0.006441260710407279,
+            "r_squared_change": 0.00972581867879605
+          }
+        }
+      },
+      {
+        "event_name": "Model S Plaid Delivery",
+        "ticker": "TSLA",
+        "original_results": {
+          "abnormal_return": 0.014438553981603814,
+          "beta": 2.626391389998999,
+          "r_squared": 0.3023945460049283
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.013957476789942348,
+            "beta_change": 0.06550515636962675,
+            "r_squared_change": -0.01998062914455533
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.013848217173532901,
+            "beta_change": 0.028025144232804177,
+            "r_squared_change": 0.003700730076436683
+          }
+        }
+      },
+      {
+        "event_name": "AI Day 2 (Optimus/Dojo)",
+        "ticker": "TSLA",
+        "original_results": {
+          "abnormal_return": 0.021504295480357913,
+          "beta": 2.0617829012756026,
+          "r_squared": 0.6215952279986157
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.021197977517779982,
+            "beta_change": 0.057356518182900544,
+            "r_squared_change": -0.01342595012931866
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.02009238967857065,
+            "beta_change": 0.007352346379360396,
+            "r_squared_change": 0.013152877192468843
+          }
+        }
+      },
+      {
+        "event_name": "Cybertruck Delivery Event",
+        "ticker": "TSLA",
+        "original_results": {
+          "abnormal_return": 0.053830251281315425,
+          "beta": 2.6094009516657546,
+          "r_squared": 0.3567380621183331
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.055218336152582384,
+            "beta_change": 0.013837890790618288,
+            "r_squared_change": -0.02101986700728304
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.061704768805593245,
+            "beta_change": -0.017347377051757682,
+            "r_squared_change": 0.0038172548026449054
+          }
+        }
+      },
+      {
+        "event_name": "Model 3 Highland Refresh",
+        "ticker": "TSLA",
+        "original_results": {
+          "abnormal_return": -0.03411903290693315,
+          "beta": 2.4131698816610596,
+          "r_squared": 0.31736657158323184
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.030920172531717787,
+            "beta_change": 0.060530694589425664,
+            "r_squared_change": 0.0018714400432061913
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.036929130654887385,
+            "beta_change": 0.024677103523250955,
+            "r_squared_change": -0.0032433505414823857
+          }
+        }
+      },
+      {
+        "event_name": "Ryzen 5000 (Zen 3)",
+        "ticker": "AMD",
+        "original_results": {
+          "abnormal_return": 0.010343387505776866,
+          "beta": 1.130504108564219,
+          "r_squared": 0.14562511987508123
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.01067532999345229,
+            "beta_change": -0.021631290388136992,
+            "r_squared_change": -0.006221933417899092
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.010631599201011381,
+            "beta_change": 0.0069189746677803966,
+            "r_squared_change": 0.019109125099876816
+          }
+        }
+      },
+      {
+        "event_name": "Radeon RX 6000 (RDNA 2)",
+        "ticker": "AMD",
+        "original_results": {
+          "abnormal_return": 0.014686972825972894,
+          "beta": 1.2523065110360225,
+          "r_squared": 0.17786526454307464
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.015922556699790633,
+            "beta_change": -0.061794988669626585,
+            "r_squared_change": -0.02494184107049844
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.013812502983491556,
+            "beta_change": 0.00650414552249028,
+            "r_squared_change": 0.015693042770954405
+          }
+        }
+      },
+      {
+        "event_name": "Ryzen 7000 (Zen 4)",
+        "ticker": "AMD",
+        "original_results": {
+          "abnormal_return": 0.002632752762923043,
+          "beta": 2.023000939878798,
+          "r_squared": 0.7431967145525896
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.00247741885533099,
+            "beta_change": -0.02337059521952786,
+            "r_squared_change": -0.020368070387053884
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.0027741499588510863,
+            "beta_change": 0.026352165907019796,
+            "r_squared_change": -0.02316370436717441
+          }
+        }
+      },
+      {
+        "event_name": "Radeon RX 7900 XTX/XT",
+        "ticker": "AMD",
+        "original_results": {
+          "abnormal_return": 0.06533383485158425,
+          "beta": 1.744527907000962,
+          "r_squared": 0.6504573283696425
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.06923623934928173,
+            "beta_change": -0.011996689338219544,
+            "r_squared_change": -0.016581014893214074
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.06655740385301584,
+            "beta_change": 0.03612591638196749,
+            "r_squared_change": 0.006761757668094764
+          }
+        }
+      },
+      {
+        "event_name": "Instinct MI300X",
+        "ticker": "AMD",
+        "original_results": {
+          "abnormal_return": -0.028486120166343668,
+          "beta": 2.2556904237407958,
+          "r_squared": 0.4083246275475756
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": -0.03134853509838201,
+            "beta_change": 0.05199985294721554,
+            "r_squared_change": 0.02599905706231044
+          },
+          "long_window_180_days": {
+            "abnormal_return": -0.027495288300341127,
+            "beta_change": -0.029734502813240048,
+            "r_squared_change": -0.010168200383992576
+          }
+        }
+      },
+      {
+        "event_name": "PlayStation 5",
+        "ticker": "SONY",
+        "original_results": {
+          "abnormal_return": 0.04790449552540857,
+          "beta": 0.775500673322862,
+          "r_squared": 0.8178351315338372
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.04712951799678558,
+            "beta_change": -0.02850608691801905,
+            "r_squared_change": 0.0020338560816505163
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.04574727894429999,
+            "beta_change": -0.01898295856933707,
+            "r_squared_change": 0.01334075169878031
+          }
+        }
+      },
+      {
+        "event_name": "PSVR2",
+        "ticker": "SONY",
+        "original_results": {
+          "abnormal_return": 0.09222458524698532,
+          "beta": 0.8962594720717204,
+          "r_squared": 0.6307836635150227
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.08433838764164926,
+            "beta_change": 0.03237126929932468,
+            "r_squared_change": -0.01288445870969206
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.09544918140429817,
+            "beta_change": 0.025409173779625,
+            "r_squared_change": 0.0025955494424594644
+          }
+        }
+      },
+      {
+        "event_name": "PS5 Slim Refresh",
+        "ticker": "SONY",
+        "original_results": {
+          "abnormal_return": 0.017129046681659335,
+          "beta": 1.211463065532104,
+          "r_squared": 0.3016682944223154
+        },
+        "alternative_windows": {
+          "short_window_90_days": {
+            "abnormal_return": 0.01654600813678684,
+            "beta_change": -0.05318867325017007,
+            "r_squared_change": 0.018357631284533188
+          },
+          "long_window_180_days": {
+            "abnormal_return": 0.017450774263972915,
+            "beta_change": -0.05919794426550414,
+            "r_squared_change": -0.008426932647676952
+          }
+        }
+      }
+    ]
+  },
+  "outlier_sensitivity": {
+    "metadata": {
+      "analysis_date": "2025-08-26T12:19:06.105557",
+      "outlier_thresholds": [
+        "2_std",
+        "2.5_std",
+        "3_std"
+      ],
+      "sample_size": 34
+    },
+    "window_analysis": {
+      "abnormal_return_minus5_plus0": {
+        "window_name": "(-5,0)",
+        "results": {
+          "full_sample": {
+            "mean": 0.006213157322679996,
+            "std": 0.03476521945112856,
+            "sample_size": 34,
+            "min": -0.043431878349925256,
+            "max": 0.09222458524698532
+          },
+          "excluding_2_std": {
+            "mean": 0.0036067504158828648,
+            "std": 0.031847624869868196,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              0.09222458524698532
+            ]
+          },
+          "excluding_2_5_std": {
+            "mean": 0.006213157322679996,
+            "std": 0.03476521945112856,
+            "sample_size": 34,
+            "outliers_removed": 0,
+            "outlier_values": []
+          },
+          "excluding_3_std": {
+            "mean": 0.006213157322679996,
+            "std": 0.03476521945112856,
+            "sample_size": 34,
+            "outliers_removed": 0,
+            "outlier_values": []
+          }
+        }
+      },
+      "abnormal_return_minus3_plus0": {
+        "window_name": "(-3,0)",
+        "results": {
+          "full_sample": {
+            "mean": 0.00677768510652422,
+            "std": 0.030752689989452332,
+            "sample_size": 34,
+            "min": -0.05740551699911928,
+            "max": 0.09672324828340123
+          },
+          "excluding_2_std": {
+            "mean": 0.0059726113230481725,
+            "std": 0.024952656199248073,
+            "sample_size": 32,
+            "outliers_removed": 2,
+            "outlier_values": [
+              -0.05740551699911928,
+              0.09672324828340123
+            ]
+          },
+          "excluding_2_5_std": {
+            "mean": 0.00405206197995219,
+            "std": 0.02686632902918,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              0.09672324828340123
+            ]
+          },
+          "excluding_3_std": {
+            "mean": 0.00677768510652422,
+            "std": 0.030752689989452332,
+            "sample_size": 34,
+            "outliers_removed": 0,
+            "outlier_values": []
+          }
+        }
+      },
+      "abnormal_return_minus1_plus0": {
+        "window_name": "(-1,0)",
+        "results": {
+          "full_sample": {
+            "mean": 0.0032027925950830352,
+            "std": 0.030338426081797987,
+            "sample_size": 34,
+            "min": -0.05740551699911928,
+            "max": 0.09287683674227323
+          },
+          "excluding_2_std": {
+            "mean": -0.0018954342397409186,
+            "std": 0.023064706723542102,
+            "sample_size": 32,
+            "outliers_removed": 2,
+            "outlier_values": [
+              0.07667200716225936,
+              0.09287683674227323
+            ]
+          },
+          "excluding_2_5_std": {
+            "mean": 0.00048539731789545344,
+            "std": 0.02640544553820141,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              0.09287683674227323
+            ]
+          },
+          "excluding_3_std": {
+            "mean": 0.0032027925950830352,
+            "std": 0.030338426081797987,
+            "sample_size": 34,
+            "outliers_removed": 0,
+            "outlier_values": []
+          }
+        }
+      },
+      "abnormal_return_plus0_plus1": {
+        "window_name": "(0,+1)",
+        "results": {
+          "full_sample": {
+            "mean": -0.00046361235254880847,
+            "std": 0.04170602820197484,
+            "sample_size": 34,
+            "min": -0.1566364439684239,
+            "max": 0.07582049239848142
+          },
+          "excluding_2_std": {
+            "mean": 0.004268897696417104,
+            "std": 0.032103200999246746,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              -0.1566364439684239
+            ]
+          },
+          "excluding_2_5_std": {
+            "mean": 0.004268897696417104,
+            "std": 0.032103200999246746,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              -0.1566364439684239
+            ]
+          },
+          "excluding_3_std": {
+            "mean": 0.004268897696417104,
+            "std": 0.032103200999246746,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              -0.1566364439684239
+            ]
+          }
+        }
+      },
+      "abnormal_return_plus0_plus3": {
+        "window_name": "(0,+3)",
+        "results": {
+          "full_sample": {
+            "mean": -0.00784923888221369,
+            "std": 0.047121862969044206,
+            "sample_size": 34,
+            "min": -0.13834441490518404,
+            "max": 0.07708458689640883
+          },
+          "excluding_2_std": {
+            "mean": -0.00023388932697956163,
+            "std": 0.03699571673619718,
+            "sample_size": 32,
+            "outliers_removed": 2,
+            "outlier_values": [
+              -0.13834441490518404,
+              -0.12104524862673549
+            ]
+          },
+          "excluding_2_5_std": {
+            "mean": -0.0038948396087903465,
+            "std": 0.04190572318415737,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              -0.13834441490518404
+            ]
+          },
+          "excluding_3_std": {
+            "mean": -0.00784923888221369,
+            "std": 0.047121862969044206,
+            "sample_size": 34,
+            "outliers_removed": 0,
+            "outlier_values": []
+          }
+        }
+      },
+      "abnormal_return_plus0_plus5": {
+        "window_name": "(0,+5)",
+        "results": {
+          "full_sample": {
+            "mean": -0.004517007166867108,
+            "std": 0.05506275265907612,
+            "sample_size": 34,
+            "min": -0.18705747118049712,
+            "max": 0.10388991842981898
+          },
+          "excluding_2_std": {
+            "mean": 0.005369488825381234,
+            "std": 0.03902173395725907,
+            "sample_size": 32,
+            "outliers_removed": 2,
+            "outlier_values": [
+              -0.13834441490518404,
+              -0.18705747118049712
+            ]
+          },
+          "excluding_2_5_std": {
+            "mean": 0.0010145220456671351,
+            "std": 0.04564490078126617,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              -0.18705747118049712
+            ]
+          },
+          "excluding_3_std": {
+            "mean": 0.0010145220456671351,
+            "std": 0.04564490078126617,
+            "sample_size": 33,
+            "outliers_removed": 1,
+            "outlier_values": [
+              -0.18705747118049712
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cross_sectional_robustness": {
+    "metadata": {
+      "analysis_date": "2025-08-26T12:19:06.135456",
+      "total_events": 34
+    },
+    "by_company": {
+      "Apple": {
+        "mean": -0.012394954951470466,
+        "std": 0.015461444322571165,
+        "events": 9,
+        "min": -0.035183938320361235,
+        "max": 0.015018998230588844
+      },
+      "NVIDIA": {
+        "mean": 0.019894977876295374,
+        "std": 0.041007797535490886,
+        "events": 7,
+        "min": -0.043431878349925256,
+        "max": 0.07184088793023115
+      },
+      "Microsoft": {
+        "mean": -0.010554273308822314,
+        "std": 0.013007291581397436,
+        "events": 5,
+        "min": -0.03448702396527231,
+        "max": 0.0014992725449062827
+      },
+      "Tesla": {
+        "mean": 0.00290790194208627,
+        "std": 0.035723489040308705,
+        "events": 5,
+        "min": -0.04111455812591265,
+        "max": 0.053830251281315425
+      },
+      "AMD": {
+        "mean": 0.012902165555982678,
+        "std": 0.03025645009372955,
+        "events": 5,
+        "min": -0.028486120166343668,
+        "max": 0.06533383485158425
+      },
+      "Sony": {
+        "mean": 0.052419375818017734,
+        "std": 0.030823401133408725,
+        "events": 3,
+        "min": 0.017129046681659335,
+        "max": 0.09222458524698532
+      }
+    },
+    "by_time_period": {
+      "covid_period": {
+        "mean": 0.014389240044759066,
+        "std": 0.025993603329773796,
+        "events": 10
+      },
+      "post_covid": {
+        "mean": 0.002806456188480383,
+        "std": 0.037299131082500374,
+        "events": 24
+      }
+    }
+  },
+  "bootstrap_stability": {
+    "original_mean": 0.006213157322679996,
+    "bootstrap_stats": {
+      "mean_of_means": 0.0060512707227095746,
+      "std_of_means": 0.0061085560574705095,
+      "ci_2_5": -0.00610568286488482,
+      "ci_97_5": 0.01804958356080325,
+      "bias_estimate": -0.0001618865999704214
+    },
+    "stability_assessment": {
+      "coefficient_of_variation": 1.0094666620262007,
+      "stable": false
+    }
+  }
+}

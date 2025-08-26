@@ -1,0 +1,12 @@
+# Python Requirements for Pre-Launch Options Signals Analysis
+# Run: pip install -r requirements.txt
+
+numpy>=2.3.2
+pandas>=2.3.1
+scipy>=1.16.1
+scikit-learn>=1.7.1
+yfinance>=0.2.65
+
+# Optional packages used in some analysis scripts
+matplotlib>=3.7.0
+seaborn>=0.12.0

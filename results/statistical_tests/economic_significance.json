@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "analysis_date": "2025-08-26T12:22:28.912021",
+    "risk_free_rate": 0.02,
+    "trading_frequency_assumption": 6,
+    "strategies_analyzed": [
+      "long_all",
+      "long_short_volume",
+      "options_anomaly"
+    ]
+  },
+  "strategy_performance": {
+    "raw_returns": {
+      "long_all": [
+        0.010590415254324609,
+        -0.025657401146477583,
+        -0.02027456819960282,
+        -0.035183938320361235,
+        0.015018998230588844,
+        -0.009801916192175587,
+        -0.02027456819960282,
+        -0.01772001097464163,
+        -0.008251605015285976,
+        0.05227888168976723,
+        0.054067501686555795,
+        0.07184088793023115,
+        0.0327310823271294,
+        -0.0005318640025561636,
+        -0.027689766147134497,
+        -0.043431878349925256,
+        -0.01298582876706892,
+        -0.0002706142413077526,
+        -0.006527172115368865,
+        -0.03448702396527231,
+        0.0014992725449062827,
+        -0.04111455812591265,
+        0.014438553981603814,
+        0.021504295480357913,
+        0.053830251281315425,
+        -0.03411903290693315,
+        0.010343387505776866,
+        0.014686972825972894,
+        0.002632752762923043,
+        0.06533383485158425,
+        -0.028486120166343668,
+        0.04790449552540857,
+        0.09222458524698532,
+        0.017129046681659335
+      ],
+      "long_short_volume": [
+        -0.010590415254324609,
+        -0.025657401146477583,
+        -0.02027456819960282,
+        -0.035183938320361235,
+        0.015018998230588844,
+        0.009801916192175587,
+        -0.02027456819960282,
+        -0.01772001097464163,
+        0.008251605015285976,
+        0.05227888168976723,
+        -0.054067501686555795,
+        0.07184088793023115,
+        0.0327310823271294,
+        0.0005318640025561636,
+        -0.027689766147134497,
+        0.043431878349925256,
+        -0.01298582876706892,
+        0.0002706142413077526,
+        -0.006527172115368865,
+        0.03448702396527231,
+        0.0014992725449062827,
+        0.04111455812591265,
+        -0.014438553981603814,
+        0.021504295480357913,
+        -0.053830251281315425,
+        0.03411903290693315,
+        -0.010343387505776866,
+        0.014686972825972894,
+        -0.002632752762923043,
+        -0.06533383485158425,
+        -0.028486120166343668,
+        -0.04790449552540857,
+        0.09222458524698532,
+        -0.017129046681659335
+      ],
+      "options_anomaly": [
+        0.010590415254324609,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.01772001097464163,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0005318640025561636,
+        0.0,
+        0.0,
+        0.03448702396527231,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.017129046681659335
+      ]
+    },
+    "performance_metrics": {
+      "long_all": {
+        "trades": 34,
+        "mean_return": 0.006213157322679996,
+        "volatility": 0.03476521945112856,
+        "annual_return": 0.03727894393607997,
+        "annual_volatility": 0.08515704845114562,
+        "sharpe_ratio": 0.20290679691643915,
+        "calmar_ratio": 0.225196759601548,
+        "information_ratio": 0.178717621254029,
+        "max_drawdown": -0.16553943316964015,
+        "win_rate": 0.5,
+        "best_trade": 0.09222458524698532,
+        "worst_trade": -0.043431878349925256
+      },
+      "long_short_volume": {
+        "trades": 34,
+        "mean_return": 8.011339728100396e-05,
+        "volatility": 0.035315965075940876,
+        "annual_return": 0.00048068038368602375,
+        "annual_volatility": 0.08650609421000612,
+        "sharpe_ratio": -0.22564097702675132,
+        "calmar_ratio": 0.0030094279301766708,
+        "information_ratio": 0.0022684753795835385,
+        "max_drawdown": -0.15972483636044577,
+        "win_rate": 0.47058823529411764,
+        "best_trade": 0.09222458524698532,
+        "worst_trade": -0.06533383485158425
+      },
+      "options_anomaly": {
+        "trades": 26,
+        "mean_return": 0.00041385559868662,
+        "volatility": 0.00855917060560176,
+        "annual_return": 0.00248313359211972,
+        "annual_volatility": 0.02096560060515279,
+        "sharpe_ratio": -0.8355051084763628,
+        "calmar_ratio": 0.1401316057689371,
+        "information_ratio": 0.04835230161386923,
+        "max_drawdown": -0.01772001097464163,
+        "win_rate": 0.11538461538461539,
+        "best_trade": 0.03448702396527231,
+        "worst_trade": -0.01772001097464163
+      }
+    },
+    "deflated_sharpe_ratios": {
+      "long_all": -7.460102422349093,
+      "long_short_volume": -9.958943876854875,
+      "options_anomaly": -11.818552890667249
+    }
+  },
+  "transaction_cost_analysis": {
+    "assumptions": {
+      "average_turnover": 0.1772375978138334,
+      "holding_period_days": 5,
+      "rebalancing_frequency": "per_event",
+      "position_size_assumption": "equal_weighted"
+    },
+    "cost_scenarios": {
+      "retail_investor": {
+        "description": "Retail investor with online broker",
+        "commission_roundtrip": 0.001,
+        "bid_ask_spread": 0.002,
+        "market_impact": 0.001,
+        "total_cost_per_roundtrip": 0.004,
+        "annual_cost_estimate": 0.024,
+        "breakeven_return_per_trade": 0.004
+      },
+      "institutional": {
+        "description": "Institutional investor",
+        "commission_roundtrip": 0.0002,
+        "bid_ask_spread": 0.001,
+        "market_impact": 0.0005,
+        "total_cost_per_roundtrip": 0.0017000000000000001,
+        "annual_cost_estimate": 0.0102,
+        "breakeven_return_per_trade": 0.0017000000000000001
+      },
+      "high_frequency": {
+        "description": "High-frequency trader",
+        "commission_roundtrip": 0.0001,
+        "bid_ask_spread": 0.0005,
+        "market_impact": 0.0002,
+        "total_cost_per_roundtrip": 0.0008,
+        "annual_cost_estimate": 0.0048000000000000004,
+        "breakeven_return_per_trade": 0.0008
+      }
+    }
+  },
+  "net_performance_after_costs": {
+    "long_all": {
+      "retail_investor": {
+        "mean_net_return": 0.002213157322679995,
+        "net_volatility": 0.03476521945112856,
+        "annual_net_return": 0.01327894393607997,
+        "net_sharpe_ratio": -0.07892542292345751,
+        "probability_positive": 0.4411764705882353,
+        "trades_profitable_after_costs": 15
+      },
+      "institutional": {
+        "mean_net_return": 0.004513157322679995,
+        "net_volatility": 0.03476521945112856,
+        "annual_net_return": 0.02707894393607997,
+        "net_sharpe_ratio": 0.08312810348448306,
+        "probability_positive": 0.47058823529411764,
+        "trades_profitable_after_costs": 16
+      },
+      "high_frequency": {
+        "mean_net_return": 0.0054131573226799965,
+        "net_volatility": 0.03476521945112856,
+        "annual_net_return": 0.03247894393607998,
+        "net_sharpe_ratio": 0.1465403529484599,
+        "probability_positive": 0.5,
+        "trades_profitable_after_costs": 17
+      }
+    },
+    "long_short_volume": {
+      "retail_investor": {
+        "mean_net_return": -0.003919886602718996,
+        "net_volatility": 0.035315965075940876,
+        "annual_net_return": -0.023519319616313976,
+        "net_sharpe_ratio": -0.5030780780677081,
+        "probability_positive": 0.38235294117647056,
+        "trades_profitable_after_costs": 13
+      },
+      "institutional": {
+        "mean_net_return": -0.0016198866027189959,
+        "net_volatility": 0.035315965075940876,
+        "annual_net_return": -0.009719319616313976,
+        "net_sharpe_ratio": -0.343551744969158,
+        "probability_positive": 0.38235294117647056,
+        "trades_profitable_after_costs": 13
+      },
+      "high_frequency": {
+        "mean_net_return": -0.0007198866027189962,
+        "net_volatility": 0.035315965075940876,
+        "annual_net_return": -0.004319319616313978,
+        "net_sharpe_ratio": -0.2811283972349427,
+        "probability_positive": 0.4117647058823529,
+        "trades_profitable_after_costs": 14
+      }
+    },
+    "options_anomaly": {
+      "retail_investor": {
+        "mean_net_return": -0.0035861444013133804,
+        "net_volatility": 0.00855917060560176,
+        "annual_net_return": -0.02151686640788028,
+        "net_sharpe_ratio": -1.980237398859756,
+        "probability_positive": 0.07692307692307693,
+        "trades_profitable_after_costs": 2
+      },
+      "institutional": {
+        "mean_net_return": -0.0012861444013133802,
+        "net_volatility": 0.00855917060560176,
+        "annual_net_return": -0.007716866407880281,
+        "net_sharpe_ratio": -1.3220163318893048,
+        "probability_positive": 0.07692307692307693,
+        "trades_profitable_after_costs": 2
+      },
+      "high_frequency": {
+        "mean_net_return": -0.00038614440131338015,
+        "net_volatility": 0.00855917060560176,
+        "annual_net_return": -0.0023168664078802807,
+        "net_sharpe_ratio": -1.0644515665530416,
+        "probability_positive": 0.07692307692307693,
+        "trades_profitable_after_costs": 2
+      }
+    }
+  },
+  "economic_interpretation": {
+    "profitability_assessment": "mixed",
+    "key_finding": "Strategies show positive gross returns but profitability depends heavily on transaction costs",
+    "practical_implementation": "Institutional investors may achieve better net returns due to lower transaction costs"
+  }
+}

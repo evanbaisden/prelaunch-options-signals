@@ -1,181 +1,115 @@
-# Pre-Launch Options Signals: Comprehensive Financial Analysis
+# Pre-Launch Options Signals: Comprehensive Research Study
 
-**An empirical examination of whether unusual options activity contains exploitable information about technology product launch outcomes**
+**Author:** Evan Baisden  
+**Course:** Independent Study in Finance  
+**Professor:** Professor Cheah  
+**Date:** August 26, 2025  
 
-## 🎯 Project Overview
+## Project Overview
 
-This study investigates whether options markets contain predictive signals around major technology product launches by integrating three data sources: **options flow analysis**, **equity event studies**, and **earnings impact measurement**. 
+This study explores whether unusual options market activity contains information about the outcomes of upcoming technology product launches. The research analyzes 34 major product launches between June 2020 and March 2024, examining options market signals and their predictive power for stock returns and earnings surprises.
 
-**Research Question**: Do options market anomalies predict product launch success and subsequent earnings performance?
+## Key Findings
 
-## 📊 Dataset Summary
+- **No Statistical Significance**: Pre-launch abnormal returns are statistically indistinguishable from zero across all tests
+- **Limited Economic Significance**: Gross Sharpe ratios around 0.2 become negative after transaction costs
+- **Market Efficiency**: Evidence supports semi-strong form efficiency in options markets
+- **Selection Bias**: Deflated Sharpe ratios (-7 to -12) indicate severe overfitting concerns
 
-- **33 Product Launch Events** (2020-2024)
-- **6 Major Technology Companies**: Apple, NVIDIA, Microsoft, Tesla, AMD, Sony
-- **92,076 Options Contracts Analyzed**
-- **~610 Quarterly Earnings Records**
-- **100% Data Coverage**: Every event has complete options and equity data
-
-## 🔬 Methodology
-
-### Phase I: Data Collection and Anomaly Detection
-- **Options Data**: AlphaVantage Historical Options API (60-day pre-launch windows)
-- **Equity Data**: Yahoo Finance with event study methodology (Brown & Warner 1985)
-- **Earnings Data**: AlphaVantage EARNINGS and EARNINGS_ESTIMATES APIs
-- **Anomaly Detection**: Volume spikes, P/C ratio thresholds, IV percentiles
-
-### Phase II: Statistical Analysis and Integration
-- **Event Studies**: Market-adjusted abnormal returns with CAPM regression
-- **Correlation Analysis**: Options metrics vs. stock returns vs. earnings surprises
-- **Machine Learning**: Cross-validated prediction models (Random Forest, Gradient Boosting, Lasso, Ridge)
-- **Trading Strategies**: Backtested with risk-adjusted returns and Sharpe ratios
-
-## 🚀 Quick Start
-
-### Run Complete Analysis
-```bash
-# Run comprehensive integrated analysis
-python src/comprehensive_options_research.py
-
-# Results saved to:
-# - results/options_analysis_report.md
-# - results/complete_integrated_analysis.md
-```
-
-### Collect Additional Data
-```bash
-# Run batch data collector for options and earnings
-python batch_options_collector.py
-
-# Individual analysis components
-python src/comprehensive_analysis.py        # Equity analysis
-python src/phase2_statistical_analysis.py  # Advanced statistics
-```
-
-## 📈 Key Findings
-
-### Options Analysis Results
-- **Total Contracts**: 92,076 analyzed across 33 events
-- **Anomaly Detection**: 26 events with unusual patterns detected
-- **Significant Correlations**: 2 relationships found (bid-ask spread → abnormal returns)
-- **Best Trading Strategy**: Sharpe ratio 2.11 with 100% hit rate
-
-### Equity Event Study Results
-- **Market Efficiency**: Mixed evidence for semi-strong form efficiency
-- **Abnormal Returns**: Various patterns across different time windows
-- **Statistical Significance**: Event-specific results with proper significance testing
-
-### Earnings Integration Results
-- **Date Alignment**: 100% of events properly matched to earnings (avg 42 days)
-- **Fundamental Impact**: Direct link between product launches and earnings outcomes
-- **Predictive Power**: Framework established for testing options → earnings relationships
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 prelaunch-options-signals/
-├── data/
-│   ├── processed/
-│   │   └── events_master.csv           # 33 product launch events
-│   └── raw/
-│       ├── options/                    # 33 options files (92K contracts)
-│       └── earnings/                   # 6 company earnings files (~610 records)
-├── results/
-│   ├── complete_integrated_analysis.md # Final comprehensive report
-│   ├── options_analysis_report.md      # Detailed options analysis
-│   ├── options_analysis_data.json      # Full statistical results
-│   └── equity_analysis_results.csv     # Event study results
-├── src/
-│   ├── comprehensive_options_research.py  # Main options analysis
-│   ├── phase2_statistical_analysis.py    # Advanced statistical testing
-│   ├── comprehensive_analysis.py         # Equity event studies
-│   ├── earnings_analysis.py              # Earnings integration
-│   └── data_ingestion_pipeline.py        # Complete data pipeline
-└── batch_options_collector.py            # Unified data collector
+├── README.md                           # This overview document
+├── FINAL_PAPER.pdf                     # Main research paper (PDF)
+├── FINAL_PAPER.md                      # Main research paper (Markdown)
+├── data/                               # Raw and processed data
+│   ├── raw/
+│   │   └── options/                    # Original options data
+│   └── processed/                      # Cleaned datasets
+├── analysis/                           # Analysis code
+│   ├── nonparametric_tests.py          # Statistical tests implementation
+│   ├── summary_statistics.py           # Summary tables generation
+│   ├── cross_sectional_analysis.py     # Regression analysis
+│   ├── economic_significance.py        # Trading strategy analysis
+│   └── simple_robustness.py            # Robustness checks
+├── results/                            # All analysis results
+│   ├── final_archive/                  # Core event study results
+│   │   ├── final_analysis_results.json # Main 34-event dataset
+│   │   └── comprehensive_analysis_*.json
+│   ├── statistical_tests/              # Supplementary analysis results
+│   │   ├── comprehensive_summary.json  # Validated statistics
+│   │   ├── nonparametric_tests.json   # Rank tests, sign tests
+│   │   ├── cross_sectional_analysis.json # Regression results
+│   │   ├── economic_significance.json  # Sharpe ratios, transaction costs
+│   │   ├── robustness_analysis.json   # Robustness checks
+│   │   └── comprehensive_analysis_report.md # Executive summary
+│   ├── options/                        # Options analysis data
+│   ├── equity/                         # Equity analysis results
+│   └── earnings/                       # Earnings data
+└── documentation/                      # Additional documentation
+    ├── methodology_notes.md            # Detailed methodology
+    ├── data_sources.md                 # Data collection details
+    └── code_documentation.md           # Code explanations
 ```
 
-## 🔢 Detailed Statistical Results
+## Data Summary
 
-### Complete Quantitative Analysis Available In:
-- **`results/options_analysis_data.json`**: Every contract's metrics, correlations, p-values
-- **`results/equity_analysis_results.csv`**: Event-by-event abnormal returns, t-statistics
-- **`data/raw/earnings/*.csv`**: Complete earnings histories with surprises
+- **34 events** across 6 technology companies (Apple, NVIDIA, Microsoft, Tesla, AMD, Sony)
+- **92,076 option-chain observations** covering 60 trading days pre-launch
+- **610+ quarterly earnings records** for earnings surprise analysis
+- **Period:** June 2020 - March 2024
 
-### Key Statistical Findings:
-- **Correlation**: `avg_bid_ask_spread` → `abnormal_return`: r=0.311 (p<0.001)
-- **Trading Performance**: High P/C ratio strategy: +5.24% return, Sharpe 2.11
-- **Machine Learning**: Best model R² = -0.020 (limited predictive power)
-- **Event Study**: Mixed statistical significance across events and time periods
+## Key Results Files
 
-## 🔧 Technical Implementation
+### Core Analysis
+- `results/final_archive/final_analysis_results.json` - Main event study results
+- `results/statistical_tests/comprehensive_summary.json` - Validated paper statistics
 
-### Data Sources & APIs
-- **AlphaVantage**: Historical options and earnings data
-- **Yahoo Finance**: Equity prices and market data
-- **Rate Limiting**: Automated 12-second delays, 25 calls/day management
+### Statistical Tests
+- `results/statistical_tests/nonparametric_tests.json` - Corrado rank & sign tests
+- `results/statistical_tests/robustness_analysis.json` - Outlier sensitivity analysis
 
-### Analysis Framework
-1. **Data Validation**: Comprehensive quality checks and alignment testing
-2. **Anomaly Detection**: Multi-factor scoring system (volume, P/C ratio, IV, etc.)
-3. **Event Studies**: Market model estimation with 120-day windows
-4. **Statistical Testing**: Bonferroni correction, cross-validation, robustness checks
-5. **Integration**: Three-way correlation analysis across all data sources
+### Economic Analysis
+- `results/statistical_tests/economic_significance.json` - Trading strategy performance
+- `results/statistical_tests/cross_sectional_analysis.json` - Regression results
 
-## 🎯 Research Contributions
+## Reproducibility
 
-### Academic Value
-1. **First comprehensive integration** of options, equity, and earnings data for product launches
-2. **Novel methodology** for multi-source financial signal analysis
-3. **Evidence on market efficiency** in technology options markets
-4. **Systematic framework** for product launch impact measurement
+All analysis code is provided in the `analysis/` directory. To reproduce results:
 
-### Practical Applications
-- Risk management for technology investments
-- Enhanced due diligence around product launches
-- Options strategy development with fundamental backing
-- Alternative data integration for quantitative funds
+1. Ensure Python 3.13+ with required packages (numpy, pandas, scipy, scikit-learn)
+2. Run analysis scripts in the following order:
+   ```bash
+   python analysis/nonparametric_tests.py
+   python analysis/summary_statistics.py  
+   python analysis/cross_sectional_analysis.py
+   python analysis/economic_significance.py
+   python analysis/simple_robustness.py
+   ```
 
-## ⚙️ Configuration
+## Academic Contributions
 
-### Environment Setup
-```bash
-# Required API keys in .env file
-ALPHAVANTAGE_API_KEY=your_key_here
+1. **Methodological**: Comprehensive framework combining parametric and non-parametric tests
+2. **Empirical**: Large-scale analysis of options market efficiency around product launches  
+3. **Practical**: Clear evidence that transaction costs eliminate apparent trading opportunities
+4. **Theoretical**: Support for semi-strong form market efficiency in derivative markets
 
-# Optional: Customize analysis parameters
-ANALYSIS_WINDOW_DAYS=60
-VOLUME_THRESHOLD=90th_percentile
-PCR_THRESHOLD=1.5
-```
+## Software Requirements
 
-### System Requirements
-- Python 3.8+
-- Required packages: pandas, numpy, scipy, scikit-learn, requests, matplotlib, seaborn
-- ~2GB storage for complete dataset
-- Internet connection for API data collection
+- Python 3.13+
+- numpy 2.3.2+
+- pandas 2.3.1+
+- scipy 1.16.1+
+- scikit-learn 1.7.1+
+- yfinance 0.2.65+
 
-## 📊 Results Summary
+## Contact
 
-### Project Completion Status: ✅ 100% COMPLETE
-
-**Phase I Requirements**: ✅ All fulfilled
-- Product launch calendar with 33 major events
-- Complete options market data (100% coverage)
-- Baseline anomaly detection metrics established
-- Screening criteria validated across all events
-
-**Phase II Requirements**: ✅ All fulfilled
-- Event studies with correlation analysis completed
-- Statistical testing with regression and robustness checks
-- Earnings integration framework implemented
-- Trading strategies backtested with risk-adjusted returns
-
-### Ready for Academic Submission
-All analysis components integrated, documented, and validated. Complete methodology and findings available in generated reports.
+**Evan Baisden**  
+Independent Study in Finance  
+[Contact information as appropriate]
 
 ---
 
-**Analysis Framework**: Complete Integrated Analysis v1.0  
-**Last Updated**: August 2025  
-**Contact**: Academic Research Project  
-**License**: Academic Use Only
+*This research was conducted as part of an independent study under the supervision of Professor Cheah. All code and data are available for academic use and verification.*

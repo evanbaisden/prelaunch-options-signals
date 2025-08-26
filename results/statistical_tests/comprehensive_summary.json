@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "generated": "2025-08-26T12:15:14.231372",
+    "data_sources": [
+      "results/final_archive/final_analysis_results.json",
+      "results/options/options_analysis_data.json",
+      "results/earnings/earnings_timing_summary.json"
+    ]
+  },
+  "paper_validation": {
+    "sample_size": 34,
+    "date_range": "2020-06-22 to 2024-03-18",
+    "companies": [
+      "Apple",
+      "NVIDIA",
+      "Microsoft",
+      "Tesla",
+      "AMD",
+      "Sony"
+    ],
+    "verified_statistics": {
+      "mean_car_minus5_0": 0.006213157322679996,
+      "mean_car_minus3_0": 0.00677768510652422,
+      "mean_car_minus1_0": 0.0032027925950830352,
+      "positive_earnings_rate": "82.4%",
+      "high_anomaly_events": 3
+    }
+  },
+  "appendix_a_abnormal_returns": [
+    {
+      "window_trading_days": "(-5,0)",
+      "mean_car": "+0.62%",
+      "median_car": "+0.06%",
+      "standard_deviation": "3.53%",
+      "approx_95_ci": "[-0.56%, +1.81%]",
+      "sample_size": 34,
+      "_raw_mean": 0.006213157322679996,
+      "_raw_median": 0.000614329151799265,
+      "_raw_std": 0.035288034043015774,
+      "_raw_ci_lower": -0.00564846458256227,
+      "_raw_ci_upper": 0.018074779227922264
+    },
+    {
+      "window_trading_days": "(-3,0)",
+      "mean_car": "+0.68%",
+      "median_car": "+0.03%",
+      "standard_deviation": "3.12%",
+      "approx_95_ci": "[-0.37%, +1.73%]",
+      "sample_size": 34,
+      "_raw_mean": 0.00677768510652422,
+      "_raw_median": 0.0002904512626857685,
+      "_raw_std": 0.031215162406428482,
+      "_raw_ci_lower": -0.0037148930213601657,
+      "_raw_ci_upper": 0.017270263234408605
+    },
+    {
+      "window_trading_days": "(-1,0)",
+      "mean_car": "+0.32%",
+      "median_car": "-0.15%",
+      "standard_deviation": "3.08%",
+      "approx_95_ci": "[-0.71%, +1.36%]",
+      "sample_size": 34,
+      "_raw_mean": 0.0032027925950830352,
+      "_raw_median": -0.0015201633777017466,
+      "_raw_std": 0.030794668616747404,
+      "_raw_ci_lower": -0.007148441916417979,
+      "_raw_ci_upper": 0.01355402710658405
+    },
+    {
+      "window_trading_days": "(0,+1)",
+      "mean_car": "-0.05%",
+      "median_car": "+0.52%",
+      "standard_deviation": "4.23%",
+      "approx_95_ci": "[-1.47%, +1.38%]",
+      "sample_size": 34,
+      "_raw_mean": -0.00046361235254880847,
+      "_raw_median": 0.005195231268945798,
+      "_raw_std": 0.04233322171485642,
+      "_raw_ci_lower": -0.014693384104647943,
+      "_raw_ci_upper": 0.013766159399550327
+    },
+    {
+      "window_trading_days": "(0,+3)",
+      "mean_car": "-0.78%",
+      "median_car": "-1.20%",
+      "standard_deviation": "4.78%",
+      "approx_95_ci": "[-2.39%, +0.82%]",
+      "sample_size": 34,
+      "_raw_mean": -0.00784923888221369,
+      "_raw_median": -0.012038279216450228,
+      "_raw_std": 0.04783050217644972,
+      "_raw_ci_lower": -0.023926851244050654,
+      "_raw_ci_upper": 0.00822837347962327
+    },
+    {
+      "window_trading_days": "(0,+5)",
+      "mean_car": "-0.45%",
+      "median_car": "-0.27%",
+      "standard_deviation": "5.59%",
+      "approx_95_ci": "[-2.33%, +1.43%]",
+      "sample_size": 34,
+      "_raw_mean": -0.004517007166867108,
+      "_raw_median": -0.0026690491183277614,
+      "_raw_std": 0.055890810442520006,
+      "_raw_ci_lower": -0.02330398919705337,
+      "_raw_ci_upper": 0.014269974863319157
+    }
+  ],
+  "appendix_b_earnings": {
+    "total_events": 34,
+    "positive_surprises": 28,
+    "positive_rate": "82.4%",
+    "binomial_test_vs_50pct": {
+      "p_value": 0.00019512558355927467,
+      "significant": true
+    },
+    "binomial_test_vs_70pct": {
+      "p_value": 0.13566009776405868,
+      "significant": false
+    },
+    "interpretation": "Rate significantly above 50% but not significantly different from 70% tech baseline"
+  },
+  "high_anomaly_analysis": {
+    "volume_threshold": 3000000,
+    "high_anomaly_events": [
+      {
+        "event": "iPhone 12",
+        "contracts": 3720000,
+        "ticker": "AAPL"
+      },
+      {
+        "event": "Model 3 Highland Refresh",
+        "contracts": 3440000,
+        "ticker": "TSLA"
+      },
+      {
+        "event": "Vision Pro Announcement",
+        "contracts": 2750000,
+        "ticker": "AAPL"
+      }
+    ],
+    "total_high_anomaly": 3,
+    "percentage_high_anomaly": "8.8%"
+  },
+  "cross_sectional_patterns": {
+    "by_company": {
+      "Apple": {
+        "events": 9,
+        "mean_ar_pre": -0.012394954951470466,
+        "mean_ar_post": -0.008262854842947058
+      },
+      "NVIDIA": {
+        "events": 7,
+        "mean_ar_pre": 0.019894977876295374,
+        "mean_ar_post": 0.018953076904642378
+      },
+      "Microsoft": {
+        "events": 5,
+        "mean_ar_pre": -0.010554273308822314,
+        "mean_ar_post": 0.0021989955485266595
+      },
+      "Tesla": {
+        "events": 5,
+        "mean_ar_pre": 0.00290790194208627,
+        "mean_ar_post": -0.060951975514907095
+      },
+      "AMD": {
+        "events": 5,
+        "mean_ar_pre": 0.012902165555982678,
+        "mean_ar_post": 0.001656050940453363
+      },
+      "Sony": {
+        "events": 3,
+        "mean_ar_pre": 0.052419375818017734,
+        "mean_ar_post": 0.024533518903393545
+      }
+    },
+    "by_category": {
+      "Consumer Hardware": {
+        "events": 4,
+        "mean_ar_pre": -0.017631373103029258
+      },
+      "Computing Hardware": {
+        "events": 4,
+        "mean_ar_pre": -0.00894927851055698
+      },
+      "Wearables": {
+        "events": 1,
+        "mean_ar_pre": -0.02027456819960282
+      },
+      "Mixed Reality": {
+        "events": 2,
+        "mean_ar_pre": -0.012985807994963803
+      },
+      "Semiconductor Hardware": {
+        "events": 5,
+        "mean_ar_pre": 0.04207729792622548
+      },
+      "AI Hardware": {
+        "events": 3,
+        "mean_ar_pre": -0.03320258822113447
+      },
+      "Gaming Hardware": {
+        "events": 4,
+        "mean_ar_pre": 0.03606807467174608
+      },
+      "Software Platform": {
+        "events": 1,
+        "mean_ar_pre": -0.0002706142413077526
+      },
+      "AI Software": {
+        "events": 1,
+        "mean_ar_pre": 0.0014992725449062827
+      },
+      "Energy Technology": {
+        "events": 1,
+        "mean_ar_pre": -0.04111455812591265
+      },
+      "Electric Vehicle": {
+        "events": 3,
+        "mean_ar_pre": 0.011383257451995366
+      },
+      "AI Technology": {
+        "events": 1,
+        "mean_ar_pre": 0.021504295480357913
+      },
+      "CPU Hardware": {
+        "events": 2,
+        "mean_ar_pre": 0.006488070134349954
+      },
+      "GPU Hardware": {
+        "events": 2,
+        "mean_ar_pre": 0.040010403838778574
+      }
+    },
+    "sample_composition": {
+      "total_events": 34,
+      "companies": 6,
+      "categories": 14
+    }
+  },
+  "statistical_tests_summary": {
+    "abnormal_return_minus5_plus0": {
+      "window_name": "(-5,0)",
+      "sample_size": 34,
+      "descriptive_stats": {
+        "mean": 0.006213157322679996,
+        "median": 0.000614329151799265,
+        "std": 0.03476521945112856,
+        "min": -0.043431878349925256,
+        "max": 0.09222458524698532
+      },
+      "parametric_tests": {
+        "t_statistic": 1.026654571334026,
+        "t_p_value": 0.31205010464863947,
+        "significant_5pct": false,
+        "significant_1pct": false
+      },
+      "nonparametric_tests": {
+        "corrado_rank": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "significant_5pct": false,
+          "significant_1pct": false
+        },
+        "sign_test": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "proportion_positive": 0.5,
+          "significant_5pct": false,
+          "significant_1pct": false
+        }
+      },
+      "bootstrap_ci": {
+        "ci_lower_95": -0.0061056828648848194,
+        "ci_upper_95": 0.01804958356080325,
+        "bootstrap_std": 0.0061085560574705095
+      }
+    },
+    "abnormal_return_minus3_plus0": {
+      "window_name": "(-3,0)",
+      "sample_size": 34,
+      "descriptive_stats": {
+        "mean": 0.00677768510652422,
+        "median": 0.0002904512626857685,
+        "std": 0.030752689989452332,
+        "min": -0.05740551699911928,
+        "max": 0.09672324828340123
+      },
+      "parametric_tests": {
+        "t_statistic": 1.2660627966623461,
+        "t_p_value": 0.21435559153161998,
+        "significant_5pct": false,
+        "significant_1pct": false
+      },
+      "nonparametric_tests": {
+        "corrado_rank": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "significant_5pct": false,
+          "significant_1pct": false
+        },
+        "sign_test": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "proportion_positive": 0.5,
+          "significant_5pct": false,
+          "significant_1pct": false
+        }
+      },
+      "bootstrap_ci": {
+        "ci_lower_95": -0.0032534349497568235,
+        "ci_upper_95": 0.01765946120727861,
+        "bootstrap_std": 0.005422206242022236
+      }
+    },
+    "abnormal_return_minus1_plus0": {
+      "window_name": "(-1,0)",
+      "sample_size": 34,
+      "descriptive_stats": {
+        "mean": 0.0032027925950830352,
+        "median": -0.0015201633777017466,
+        "std": 0.030338426081797987,
+        "min": -0.05740551699911928,
+        "max": 0.09287683674227323
+      },
+      "parametric_tests": {
+        "t_statistic": 0.6064468425855867,
+        "t_p_value": 0.548367632805784,
+        "significant_5pct": false,
+        "significant_1pct": false
+      },
+      "nonparametric_tests": {
+        "corrado_rank": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "significant_5pct": false,
+          "significant_1pct": false
+        },
+        "sign_test": {
+          "test_statistic": -0.6859943405700353,
+          "p_value": 0.4927166772270879,
+          "proportion_positive": 0.4411764705882353,
+          "significant_5pct": false,
+          "significant_1pct": false
+        }
+      },
+      "bootstrap_ci": {
+        "ci_lower_95": -0.00718272319708145,
+        "ci_upper_95": 0.013623443571318202,
+        "bootstrap_std": 0.005355068716840759
+      }
+    },
+    "abnormal_return_plus0_plus1": {
+      "window_name": "(0,+1)",
+      "sample_size": 34,
+      "descriptive_stats": {
+        "mean": -0.00046361235254880847,
+        "median": 0.005195231268945798,
+        "std": 0.04170602820197484,
+        "min": -0.1566364439684239,
+        "max": 0.07582049239848142
+      },
+      "parametric_tests": {
+        "t_statistic": -0.0638576799983892,
+        "t_p_value": 0.9494688034880827,
+        "significant_5pct": false,
+        "significant_1pct": false
+      },
+      "nonparametric_tests": {
+        "corrado_rank": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "significant_5pct": false,
+          "significant_1pct": false
+        },
+        "sign_test": {
+          "test_statistic": 1.028991510855053,
+          "p_value": 0.30348366402484217,
+          "proportion_positive": 0.5882352941176471,
+          "significant_5pct": false,
+          "significant_1pct": false
+        }
+      },
+      "bootstrap_ci": {
+        "ci_lower_95": -0.01593686613699853,
+        "ci_upper_95": 0.01250549178169691,
+        "bootstrap_std": 0.007232536867334943
+      }
+    },
+    "abnormal_return_plus0_plus3": {
+      "window_name": "(0,+3)",
+      "sample_size": 34,
+      "descriptive_stats": {
+        "mean": -0.00784923888221369,
+        "median": -0.012038279216450228,
+        "std": 0.047121862969044206,
+        "min": -0.13834441490518404,
+        "max": 0.07708458689640883
+      },
+      "parametric_tests": {
+        "t_statistic": -0.956890106745991,
+        "t_p_value": 0.3455808478692717,
+        "significant_5pct": false,
+        "significant_1pct": false
+      },
+      "nonparametric_tests": {
+        "corrado_rank": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "significant_5pct": false,
+          "significant_1pct": false
+        },
+        "sign_test": {
+          "test_statistic": -0.6859943405700353,
+          "p_value": 0.4927166772270879,
+          "proportion_positive": 0.4411764705882353,
+          "significant_5pct": false,
+          "significant_1pct": false
+        }
+      },
+      "bootstrap_ci": {
+        "ci_lower_95": -0.023769542715404362,
+        "ci_upper_95": 0.006898865535842634,
+        "bootstrap_std": 0.007967886695919205
+      }
+    },
+    "abnormal_return_plus0_plus5": {
+      "window_name": "(0,+5)",
+      "sample_size": 34,
+      "descriptive_stats": {
+        "mean": -0.004517007166867108,
+        "median": -0.0026690491183277614,
+        "std": 0.05506275265907612,
+        "min": -0.18705747118049712,
+        "max": 0.10388991842981898
+      },
+      "parametric_tests": {
+        "t_statistic": -0.4712483374303709,
+        "t_p_value": 0.6405640362993572,
+        "significant_5pct": false,
+        "significant_1pct": false
+      },
+      "nonparametric_tests": {
+        "corrado_rank": {
+          "test_statistic": 0.0,
+          "p_value": 1.0,
+          "significant_5pct": false,
+          "significant_1pct": false
+        },
+        "sign_test": {
+          "test_statistic": -0.6859943405700353,
+          "p_value": 0.4927166772270879,
+          "proportion_positive": 0.4411764705882353,
+          "significant_5pct": false,
+          "significant_1pct": false
+        }
+      },
+      "bootstrap_ci": {
+        "ci_lower_95": -0.023177576072648004,
+        "ci_upper_95": 0.01264662402168539,
+        "bootstrap_std": 0.009309858075885568
+      }
+    }
+  }
+}

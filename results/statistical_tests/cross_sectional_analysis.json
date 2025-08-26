@@ -1,0 +1,869 @@
+{
+  "metadata": {
+    "analysis_date": "2025-08-26T12:21:09.043469",
+    "total_events": 34,
+    "variables_available": [
+      "event_name",
+      "ticker",
+      "company",
+      "category",
+      "announcement_date",
+      "ar_minus5_0",
+      "ar_minus3_0",
+      "ar_minus1_0",
+      "beta",
+      "r_squared",
+      "alpha",
+      "volume_spike",
+      "dollar_volume",
+      "turnover",
+      "apple",
+      "nvidia",
+      "microsoft",
+      "tesla",
+      "amd",
+      "sony",
+      "consumer_hardware",
+      "ai_hardware",
+      "semiconductor",
+      "gaming",
+      "software",
+      "announcement_year",
+      "covid_period",
+      "market_cap_proxy",
+      "volatility_proxy",
+      "options_volume",
+      "put_call_ratio",
+      "otm_ratio",
+      "short_term_ratio",
+      "high_volume_anomaly",
+      "high_anomaly_event",
+      "anomaly_score"
+    ],
+    "regression_specifications": [
+      "basic",
+      "options",
+      "company_controls",
+      "full_model"
+    ]
+  },
+  "dataset_summary": {
+    "descriptive_stats": {
+      "ar_minus5_0": {
+        "count": 34.0,
+        "mean": 0.006213157322679996,
+        "std": 0.035288034043015774,
+        "min": -0.043431878349925256,
+        "25%": -0.02027456819960282,
+        "50%": 0.000614329151799265,
+        "75%": 0.02041048328068327,
+        "max": 0.09222458524698532
+      },
+      "ar_minus3_0": {
+        "count": 34.0,
+        "mean": 0.00677768510652422,
+        "std": 0.031215162406428482,
+        "min": -0.05740551699911928,
+        "25%": -0.011664222093460467,
+        "50%": 0.0002904512626857685,
+        "75%": 0.015736131275161176,
+        "max": 0.09672324828340123
+      },
+      "ar_minus1_0": {
+        "count": 34.0,
+        "mean": 0.0032027925950830352,
+        "std": 0.030794668616747404,
+        "min": -0.05740551699911928,
+        "25%": -0.011638212083991689,
+        "50%": -0.0015201633777017466,
+        "75%": 0.010208269802837348,
+        "max": 0.09287683674227323
+      },
+      "beta": {
+        "count": 34.0,
+        "mean": 1.5586141182568125,
+        "std": 0.5574382797988444,
+        "min": 0.775500673322862,
+        "25%": 1.1320163138636434,
+        "50%": 1.3178770228851873,
+        "75%": 2.0129781860625915,
+        "max": 2.8403434135148102
+      },
+      "r_squared": {
+        "count": 34.0,
+        "mean": 0.5117563257923262,
+        "std": 0.2012595291352345,
+        "min": 0.14562511987508123,
+        "25%": 0.3555928129645699,
+        "50%": 0.4818896849249114,
+        "75%": 0.654907915607478,
+        "max": 0.8721051569647925
+      },
+      "alpha": {
+        "count": 34.0,
+        "mean": 0.0009628159838726964,
+        "std": 0.002338136611470572,
+        "min": -0.0033046124373693484,
+        "25%": 6.464654379973612e-05,
+        "50%": 0.0007844929516677061,
+        "75%": 0.0015264515089836333,
+        "max": 0.009787338615831087
+      },
+      "volume_spike": {
+        "count": 34.0,
+        "mean": 0.11213086114246174,
+        "std": 0.14663732478398486,
+        "min": -0.11700889984224061,
+        "25%": -3.2932355232911936e-05,
+        "50%": 0.07342640261166844,
+        "75%": 0.21034599692961037,
+        "max": 0.5072073275352789
+      },
+      "dollar_volume": {
+        "count": 34.0,
+        "mean": 13217135223.461971,
+        "std": 11124472664.891615,
+        "min": 43047494.985502586,
+        "25%": 6366022903.483797,
+        "50%": 9798727525.991486,
+        "75%": 15899018215.594856,
+        "max": 53658128408.34403
+      },
+      "turnover": {
+        "count": 34.0,
+        "mean": 0.1772375978138334,
+        "std": 0.21444726643753642,
+        "min": 0.0025520446517885605,
+        "25%": 0.052751412529052945,
+        "50%": 0.08163019731338542,
+        "75%": 0.16691769816068436,
+        "max": 0.7738679416886679
+      },
+      "apple": {
+        "count": 34.0,
+        "mean": 0.2647058823529412,
+        "std": 0.4478110755198991,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.75,
+        "max": 1.0
+      },
+      "nvidia": {
+        "count": 34.0,
+        "mean": 0.20588235294117646,
+        "std": 0.4104256301219048,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "microsoft": {
+        "count": 34.0,
+        "mean": 0.14705882352941177,
+        "std": 0.3594906279535709,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "tesla": {
+        "count": 34.0,
+        "mean": 0.14705882352941177,
+        "std": 0.3594906279535709,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "amd": {
+        "count": 34.0,
+        "mean": 0.14705882352941177,
+        "std": 0.3594906279535709,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "sony": {
+        "count": 34.0,
+        "mean": 0.08823529411764706,
+        "std": 0.2879022412812366,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "consumer_hardware": {
+        "count": 34.0,
+        "mean": 0.7058823529411765,
+        "std": 0.4624972900628803,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 1.0,
+        "75%": 1.0,
+        "max": 1.0
+      },
+      "ai_hardware": {
+        "count": 34.0,
+        "mean": 0.14705882352941177,
+        "std": 0.35949062795357095,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "semiconductor": {
+        "count": 34.0,
+        "mean": 0.14705882352941177,
+        "std": 0.35949062795357095,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "gaming": {
+        "count": 34.0,
+        "mean": 0.11764705882352941,
+        "std": 0.3270349700838643,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "software": {
+        "count": 34.0,
+        "mean": 0.058823529411764705,
+        "std": 0.23883257361061286,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "announcement_year": {
+        "count": 34.0,
+        "mean": 2021.764705882353,
+        "std": 1.3040455357687049,
+        "min": 2020.0,
+        "25%": 2021.0,
+        "50%": 2022.0,
+        "75%": 2023.0,
+        "max": 2024.0
+      },
+      "covid_period": {
+        "count": 34.0,
+        "mean": 0.29411764705882354,
+        "std": 0.46249729006288026,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 1.0,
+        "max": 1.0
+      },
+      "market_cap_proxy": {
+        "count": 34.0,
+        "mean": 22.75515534759159,
+        "std": 1.5497402877303903,
+        "min": 17.577814598654932,
+        "25%": 22.572410243831868,
+        "50%": 23.005499774263885,
+        "75%": 23.48857925314076,
+        "max": 24.70589880262417
+      },
+      "volatility_proxy": {
+        "count": 34.0,
+        "mean": 0.030109400131745588,
+        "std": 0.025321820033515522,
+        "min": 0.0008324881105110649,
+        "25%": 0.01331296388606007,
+        "50%": 0.0235194725611102,
+        "75%": 0.0397654149535249,
+        "max": 0.09846738478228478
+      },
+      "options_volume": {
+        "count": 34.0,
+        "mean": 866893.5294117647,
+        "std": 1014605.7539721566,
+        "min": 0.0,
+        "25%": 1648.75,
+        "50%": 477837.5,
+        "75%": 1410276.5,
+        "max": 3724075.0
+      },
+      "put_call_ratio": {
+        "count": 34.0,
+        "mean": 0.594165836486749,
+        "std": 0.6975689955127053,
+        "min": 0.0,
+        "25%": 0.23596607377120773,
+        "50%": 0.49899401423373513,
+        "75%": 0.7208612565191265,
+        "max": 3.971311475409836
+      },
+      "otm_ratio": {
+        "count": 34.0,
+        "mean": 0.41691988000417574,
+        "std": 0.27521972051917043,
+        "min": 0.0,
+        "25%": 0.2721426361997474,
+        "50%": 0.4394400189990636,
+        "75%": 0.6683694410902131,
+        "max": 0.7741600672046842
+      },
+      "short_term_ratio": {
+        "count": 34.0,
+        "mean": 0.599889378605289,
+        "std": 0.3617296406829526,
+        "min": 0.0,
+        "25%": 0.2560057122490119,
+        "50%": 0.7927545876174527,
+        "75%": 0.8425578720390663,
+        "max": 0.921193441142038
+      },
+      "high_volume_anomaly": {
+        "count": 34.0,
+        "mean": 0.08823529411764706,
+        "std": 0.28790224128123654,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "high_anomaly_event": {
+        "count": 34.0,
+        "mean": 0.08823529411764706,
+        "std": 0.28790224128123654,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "anomaly_score": {
+        "count": 34.0,
+        "mean": 1.5,
+        "std": 0.9613752775282003,
+        "min": 0.0,
+        "25%": 1.0,
+        "50%": 2.0,
+        "75%": 2.0,
+        "max": 3.0
+      }
+    },
+    "key_correlations": {
+      "ar_volume_corr": 0.13804817668865915
+    }
+  },
+  "regression_results": {
+    "ar_minus5_0": {
+      "basic": {
+        "coefficients": {
+          "beta": 0.00024836292623098223,
+          "r_squared": 0.0019129733875781598,
+          "volume_spike": 0.004825183333649447
+        },
+        "intercept": 0.006213157322679996,
+        "r_squared": 0.022009122099530654,
+        "adj_r_squared": -0.0757899656905161,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike"
+        ],
+        "mean_dependent_var": 0.006213157322679996,
+        "residual_std": 0.0343805149422185
+      },
+      "options": {
+        "coefficients": {
+          "beta": 0.00029850309550434335,
+          "r_squared": 0.0016591394832363915,
+          "volume_spike": 0.004591984037999269,
+          "put_call_ratio": -0.0005679773162875782,
+          "otm_ratio": 0.0013000148804658744,
+          "high_volume_anomaly": -0.006313258520904664
+        },
+        "intercept": 0.006213157322679996,
+        "r_squared": 0.05317213198583548,
+        "adj_r_squared": -0.15723406090620107,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "put_call_ratio",
+          "otm_ratio",
+          "high_volume_anomaly"
+        ],
+        "mean_dependent_var": 0.006213157322679996,
+        "residual_std": 0.03382832475332575
+      },
+      "company_controls": {
+        "coefficients": {
+          "beta": -0.014130770313124139,
+          "r_squared": 0.007458179103624396,
+          "volume_spike": 0.0031556054496012695,
+          "apple": -0.021847581503391496,
+          "nvidia": 0.0022267896392528927,
+          "microsoft": -0.01631023766956533,
+          "tesla": 0.0016630768814379763
+        },
+        "intercept": 0.006213157322679995,
+        "r_squared": 0.3437585327275837,
+        "adj_r_squared": 0.1670781376927024,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "apple",
+          "nvidia",
+          "microsoft",
+          "tesla"
+        ],
+        "mean_dependent_var": 0.006213157322679996,
+        "residual_std": 0.028162863481147955
+      },
+      "full_model": {
+        "coefficients": {
+          "beta": -0.003610887621642451,
+          "r_squared": 0.003242969600435239,
+          "volume_spike": 0.0009386010709260066,
+          "put_call_ratio": -0.014851997632804375,
+          "otm_ratio": 0.005757958600136812,
+          "apple": -0.007018344977501151,
+          "nvidia": 0.010037857209126361,
+          "microsoft": -0.006314929165798607,
+          "tesla": 0.008300562777000385,
+          "covid_period": -0.002144806255156041,
+          "market_cap_proxy": -0.023492996725629083
+        },
+        "intercept": 0.006213157322679969,
+        "r_squared": 0.44608763164404475,
+        "adj_r_squared": 0.16913144746606712,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "put_call_ratio",
+          "otm_ratio",
+          "apple",
+          "nvidia",
+          "microsoft",
+          "tesla",
+          "covid_period",
+          "market_cap_proxy"
+        ],
+        "mean_dependent_var": 0.006213157322679996,
+        "residual_std": 0.02587411514333904
+      }
+    },
+    "ar_minus3_0": {
+      "basic": {
+        "coefficients": {
+          "beta": -0.0029769578211905866,
+          "r_squared": -0.00024296999668602364,
+          "volume_spike": 0.006283925507955489
+        },
+        "intercept": 0.006777685106524221,
+        "r_squared": 0.05920254803323288,
+        "adj_r_squared": -0.03487719716344384,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike"
+        ],
+        "mean_dependent_var": 0.00677768510652422,
+        "residual_std": 0.02982848366409472
+      },
+      "options": {
+        "coefficients": {
+          "beta": -0.002932521874521453,
+          "r_squared": -0.001183416294520347,
+          "volume_spike": 0.006424963804094492,
+          "put_call_ratio": -0.0003033648105406922,
+          "otm_ratio": -0.003696942692624385,
+          "high_volume_anomaly": -0.0036987986921720667
+        },
+        "intercept": 0.006777685106524221,
+        "r_squared": 0.09372622747760395,
+        "adj_r_squared": -0.10766794419403958,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "put_call_ratio",
+          "otm_ratio",
+          "high_volume_anomaly"
+        ],
+        "mean_dependent_var": 0.00677768510652422,
+        "residual_std": 0.029276072643068408
+      },
+      "company_controls": {
+        "coefficients": {
+          "beta": -0.012027495860066833,
+          "r_squared": 0.003158215104603456,
+          "volume_spike": 0.004850973444095356,
+          "apple": -0.014959003176539072,
+          "nvidia": 0.001109816660181837,
+          "microsoft": -0.011799199615245542,
+          "tesla": -0.0006394884227135813
+        },
+        "intercept": 0.0067776851065242194,
+        "r_squared": 0.2552860875197577,
+        "adj_r_squared": 0.054786188005846226,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "apple",
+          "nvidia",
+          "microsoft",
+          "tesla"
+        ],
+        "mean_dependent_var": 0.00677768510652422,
+        "residual_std": 0.026538589930917775
+      },
+      "full_model": {
+        "coefficients": {
+          "beta": -0.002470828507947922,
+          "r_squared": -0.002510670921139992,
+          "volume_spike": 0.002999784137823752,
+          "put_call_ratio": -0.01434622537546679,
+          "otm_ratio": 0.0005197567936951602,
+          "apple": 0.0004850863497990105,
+          "nvidia": 0.009470744947220439,
+          "microsoft": -0.00304575998859416,
+          "tesla": 0.006365076067264947,
+          "covid_period": -0.00346278139148985,
+          "market_cap_proxy": -0.02335253932396267
+        },
+        "intercept": 0.006777685106524195,
+        "r_squared": 0.40543067330135885,
+        "adj_r_squared": 0.10814600995203838,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "put_call_ratio",
+          "otm_ratio",
+          "apple",
+          "nvidia",
+          "microsoft",
+          "tesla",
+          "covid_period",
+          "market_cap_proxy"
+        ],
+        "mean_dependent_var": 0.00677768510652422,
+        "residual_std": 0.02371288311171144
+      }
+    },
+    "ar_minus1_0": {
+      "basic": {
+        "coefficients": {
+          "beta": -0.005334058297533664,
+          "r_squared": 0.004466508898705502,
+          "volume_spike": 0.0033836598220289456
+        },
+        "intercept": 0.0032027925950830352,
+        "r_squared": 0.08203721920954354,
+        "adj_r_squared": -0.009759058869502235,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike"
+        ],
+        "mean_dependent_var": 0.0032027925950830352,
+        "residual_std": 0.029067359560998283
+      },
+      "options": {
+        "coefficients": {
+          "beta": -0.005280688372698958,
+          "r_squared": 0.00398055477925929,
+          "volume_spike": 0.0034078951966868653,
+          "put_call_ratio": -1.9369805730439857e-05,
+          "otm_ratio": -0.0009573623599062157,
+          "high_volume_anomaly": -0.004153706502389971
+        },
+        "intercept": 0.0032027925950830357,
+        "r_squared": 0.10319607751560389,
+        "adj_r_squared": -0.09609368303648402,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "put_call_ratio",
+          "otm_ratio",
+          "high_volume_anomaly"
+        ],
+        "mean_dependent_var": 0.0032027925950830352,
+        "residual_std": 0.028730408166807008
+      },
+      "company_controls": {
+        "coefficients": {
+          "beta": -0.010012861185528297,
+          "r_squared": 0.0067185863770219695,
+          "volume_spike": 0.0022336528731030886,
+          "apple": -0.012014126815976882,
+          "nvidia": -0.0019089799666280043,
+          "microsoft": -0.008849817678368744,
+          "tesla": -0.0032024058090966115
+        },
+        "intercept": 0.003202792595083035,
+        "r_squared": 0.19236735759492318,
+        "adj_r_squared": -0.025072199975674447,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "apple",
+          "nvidia",
+          "microsoft",
+          "tesla"
+        ],
+        "mean_dependent_var": 0.0032027925950830352,
+        "residual_std": 0.027264653219147034
+      },
+      "full_model": {
+        "coefficients": {
+          "beta": -0.004240315548938864,
+          "r_squared": 0.0013672110087372823,
+          "volume_spike": 0.00030198132646420224,
+          "put_call_ratio": -0.015246477276196472,
+          "otm_ratio": 0.004622218612581041,
+          "apple": 0.00018015127347771693,
+          "nvidia": 0.006029769176105149,
+          "microsoft": -0.0015219660900364328,
+          "tesla": 0.004579937731366555,
+          "covid_period": -0.008297845641909923,
+          "market_cap_proxy": -0.021525663723399067
+        },
+        "intercept": 0.003202792595083011,
+        "r_squared": 0.3374709245768084,
+        "adj_r_squared": 0.006206386865212576,
+        "observations": 34,
+        "variables_included": [
+          "beta",
+          "r_squared",
+          "volume_spike",
+          "put_call_ratio",
+          "otm_ratio",
+          "apple",
+          "nvidia",
+          "microsoft",
+          "tesla",
+          "covid_period",
+          "market_cap_proxy"
+        ],
+        "mean_dependent_var": 0.0032027925950830352,
+        "residual_std": 0.02469423163304165
+      }
+    }
+  },
+  "heterogeneity_analysis": {
+    "by_company": {
+      "Apple": {
+        "events": 9,
+        "mean_ar_minus5_0": -0.012394954951470466,
+        "std_ar_minus5_0": 0.016399338191142476,
+        "mean_volume_spike": 0.12866923493650273,
+        "mean_beta": 1.2208370675294156
+      },
+      "NVIDIA": {
+        "events": 7,
+        "mean_ar_minus5_0": 0.019894977876295374,
+        "std_ar_minus5_0": 0.04429348374005422,
+        "mean_volume_spike": 0.12655758690922206,
+        "mean_beta": 1.9443283575685084
+      },
+      "Microsoft": {
+        "events": 5,
+        "mean_ar_minus5_0": -0.010554273308822314,
+        "std_ar_minus5_0": 0.014542594089582703,
+        "mean_volume_spike": 0.10360865730286287,
+        "mean_beta": 1.1406743338722365
+      },
+      "Tesla": {
+        "events": 5,
+        "mean_ar_minus5_0": 0.00290790194208627,
+        "std_ar_minus5_0": 0.039940074943799496,
+        "mean_volume_spike": 0.020618164373747305,
+        "mean_beta": 2.2804846278957323
+      },
+      "AMD": {
+        "events": 5,
+        "mean_ar_minus5_0": 0.012902165555982678,
+        "std_ar_minus5_0": 0.03382773958370458,
+        "mean_volume_spike": 0.12721532519909168,
+        "mean_beta": 1.6812059780441593
+      },
+      "Sony": {
+        "events": 3,
+        "mean_ar_minus5_0": 0.052419375818017734,
+        "std_ar_minus5_0": 0.03775080245698803,
+        "mean_volume_spike": 0.17043744055737017,
+        "mean_beta": 0.9610744036422288
+      }
+    },
+    "by_category": {
+      "Consumer Hardware": {
+        "events": 4,
+        "mean_ar_minus5_0": -0.017631373103029258,
+        "companies": [
+          "Apple"
+        ]
+      },
+      "Computing Hardware": {
+        "events": 4,
+        "mean_ar_minus5_0": -0.00894927851055698,
+        "companies": [
+          "Apple",
+          "Microsoft"
+        ]
+      },
+      "Wearables": {
+        "events": 1,
+        "mean_ar_minus5_0": -0.02027456819960282,
+        "companies": [
+          "Apple"
+        ]
+      },
+      "Mixed Reality": {
+        "events": 2,
+        "mean_ar_minus5_0": -0.012985807994963803,
+        "companies": [
+          "Apple"
+        ]
+      },
+      "Semiconductor Hardware": {
+        "events": 5,
+        "mean_ar_minus5_0": 0.04207729792622548,
+        "companies": [
+          "NVIDIA"
+        ]
+      },
+      "AI Hardware": {
+        "events": 3,
+        "mean_ar_minus5_0": -0.03320258822113447,
+        "companies": [
+          "NVIDIA",
+          "AMD"
+        ]
+      },
+      "Gaming Hardware": {
+        "events": 4,
+        "mean_ar_minus5_0": 0.03606807467174608,
+        "companies": [
+          "Microsoft",
+          "Sony"
+        ]
+      },
+      "Software Platform": {
+        "events": 1,
+        "mean_ar_minus5_0": -0.0002706142413077526,
+        "companies": [
+          "Microsoft"
+        ]
+      },
+      "AI Software": {
+        "events": 1,
+        "mean_ar_minus5_0": 0.0014992725449062827,
+        "companies": [
+          "Microsoft"
+        ]
+      },
+      "Energy Technology": {
+        "events": 1,
+        "mean_ar_minus5_0": -0.04111455812591265,
+        "companies": [
+          "Tesla"
+        ]
+      },
+      "Electric Vehicle": {
+        "events": 3,
+        "mean_ar_minus5_0": 0.011383257451995366,
+        "companies": [
+          "Tesla"
+        ]
+      },
+      "AI Technology": {
+        "events": 1,
+        "mean_ar_minus5_0": 0.021504295480357913,
+        "companies": [
+          "Tesla"
+        ]
+      },
+      "CPU Hardware": {
+        "events": 2,
+        "mean_ar_minus5_0": 0.006488070134349954,
+        "companies": [
+          "AMD"
+        ]
+      },
+      "GPU Hardware": {
+        "events": 2,
+        "mean_ar_minus5_0": 0.040010403838778574,
+        "companies": [
+          "AMD"
+        ]
+      }
+    },
+    "volume_split": {
+      "high_volume": {
+        "events": 17,
+        "mean_ar_minus5_0": 0.006293270719961,
+        "mean_volume_spike": 0.23222422372753335
+      },
+      "low_volume": {
+        "events": 17,
+        "mean_ar_minus5_0": 0.006133043925398991,
+        "mean_volume_spike": -0.007962501442609897
+      }
+    },
+    "covid_analysis": {
+      "covid_period": {
+        "events": 10,
+        "mean_ar_minus5_0": 0.014389240044759066
+      },
+      "non_covid_period": {
+        "events": 24,
+        "mean_ar_minus5_0": 0.002806456188480383
+      }
+    }
+  },
+  "hypothesis_tests": {
+    "options_volume_predicts_returns": {
+      "correlation": -0.2191230727785053,
+      "interpretation": "negative"
+    },
+    "put_call_ratio_relationship": {
+      "correlation": -0.017918714827926355,
+      "interpretation": "higher_pcr_lower_returns"
+    },
+    "high_anomaly_different_returns": {
+      "high_anomaly_mean": -0.013749542875750054,
+      "normal_events_mean": 0.008145031535431292,
+      "t_statistic": -1.0270010911508405,
+      "p_value": 0.3121208779156526,
+      "significant": false
+    }
+  }
+}
