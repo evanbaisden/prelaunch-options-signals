@@ -1,4 +1,0 @@
-event_name,company,ticker,event_date,category,total_call_volume,total_put_volume,total_volume,put_call_ratio_volume,total_call_oi,total_put_oi,total_oi,put_call_ratio_oi,avg_call_iv,avg_put_iv,iv_skew,vw_call_iv,vw_put_iv,high_volume_activity,high_pcr_activity,high_iv_activity,atm_volume,otm_volume,otm_volume_ratio,num_call_contracts,num_put_contracts,total_contracts
-Vision Pro US Launch,Apple,AAPL,2024-01-08,Mixed Reality,629311,312362,941673,0.49635553804080973,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,True,False,False,756951,171898,0.18254532093412468,1066,1066,2132
-RTX 40 SUPER,NVIDIA,NVDA,2024-01-08,Semiconductor Hardware,1035942,718795,1754737,0.6938564128107558,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,True,False,False,1182990,534239,0.3044553115367146,2638,2638,5276
-Blackwell B200 / GB200,NVIDIA,NVDA,2024-03-18,AI Hardware,807400,372804,1180204,0.4617339608620263,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,True,False,False,743650,393076,0.3330576747748694,4563,4563,9126
