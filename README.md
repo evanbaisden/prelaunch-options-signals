@@ -21,8 +21,6 @@ This study explores whether unusual options market activity contains information
 ```
 prelaunch-options-signals/
 ├── README.md                           # This overview document
-├── FINAL_PAPER.pdf                     # Main research paper (PDF)
-├── FINAL_PAPER.md                      # Main research paper (Markdown)
 ├── data/                               # Raw and processed data
 │   ├── raw/
 │   │   └── options/                    # Original options data
